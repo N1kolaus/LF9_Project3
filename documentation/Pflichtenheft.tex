@@ -1,0 +1,184 @@
+\documentclass[a4paper,12pt,headings=small,ngerman,bibliography=totoc]{scrartcl}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[headsepline]{scrlayer-scrpage}
+
+\usepackage{amssymb,graphicx}
+\clearscrheadings
+\pagestyle{scrheadings}
+\usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=2.5cm]{geometry}
+\usepackage[onehalfspacing]{setspace}
+\usepackage{microtype}
+\ofoot{\pagemark}
+\footskip1cm
+\setkomafont{sectioning}{\normalfont\normalcolor\bfseries}
+\usepackage[osf,sc]{mathpazo}
+\usepackage{url}
+\clubpenalty = 10000
+\widowpenalty = 10000 \displaywidowpenalty = 10000
+
+\usepackage[usenames,
+	    dvipsnames,
+	    svgnames]{xcolor}
+
+\usepackage[babel,german=quotes]{csquotes}
+\usepackage{url}
+\usepackage{soul}
+
+%%% Für Bildunterschriften %%%
+\usepackage{caption}
+
+%%% Für Bilder im Text %%%
+\usepackage{wrapfig}
+
+%%% Für Mathe %%%
+\usepackage[fleqn]{amsmath}
+\usepackage{commath}
+\usepackage{amstext}
+\allowdisplaybreaks
+%%% Für schräge Bruchstriche %%%
+\usepackage{nicefrac}
+%%% Rechtecke %%%
+\usepackage{amsfonts}
+
+%%% Für Textübergreifende Numerierung %%%
+\usepackage{enumitem}
+\renewcommand{\labelenumi}{\alph{enumi})}
+
+%%% Für Abkürzungen %%%
+\usepackage{acronym}
+
+%%%% Überschriften bis subsubsubsection (paragraph) %%%
+\setcounter{secnumdepth}{5}
+
+\setkomafont{dictumtext}{\itshape\small}
+\setkomafont{dictumauthor}{\small}
+\renewcommand*\dictumwidth{\linewidth}
+\renewcommand*\dictumauthorformat[1]{--- #1}
+\renewcommand*\dictumrule{}
+
+%%% Für Quotes %%%
+\usepackage[ngerman]{varioref}
+\usepackage{hyperref}
+ \hypersetup{%draft, 								% no hyperlinking at all (useful in b/w printouts)
+    colorlinks=true, breaklinks=true,
+    urlcolor=Black, linkcolor=Black, citecolor=Black,
+    linktoc=page, %
+    bookmarksnumbered, bookmarksopenlevel=1, bookmarksdepth = section,%
+    pdfstartview=FitV,
+    }
+\setlength{\parindent}{0em}
+\usepackage{cleveref}
+\crefname{paragraph}{Abschnitt}{Abschnitt}
+
+\usepackage[bibencoding=utf8,
+			sortlocale=de,
+			style=authoryear-icomp,
+			pagetracker=true,
+			autocite=inline,
+			backrefstyle=three+,
+			date=short,
+			sorting=nty,
+			backend=biber]{biblatex}
+			
+\bibliography{Literaturverzeichnis}
+
+%%% urldate in eckigen Klammern %%%
+\DeclareFieldFormat{urldate}{\mkbibbrackets{#1}}
+%%% URL: = Verfügbar unter: %%%
+\DeclareFieldFormat{url}{{Verfügbar unter:}\space\url{#1}}
+%%% Abstand zwischen den Literaturangaben %%%
+\setlength{\bibitemsep}{1.3em}
+%%% statt und ein & %%%
+\renewcommand*{\finalnamedelim}{\space\&\space}
+%%% Nachname, Vorname, immer %%%
+\DeclareNameAlias{sortname}{last-first}
+
+%%% Kopfzeile %%%
+\automark[section]{section}
+\renewcommand*{\headfont}{\normalfont}
+\setkomafont{pageheadfoot}{}
+\renewcommand*{\sectionmarkformat}{} 
+
+%%% Damit das Abbildungsverzeichnis im Inhaltsverzeichnis abgebildet wird %%%
+\usepackage{tocbibind}
+\renewcommand{\listoffigures}{\begingroup
+  \tocchapter
+  \tocfile{\listfigurename}{lof}
+  \endgroup}
+  
+%%% Für SI Einheiten %%%
+\usepackage{siunitx}
+\sisetup{
+  locale = DE ,
+  detect-all
+}
+
+%Für Tabellen
+\usepackage{array}
+% Für Seitenübergreifende Tabellen
+\usepackage{longtable}
+% Für Tabellen mit vertikal und horizontal zentriertem Inhalt
+\newcolumntype{B}[1]{>{\centering\arraybackslash}m{#1}}
+
+\begin{document}
+
+\pagenumbering{gobble}
+\pagestyle{empty}
+
+
+\begin{center}
+  \Large{Berufliches Schulzentrum für Elektrotechnik Dresden}\\
+\end{center}
+
+\begin{center}
+  \Large{Fachbereich Informationstechnik}
+\end{center}
+\begin{verbatim}
+
+\end{verbatim}
+\begin{center}
+  \textbf{\LARGE{Lernfeld 9}}
+\end{center}
+
+\begin{center}
+  \Large{Segmentierung eines Enterprise IT-Netzwerkes}
+\end{center}
+
+\begin{flushleft}
+  \begin{tabular}{lll}
+                           &                                                            & \\
+                           &                                                            & \\
+                           &                                                            & \\
+                           &                                                            & \\
+                           &                                                            & \\
+                           &                                                            & \\
+    \textbf{erstellt von:} & Johannes Leyrer \flq{}i20leyrerjo@bszetdd.lernsax.de\frq{}   \\
+                           &                                                            & \\
+                           &                                                            & \\
+    \textbf{erstellt im:}  & Lehrjahr 2, 2021/2022                                        \\
+                           &                                                            & \\
+                           &                                                            & \\
+  \end{tabular}
+\end{flushleft}
+
+\vspace{\fill}
+\begin{description}
+  \item[Disclaimer:] Diese Mitschrift ist nicht offiziell. Insbesondere erhebe ich keinen Anspruch auf Vollständigkeit oder Korrektheit. Ich bin jederzeit froh um Hinweise zu Fehlern oder Unklarheiten.
+\end{description}
+
+\newpage
+%%% Inhaltsverzeichnis einfügen %%%
+\tableofcontents
+\cleardoublepage
+
+\newpage
+\pagestyle{scrheadings}
+\pagenumbering{arabic}
+\ohead{Vorlage}
+\ihead{\rightmark}
+
+
+
+
+\end{document}
