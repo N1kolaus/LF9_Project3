@@ -1,18 +1,18 @@
-import { Link } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./layout/Layout";
+import NewTicket from "./pages/NewTicket";
+import AllTicketsPage from "./pages/AllTickets";
 
 function App() {
     return (
-        <div>
-            <h1>Tickets</h1>
-            <nav
-                style={{
-                    borderBottom: "solid 1px",
-                    paddingBottom: "1rem",
-                }}
-            >
-                <Link to="/new">New Ticket</Link>
-            </nav>
-        </div>
+        <BrowserRouter>
+            <Layout>
+                <Routes>
+                    <Route path="/" element={<AllTicketsPage />} />
+                    <Route path="new" element={<NewTicket />} />
+                </Routes>
+            </Layout>
+        </BrowserRouter>
     );
 }
 

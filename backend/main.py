@@ -37,8 +37,10 @@ def post_data(i: Issue):
         issue = Issue(
             email=i.email,
             section=i.section,
+            title=i.title,
             issue=i.issue,
             attachments=i.attachments,
+            solved=False,
             timestamp=i.timestamp,
         )
 
