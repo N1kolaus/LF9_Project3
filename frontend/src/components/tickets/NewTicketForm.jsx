@@ -24,6 +24,7 @@ const NewTicketForm = (props) => {
             title: enteredTitle,
             issue: enteredIssue,
             attachments: enteredAttachments,
+            solved: false,
             timestamp: Math.floor(new Date().getTime() / 1000), // get current timestamp
         };
 

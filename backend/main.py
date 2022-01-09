@@ -7,11 +7,30 @@ import logging
 from sqlmodel import Session, select
 from database_context.db_context import engine, create_db_and_tables
 from models.ticket_model import Issue
+from fastapi.middleware.cors import CORSMiddleware
 
 logging.basicConfig(filename="./logs/log.txt", encoding="utf-8", level=logging.DEBUG)
 logger = logging.getLogger("main")
 
 app = FastAPI()
+
+
+# TODO: For development only! Delete if Deploy!
+origins = [
+    "http://localhost",
+    "http://localhost:8080",
+    "http://localhost:8008",
+    "http://localhost:3000",
+    "*"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
@@ -30,7 +49,7 @@ async def serve_spa(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 
-@app.post("/post")
+@app.post("/api/post")
 def post_data(i: Issue):
     logger.info("Data posted.")
     try:
@@ -40,7 +59,7 @@ def post_data(i: Issue):
             title=i.title,
             issue=i.issue,
             attachments=i.attachments,
-            solved=False,
+            solved=i.solved,
             timestamp=i.timestamp,
         )
 
