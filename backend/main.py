@@ -15,13 +15,9 @@ logger = logging.getLogger("main")
 app = FastAPI()
 
 
-# TODO: For development only! Delete if Deploy!
+# TODO: Maybe add IPFire as origins to allow CORS, right now it's a wildcard
 origins = [
-    "http://localhost",
-    "http://localhost:8080",
-    "http://localhost:8008",
-    "http://localhost:3000",
-    "*"
+    "*",
 ]
 
 app.add_middleware(
