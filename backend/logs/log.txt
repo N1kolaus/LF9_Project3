@@ -1,0 +1,82 @@
+INFO:uvicorn.error:Started server process [13609]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+WARNING:uvicorn.error:Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 131, in data_received
+    self.parser.feed_data(data)
+  File "httptools/parser/parser.pyx", line 212, in httptools.parser.parser.HttpParser.feed_data
+httptools.parser.errors.HttpParserInvalidMethodError: Invalid method encountered
+WARNING:uvicorn.error:Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 131, in data_received
+    self.parser.feed_data(data)
+  File "httptools/parser/parser.pyx", line 212, in httptools.parser.parser.HttpParser.feed_data
+httptools.parser.errors.HttpParserInvalidMethodError: Invalid method encountered
+INFO:main:Frontend called.
+WARNING:uvicorn.error:Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 131, in data_received
+    self.parser.feed_data(data)
+  File "httptools/parser/parser.pyx", line 212, in httptools.parser.parser.HttpParser.feed_data
+httptools.parser.errors.HttpParserInvalidMethodError: Invalid method encountered
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:main:Frontend called.
+WARNING:uvicorn.error:Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 131, in data_received
+    self.parser.feed_data(data)
+  File "httptools/parser/parser.pyx", line 212, in httptools.parser.parser.HttpParser.feed_data
+httptools.parser.errors.HttpParserInvalidMethodError: Invalid method encountered
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:main:Data posted.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO issue (email, section, title, issue, attachments, solved, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?)
+INFO:sqlalchemy.engine.Engine:[generated in 0.00019s] ('asdf@asdf.de', 'security', 'adfsafsd', 'aa', 'f', 0, 1642007408)
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[generated in 0.00014s] (2,)
+INFO:main:Issue saved to DB.
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK

@@ -18,6 +18,7 @@ app = FastAPI()
 # TODO: Maybe add IPFire as origins to allow CORS, right now it's a wildcard
 origins = [
     "*",
+    # "http://192.168.72.3:8000",
 ]
 
 app.add_middleware(
