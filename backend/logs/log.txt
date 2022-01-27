@@ -80,3 +80,1345 @@ INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue
 FROM issue
 INFO:sqlalchemy.engine.Engine:[no key 0.00013s] ()
 INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [13609]
+INFO:uvicorn.error:Started server process [14992]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+WARNING:uvicorn.error:Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 131, in data_received
+    self.parser.feed_data(data)
+  File "httptools/parser/parser.pyx", line 212, in httptools.parser.parser.HttpParser.feed_data
+httptools.parser.errors.HttpParserInvalidMethodError: Invalid method encountered
+WARNING:uvicorn.error:Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 131, in data_received
+    self.parser.feed_data(data)
+  File "httptools/parser/parser.pyx", line 212, in httptools.parser.parser.HttpParser.feed_data
+httptools.parser.errors.HttpParserInvalidMethodError: Invalid method encountered
+WARNING:uvicorn.error:Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 131, in data_received
+    self.parser.feed_data(data)
+  File "httptools/parser/parser.pyx", line 212, in httptools.parser.parser.HttpParser.feed_data
+httptools.parser.errors.HttpParserInvalidMethodError: Invalid method encountered
+INFO:main:Frontend called.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00011s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+WARNING:uvicorn.error:Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 131, in data_received
+    self.parser.feed_data(data)
+  File "httptools/parser/parser.pyx", line 212, in httptools.parser.parser.HttpParser.feed_data
+httptools.parser.errors.HttpParserInvalidMethodError: Invalid method encountered
+WARNING:uvicorn.error:Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 131, in data_received
+    self.parser.feed_data(data)
+  File "httptools/parser/parser.pyx", line 212, in httptools.parser.parser.HttpParser.feed_data
+httptools.parser.errors.HttpParserInvalidMethodError: Invalid method encountered
+WARNING:uvicorn.error:Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 131, in data_received
+    self.parser.feed_data(data)
+  File "httptools/parser/parser.pyx", line 212, in httptools.parser.parser.HttpParser.feed_data
+httptools.parser.errors.HttpParserInvalidMethodError: Invalid method encountered
+WARNING:uvicorn.error:Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 131, in data_received
+    self.parser.feed_data(data)
+  File "httptools/parser/parser.pyx", line 212, in httptools.parser.parser.HttpParser.feed_data
+httptools.parser.errors.HttpParserInvalidMethodError: Invalid method encountered
+INFO:main:Frontend called.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00011s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [14992]
+INFO:uvicorn.error:Started server process [16232]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 161, in openapi
+    return JSONResponse(self.openapi())
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 136, in openapi
+    self.openapi_schema = get_openapi(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/openapi/utils.py", line 392, in get_openapi
+    result = get_openapi_path(route=route, model_name_map=model_name_map)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/openapi/utils.py", line 195, in get_openapi_path
+    operation_parameters = get_openapi_operation_parameters(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/openapi/utils.py", line 99, in get_openapi_operation_parameters
+    "schema": field_schema(
+  File "pydantic/schema.py", line 258, in pydantic.schema.field_schema
+  File "pydantic/schema.py", line 563, in pydantic.schema.field_type_schema
+  File "pydantic/schema.py", line 947, in pydantic.schema.field_singleton_schema
+ValueError: Value not declarable with JSON Schema, field: name='file' type=UploadFile required=True
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [16232]
+INFO:uvicorn.error:Started server process [16268]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 161, in openapi
+    return JSONResponse(self.openapi())
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 136, in openapi
+    self.openapi_schema = get_openapi(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/openapi/utils.py", line 392, in get_openapi
+    result = get_openapi_path(route=route, model_name_map=model_name_map)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/openapi/utils.py", line 195, in get_openapi_path
+    operation_parameters = get_openapi_operation_parameters(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/openapi/utils.py", line 99, in get_openapi_operation_parameters
+    "schema": field_schema(
+  File "pydantic/schema.py", line 258, in pydantic.schema.field_schema
+  File "pydantic/schema.py", line 563, in pydantic.schema.field_type_schema
+  File "pydantic/schema.py", line 947, in pydantic.schema.field_singleton_schema
+ValueError: Value not declarable with JSON Schema, field: name='file' type=UploadFile required=True
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [16268]
+INFO:uvicorn.error:Started server process [16423]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:136]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[138:150]
+DEBUG:multipart.multipart:Calling on_header_value with data[152:161]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[165:89167]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:135]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[137:149]
+DEBUG:multipart.multipart:Calling on_header_value with data[151:160]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[164:6710]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[6711:89166]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:135]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[137:149]
+DEBUG:multipart.multipart:Calling on_header_value with data[151:160]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[164:89166]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:104]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[108:125]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:135]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[137:149]
+DEBUG:multipart.multipart:Calling on_header_value with data[151:160]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[164:89166]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:136]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[138:150]
+DEBUG:multipart.multipart:Calling on_header_value with data[152:161]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[165:64989]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:13064]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[13065:24178]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:137]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[139:151]
+DEBUG:multipart.multipart:Calling on_header_value with data[153:162]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[166:89168]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00008s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:136]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[138:150]
+DEBUG:multipart.multipart:Calling on_header_value with data[152:161]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[165:89167]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:137]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[139:151]
+DEBUG:multipart.multipart:Calling on_header_value with data[153:162]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[166:64989]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:24179]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:133]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[135:147]
+DEBUG:multipart.multipart:Calling on_header_value with data[149:158]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[162:89164]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:133]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[135:147]
+DEBUG:multipart.multipart:Calling on_header_value with data[149:158]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[162:89164]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:134]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[136:148]
+DEBUG:multipart.multipart:Calling on_header_value with data[150:159]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[163:64989]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:24176]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[58:77]
+DEBUG:multipart.multipart:Calling on_header_value with data[79:131]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[133:145]
+DEBUG:multipart.multipart:Calling on_header_value with data[147:156]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[160:89162]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [16423]
+INFO:uvicorn.error:Started server process [24360]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:133]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[135:147]
+DEBUG:multipart.multipart:Calling on_header_value with data[149:158]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[162:89164]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:135]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[137:149]
+DEBUG:multipart.multipart:Calling on_header_value with data[151:160]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[164:6710]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[6711:65081]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:24085]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/main.py", line 87, in upload
+    save_file(file.filename, contents)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/main.py", line 93, in save_file
+    with open(f"/pictures/{filename}", 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/pictures/O2_Bestaetigung.png'
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:135]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[137:149]
+DEBUG:multipart.multipart:Calling on_header_value with data[151:160]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[164:89166]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/main.py", line 87, in upload
+    save_file(file.filename, contents)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/main.py", line 93, in save_file
+    with open(f"./pictures/{filename}", 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/pictures/O2_Bestaetigung.png'
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:136]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[138:150]
+DEBUG:multipart.multipart:Calling on_header_value with data[152:161]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[165:68548]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[68549:89167]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/main.py", line 87, in upload
+    save_file(file.filename, contents)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/main.py", line 93, in save_file
+    with open(f"pictures/{filename}", 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/pictures/O2_Bestaetigung.png'
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:135]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[137:149]
+DEBUG:multipart.multipart:Calling on_header_value with data[151:160]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[164:89166]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/main.py", line 87, in upload
+    save_file(file.filename, contents)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/main.py", line 93, in save_file
+    with open(filename, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/pictures/O2_Bestaetigung.png'
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [24360]
+INFO:uvicorn.error:Started server process [24487]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [24487]
+INFO:uvicorn.error:Started server process [24531]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:135]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[137:149]
+DEBUG:multipart.multipart:Calling on_header_value with data[151:160]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[164:32313]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:38426]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[38427:56853]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[59:78]
+DEBUG:multipart.multipart:Calling on_header_value with data[80:134]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[136:148]
+DEBUG:multipart.multipart:Calling on_header_value with data[150:159]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[163:32312]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[32313:32314]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:56851]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [24531]
+INFO:uvicorn.error:Started server process [24795]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:136]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[138:150]
+DEBUG:multipart.multipart:Calling on_header_value with data[152:161]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[165:68548]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[68549:89167]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:136]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[138:150]
+DEBUG:multipart.multipart:Calling on_header_value with data[152:161]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[165:89167]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [24795]
+INFO:uvicorn.error:Started server process [25987]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:136]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[138:150]
+DEBUG:multipart.multipart:Calling on_header_value with data[152:161]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[165:65080]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:24087]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:135]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[137:149]
+DEBUG:multipart.multipart:Calling on_header_value with data[151:160]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[164:65081]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:24085]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[59:78]
+DEBUG:multipart.multipart:Calling on_header_value with data[80:132]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[134:146]
+DEBUG:multipart.multipart:Calling on_header_value with data[148:157]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[161:89163]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00010s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:136]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[138:150]
+DEBUG:multipart.multipart:Calling on_header_value with data[152:161]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[165:65019]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:24148]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:135]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[137:149]
+DEBUG:multipart.multipart:Calling on_header_value with data[151:160]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[164:89166]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:136]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[138:150]
+DEBUG:multipart.multipart:Calling on_header_value with data[152:161]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[165:68548]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[68549:89167]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:104]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[108:125]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:103]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[107:120]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:103]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[107:120]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:144]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[146:158]
+DEBUG:multipart.multipart:Calling on_header_value with data[160:169]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[173:68556]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[68557:89175]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:144]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[146:158]
+DEBUG:multipart.multipart:Calling on_header_value with data[160:169]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[173:68556]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[68557:89175]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [25987]
+INFO:uvicorn.error:Started server process [29090]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 161, in openapi
+    return JSONResponse(self.openapi())
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 136, in openapi
+    self.openapi_schema = get_openapi(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/openapi/utils.py", line 392, in get_openapi
+    result = get_openapi_path(route=route, model_name_map=model_name_map)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/openapi/utils.py", line 195, in get_openapi_path
+    operation_parameters = get_openapi_operation_parameters(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/openapi/utils.py", line 99, in get_openapi_operation_parameters
+    "schema": field_schema(
+  File "pydantic/schema.py", line 258, in pydantic.schema.field_schema
+  File "pydantic/schema.py", line 563, in pydantic.schema.field_type_schema
+  File "pydantic/schema.py", line 947, in pydantic.schema.field_singleton_schema
+ValueError: Value not declarable with JSON Schema, field: name='file' type=UploadFile required=True
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [29090]
+INFO:uvicorn.error:Started server process [29196]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 161, in openapi
+    return JSONResponse(self.openapi())
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 136, in openapi
+    self.openapi_schema = get_openapi(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/openapi/utils.py", line 392, in get_openapi
+    result = get_openapi_path(route=route, model_name_map=model_name_map)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/openapi/utils.py", line 195, in get_openapi_path
+    operation_parameters = get_openapi_operation_parameters(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/openapi/utils.py", line 99, in get_openapi_operation_parameters
+    "schema": field_schema(
+  File "pydantic/schema.py", line 258, in pydantic.schema.field_schema
+  File "pydantic/schema.py", line 563, in pydantic.schema.field_type_schema
+  File "pydantic/schema.py", line 947, in pydantic.schema.field_singleton_schema
+ValueError: Value not declarable with JSON Schema, field: name='file' type=UploadFile required=True
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 161, in openapi
+    return JSONResponse(self.openapi())
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 136, in openapi
+    self.openapi_schema = get_openapi(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/openapi/utils.py", line 392, in get_openapi
+    result = get_openapi_path(route=route, model_name_map=model_name_map)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/openapi/utils.py", line 195, in get_openapi_path
+    operation_parameters = get_openapi_operation_parameters(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/openapi/utils.py", line 99, in get_openapi_operation_parameters
+    "schema": field_schema(
+  File "pydantic/schema.py", line 258, in pydantic.schema.field_schema
+  File "pydantic/schema.py", line 563, in pydantic.schema.field_type_schema
+  File "pydantic/schema.py", line 947, in pydantic.schema.field_singleton_schema
+ValueError: Value not declarable with JSON Schema, field: name='file' type=UploadFile required=True
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [29196]
+INFO:uvicorn.error:Started server process [29261]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:main:Frontend called.
+INFO:main:Frontend called.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00051s] ()
+INFO:sqlalchemy.engine.Engine:[no key 0.00016s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 161, in openapi
+    return JSONResponse(self.openapi())
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 136, in openapi
+    self.openapi_schema = get_openapi(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/openapi/utils.py", line 392, in get_openapi
+    result = get_openapi_path(route=route, model_name_map=model_name_map)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/openapi/utils.py", line 195, in get_openapi_path
+    operation_parameters = get_openapi_operation_parameters(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/openapi/utils.py", line 99, in get_openapi_operation_parameters
+    "schema": field_schema(
+  File "pydantic/schema.py", line 258, in pydantic.schema.field_schema
+  File "pydantic/schema.py", line 563, in pydantic.schema.field_type_schema
+  File "pydantic/schema.py", line 947, in pydantic.schema.field_singleton_schema
+ValueError: Value not declarable with JSON Schema, field: name='file' type=UploadFile required=True
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [29261]
+INFO:uvicorn.error:Started server process [29550]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:main:Frontend called.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00009s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:main:Frontend called.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00009s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:136]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[138:150]
+DEBUG:multipart.multipart:Calling on_header_value with data[152:161]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[165:68548]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[68549:89167]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:136]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[138:150]
+DEBUG:multipart.multipart:Calling on_header_value with data[152:161]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[165:32312]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:56855]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [29550]
+INFO:uvicorn.error:Started server process [29913]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[59:78]
+DEBUG:multipart.multipart:Calling on_header_value with data[80:134]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[136:148]
+DEBUG:multipart.multipart:Calling on_header_value with data[150:159]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[163:32312]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[32313:32314]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:56851]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:144]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[146:158]
+DEBUG:multipart.multipart:Calling on_header_value with data[160:169]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[173:68556]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[68557:89175]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[89238:89257]
+DEBUG:multipart.multipart:Calling on_header_value with data[89259:89281]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[89285:89294]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[59:78]
+DEBUG:multipart.multipart:Calling on_header_value with data[80:142]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[144:156]
+DEBUG:multipart.multipart:Calling on_header_value with data[158:167]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[171:89173]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[89234:89253]
+DEBUG:multipart.multipart:Calling on_header_value with data[89255:89277]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[89281:89290]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:144]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[146:158]
+DEBUG:multipart.multipart:Calling on_header_value with data[160:169]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[173:89175]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[89238:89257]
+DEBUG:multipart.multipart:Calling on_header_value with data[89259:89281]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[89285:89294]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[59:78]
+DEBUG:multipart.multipart:Calling on_header_value with data[80:142]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[144:156]
+DEBUG:multipart.multipart:Calling on_header_value with data[158:167]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[171:89173]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[89234:89253]
+DEBUG:multipart.multipart:Calling on_header_value with data[89255:89277]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[89281:89290]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:135]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[137:149]
+DEBUG:multipart.multipart:Calling on_header_value with data[151:160]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[164:89166]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:140]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[142:154]
+DEBUG:multipart.multipart:Calling on_header_value with data[156:165]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[169:89171]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [29913]
+INFO:uvicorn.error:Started server process [31896]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:136]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[138:150]
+DEBUG:multipart.multipart:Calling on_header_value with data[152:161]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[165:89167]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:135]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[137:149]
+DEBUG:multipart.multipart:Calling on_header_value with data[151:160]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[164:89166]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[58:77]
+DEBUG:multipart.multipart:Calling on_header_value with data[79:133]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[135:147]
+DEBUG:multipart.multipart:Calling on_header_value with data[149:158]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[162:64992]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:24172]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[58:77]
+DEBUG:multipart.multipart:Calling on_header_value with data[79:133]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[135:147]
+DEBUG:multipart.multipart:Calling on_header_value with data[149:158]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[162:89164]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:135]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[137:149]
+DEBUG:multipart.multipart:Calling on_header_value with data[151:160]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[164:89166]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:135]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[137:149]
+DEBUG:multipart.multipart:Calling on_header_value with data[151:160]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[164:89166]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:136]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[138:150]
+DEBUG:multipart.multipart:Calling on_header_value with data[152:161]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[165:68548]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[68549:89167]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:135]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[137:149]
+DEBUG:multipart.multipart:Calling on_header_value with data[151:160]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[164:64990]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:24176]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:136]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[138:150]
+DEBUG:multipart.multipart:Calling on_header_value with data[152:161]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[165:89167]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:136]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[138:150]
+DEBUG:multipart.multipart:Calling on_header_value with data[152:161]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[165:73424]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[73425:89167]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[59:78]
+DEBUG:multipart.multipart:Calling on_header_value with data[80:134]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[136:148]
+DEBUG:multipart.multipart:Calling on_header_value with data[150:159]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[163:89165]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:135]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[137:149]
+DEBUG:multipart.multipart:Calling on_header_value with data[151:160]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[164:89166]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:136]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[138:150]
+DEBUG:multipart.multipart:Calling on_header_value with data[152:161]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[165:68548]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[68549:89167]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data

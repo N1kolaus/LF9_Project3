@@ -1,8 +1,14 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
 import Card from "../ui/Card";
 import classes from "./NewTicketForm.module.css";
+import FormData from "form-data";
 
 const NewTicketForm = (props) => {
+    const [selectedFile, setSelectedFile] = useState();
+    const [isFilePicked, setIsFilePicked] = useState(false);
+    const [attachmentsList, setAttachmentsList] = useState([]);
     const emailInputRef = useRef();
     const sectionInputRef = useRef();
     const titleInputRef = useRef();
@@ -29,6 +35,44 @@ const NewTicketForm = (props) => {
         };
 
         props.onNewTicket(ticketData);
+    };
+
+    const handleSubmission = async (event) => {
+        event.preventDefault();
+        const currentDomain = window.location.hostname;
+
+        const formData = new FormData();
+        console.log(selectedFile);
+        formData.append("file", selectedFile, selectedFile.name);
+
+        return await axios
+            .post(`http://${currentDomain}:8000/api/upload`, formData)
+            .then((response) => {
+                console.log(response);
+                toast.success("Bild erfolgreich gespeichert. 😊");
+                // navigate("/");
+            })
+            .catch((err) => {
+                console.log(err);
+                toast.error("Bild konnte nicht gesendet werden. 😞");
+            });
+    };
+
+    const changeHandler = async (event) => {
+        const imageData = event.target.files[0];
+        const currentTimestamp = Math.floor(new Date().getTime() / 1000);
+        const imageSaveName = `${currentTimestamp}_${imageData.name}`;
+
+        setSelectedFile({
+            name: imageSaveName,
+            size: imageData.size,
+            type: imageData.type,
+            lastModified: imageData.lastModified,
+        });
+
+        setAttachmentsList((prevState) => [...prevState, imageSaveName]);
+
+        setIsFilePicked(true);
     };
 
     return (
@@ -83,6 +127,24 @@ const NewTicketForm = (props) => {
                         id="attachments"
                         ref={attachmentsInputRef}
                     />
+                </div>
+                <div className={classes.control}>
+                    <input type="file" name="file" onChange={changeHandler} />
+                    {isFilePicked ? (
+                        <div>
+                            <p>Files:</p>
+                            <ul>
+                                {attachmentsList.map((attachment) => (
+                                    <li key={attachment}>{attachment}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    ) : (
+                        <p>Select a file to show details</p>
+                    )}
+                    <div>
+                        <button onClick={handleSubmission}>Submit</button>
+                    </div>
                 </div>
                 <div className={classes.actions}>
                     <button>Ticket anlegen</button>

@@ -1,5 +1,5 @@
 import uvicorn
-from fastapi import FastAPI, Request, HTTPException
+from fastapi import FastAPI, Request, HTTPException, File, UploadFile
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
@@ -8,6 +8,8 @@ from sqlmodel import Session, select
 from database_context.db_context import engine, create_db_and_tables
 from models.ticket_model import Issue
 from fastapi.middleware.cors import CORSMiddleware
+from typing import List
+import os
 
 logging.basicConfig(filename="./logs/log.txt", encoding="utf-8", level=logging.DEBUG)
 logger = logging.getLogger("main")
@@ -76,6 +78,22 @@ def post_data(i: Issue):
 def read_current_user():
     issues = get_all_issues()
     return {"Issues": issues}
+
+
+@app.post("/api/upload")
+async def upload(file: UploadFile = File(...)):
+
+    # in case you need the files saved, once they are uploaded
+    contents = await file.read()
+    save_file(file.filename, contents)
+
+    return {"Uploaded Filenames": file.filename, "uploaded file": file}
+
+
+def save_file(filename, data):
+    file = os.path.join(f"{os.getcwd()}/pictures/", filename)
+    with open(file, 'wb') as f:
+        f.write(data)
 
 
 def get_all_issues():
