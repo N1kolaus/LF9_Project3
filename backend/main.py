@@ -92,7 +92,7 @@ async def upload(file: UploadFile = File(...)):
 
 def save_file(filename, data):
     file = os.path.join(f"{os.getcwd()}/pictures/", filename)
-    with open(file, 'wb') as f:
+    with open(file, "wb") as f:
         f.write(data)
 
 

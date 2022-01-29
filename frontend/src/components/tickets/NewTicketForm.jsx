@@ -63,12 +63,19 @@ const NewTicketForm = (props) => {
         const currentTimestamp = Math.floor(new Date().getTime() / 1000);
         const imageSaveName = `${currentTimestamp}_${imageData.name}`;
 
-        setSelectedFile({
-            name: imageSaveName,
-            size: imageData.size,
-            type: imageData.type,
-            lastModified: imageData.lastModified,
-        });
+        // setSelectedFile({
+        //     name: imageSaveName,
+        //     size: imageData.size,
+        //     type: imageData.type,
+        //     lastModified: imageData.lastModified,
+        // });
+
+        const file = new File(imageData, imageSaveName);
+
+        console.log(file);
+
+        console.log(imageData);
+        setSelectedFile(imageData);
 
         setAttachmentsList((prevState) => [...prevState, imageSaveName]);
 
