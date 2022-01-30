@@ -10,7 +10,7 @@ const NewTicket = () => {
 
     const handleNewTicket = (ticketData) => {
         axios
-            .post(`http://${currentDomain}:8000/api/post`, ticketData)
+            .post(`http://${currentDomain}:8000/api/postIssue`, ticketData)
             .then((response) => {
                 console.log(response);
                 toast.success("Daten erfolgreich gespeichert. 😊");

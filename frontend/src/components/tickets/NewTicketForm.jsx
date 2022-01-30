@@ -18,23 +18,26 @@ const NewTicketForm = (props) => {
     const handleOnSubmit = (event) => {
         event.preventDefault();
 
-        const enteredEmail = emailInputRef.current.value;
-        const enteredSection = sectionInputRef.current.value;
-        const enteredTitle = titleInputRef.current.value;
-        const enteredIssue = issueInputRef.current.value;
-        const enteredAttachments = attachmentsInputRef.current.value;
-
         const ticketData = {
-            email: enteredEmail,
-            section: enteredSection,
-            title: enteredTitle,
-            issue: enteredIssue,
-            attachments: enteredAttachments,
+            email: emailInputRef.current.value,
+            section: sectionInputRef.current.value,
+            title: titleInputRef.current.value,
+            issue: issueInputRef.current.value,
+            attachments:
+                attachmentsList.length > 0
+                    ? attachmentsList.join(", ")
+                    : "no attachments",
             solved: false,
             timestamp: Math.floor(new Date().getTime() / 1000), // get current timestamp
         };
 
-        props.onNewTicket(ticketData);
+        const formData = new FormData();
+        for (const [key, value] of Object.entries(ticketData)) {
+            console.log(`${key}: ${value}`);
+            formData.append(key, value);
+        }
+
+        props.onNewTicket(formData);
     };
 
     const handleSubmission = async (event) => {

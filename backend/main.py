@@ -1,5 +1,5 @@
 import uvicorn
-from fastapi import FastAPI, Request, HTTPException, File, UploadFile
+from fastapi import FastAPI, Request, HTTPException, File, UploadFile, Form
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
@@ -61,6 +61,46 @@ def post_data(i: Issue):
             solved=i.solved,
             timestamp=i.timestamp,
         )
+
+        with Session(engine) as session:
+            session.add(issue)
+            session.commit()
+            session.refresh(issue)
+            logger.info("Issue saved to DB.")
+
+        return issue
+    except Exception as e:
+        logger.debug(f"Couldn't save data: {str(e)}")
+        return HTTPException(status_code=404, detail="Couldn't save data.")
+
+
+@app.post("/api/postIssue")
+async def post_issue(
+    email: str = Form(...),
+    section: str = Form(...),
+    title: str = Form(...),
+    issue: str = Form(...),
+    attachments: str = Form(...),
+    solved: bool = Form(...),
+    timestamp: int = Form(...),
+    files: Optional[List[UploadFile]] = File(None)
+):
+    logger.info("Data posted.")
+    try:
+        issue = Issue(
+            email=email,
+            section=section,
+            title=title,
+            issue=issue,
+            attachments=attachments,
+            solved=solved,
+            timestamp=timestamp,
+        )
+
+        if files is not None:
+            for file in files:
+                contents = await file.read()
+                save_file(file.filename, contents)
 
         with Session(engine) as session:
             session.add(issue)
