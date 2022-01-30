@@ -1,6 +1,4 @@
 import { useRef, useState } from "react";
-import axios from "axios";
-import { toast } from "react-toastify";
 import Card from "../ui/Card";
 import classes from "./NewTicketForm.module.css";
 import FormData from "form-data";
@@ -13,7 +11,6 @@ const NewTicketForm = (props) => {
     const sectionInputRef = useRef();
     const titleInputRef = useRef();
     const issueInputRef = useRef();
-    const attachmentsInputRef = useRef();
 
     const handleOnSubmit = (event) => {
         event.preventDefault();
@@ -36,30 +33,11 @@ const NewTicketForm = (props) => {
             console.log(`${key}: ${value}`);
             formData.append(key, value);
         }
-
-        props.onNewTicket(formData);
-    };
-
-    const handleSubmission = async (event) => {
-        event.preventDefault();
-        const currentDomain = window.location.hostname;
-
-        const formData = new FormData();
         for (var i = 0; i < selectedFile.length; i++) {
             formData.append("files", selectedFile[i]);
         }
 
-        return await axios
-            .post(`http://${currentDomain}:8000/api/upload`, formData)
-            .then((response) => {
-                console.log(response);
-                toast.success("Bild erfolgreich gespeichert. 😊");
-                // navigate("/");
-            })
-            .catch((err) => {
-                console.log(err);
-                toast.error("Bild konnte nicht gesendet werden. 😞");
-            });
+        props.onNewTicket(formData);
     };
 
     const changeHandler = async (event) => {
@@ -69,12 +47,8 @@ const NewTicketForm = (props) => {
             filenames.push(file.name);
         });
 
-        console.log(files);
-
         setSelectedFile((prevState) => [...prevState, ...files]);
-
         setAttachmentsList((prevState) => [...prevState, ...filenames]);
-
         setIsFilePicked(true);
     };
 
@@ -127,15 +101,6 @@ const NewTicketForm = (props) => {
                     ></textarea>
                 </div>
                 <div className={classes.control}>
-                    <label htmlFor="attachments">Anhang</label>
-                    <input
-                        type="text"
-                        required
-                        id="attachments"
-                        ref={attachmentsInputRef}
-                    />
-                </div>
-                <div className={classes.control}>
                     <input
                         type="file"
                         name="file"
@@ -144,7 +109,7 @@ const NewTicketForm = (props) => {
                     />
                     {isFilePicked ? (
                         <div>
-                            <p>Files:</p>
+                            <p>Dateien:</p>
                             <ul>
                                 {attachmentsList.map((attachment) => (
                                     <li key={attachment}>{attachment}</li>
@@ -152,11 +117,8 @@ const NewTicketForm = (props) => {
                             </ul>
                         </div>
                     ) : (
-                        <p>Select a file to show details</p>
+                        <p></p>
                     )}
-                    <div>
-                        <button onClick={handleSubmission}>Submit</button>
-                    </div>
                 </div>
                 <div className={classes.actions}>
                     <button>Ticket anlegen</button>

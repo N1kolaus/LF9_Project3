@@ -1,15 +1,17 @@
-import uvicorn
+from database_context.db_context import engine, create_db_and_tables
 from fastapi import FastAPI, Request, HTTPException, File, UploadFile, Form
-from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import logging
-from sqlmodel import Session, select
-from database_context.db_context import engine, create_db_and_tables
 from models.ticket_model import Issue
-from fastapi.middleware.cors import CORSMiddleware
-from typing import List, Optional
 import os
+from pathlib import Path
+from sqlmodel import Session, select
+from typing import List, Optional
+import uvicorn
+
 
 logging.basicConfig(filename="./logs/log.txt", encoding="utf-8", level=logging.DEBUG)
 logger = logging.getLogger("main")
@@ -48,32 +50,6 @@ async def serve_spa(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 
-@app.post("/api/post")
-def post_data(i: Issue):
-    logger.info("Data posted.")
-    try:
-        issue = Issue(
-            email=i.email,
-            section=i.section,
-            title=i.title,
-            issue=i.issue,
-            attachments=i.attachments,
-            solved=i.solved,
-            timestamp=i.timestamp,
-        )
-
-        with Session(engine) as session:
-            session.add(issue)
-            session.commit()
-            session.refresh(issue)
-            logger.info("Issue saved to DB.")
-
-        return issue
-    except Exception as e:
-        logger.debug(f"Couldn't save data: {str(e)}")
-        return HTTPException(status_code=404, detail="Couldn't save data.")
-
-
 @app.post("/api/postIssue")
 async def post_issue(
     email: str = Form(...),
@@ -83,7 +59,7 @@ async def post_issue(
     attachments: str = Form(...),
     solved: bool = Form(...),
     timestamp: int = Form(...),
-    files: Optional[List[UploadFile]] = File(None)
+    files: Optional[List[UploadFile]] = File(None),
 ):
     logger.info("Data posted.")
     try:
@@ -100,7 +76,7 @@ async def post_issue(
         if files is not None:
             for file in files:
                 contents = await file.read()
-                save_file(file.filename, contents)
+                save_file(file.filename, contents, timestamp)
 
         with Session(engine) as session:
             session.add(issue)
@@ -120,33 +96,9 @@ def read_current_user():
     return {"Issues": issues}
 
 
-# @app.post("/api/upload")
-# async def upload(file: UploadFile = File(...)):
-#
-#     # in case you need the files saved, once they are uploaded
-#     contents = await file.read()
-#     save_file(file.filename, contents)
-#
-#     return {"Uploaded Filenames": file.filename, "uploaded file": file}
-
-
-@app.post("/api/upload")
-async def upload(files: Optional[List[UploadFile]] = File(None)):
-
-    print(files)
-    if files is None:
-        return {"No files uploaded."}
-
-    # in case you need the files saved, once they are uploaded
-    for file in files:
-        contents = await file.read()
-        save_file(file.filename, contents)
-
-    return {"Uploaded Filenames": [file.filename for file in files]}
-
-
-def save_file(filename, data):
-    file = os.path.join(f"{os.getcwd()}/pictures/", filename)
+def save_file(filename, data, timestamp):
+    Path(f"{os.getcwd()}/pictures/{timestamp}/").mkdir(parents=True, exist_ok=True)
+    file = os.path.join(f"{os.getcwd()}/pictures/{timestamp}/", filename)
     with open(file, "wb") as f:
         f.write(data)
 
