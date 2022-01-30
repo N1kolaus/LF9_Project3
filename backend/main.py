@@ -8,7 +8,7 @@ from sqlmodel import Session, select
 from database_context.db_context import engine, create_db_and_tables
 from models.ticket_model import Issue
 from fastapi.middleware.cors import CORSMiddleware
-from typing import List
+from typing import List, Optional
 import os
 
 logging.basicConfig(filename="./logs/log.txt", encoding="utf-8", level=logging.DEBUG)
@@ -80,14 +80,29 @@ def read_current_user():
     return {"Issues": issues}
 
 
+# @app.post("/api/upload")
+# async def upload(file: UploadFile = File(...)):
+#
+#     # in case you need the files saved, once they are uploaded
+#     contents = await file.read()
+#     save_file(file.filename, contents)
+#
+#     return {"Uploaded Filenames": file.filename, "uploaded file": file}
+
+
 @app.post("/api/upload")
-async def upload(file: UploadFile = File(...)):
+async def upload(files: Optional[List[UploadFile]] = File(None)):
+
+    print(files)
+    if files is None:
+        return {"No files uploaded."}
 
     # in case you need the files saved, once they are uploaded
-    contents = await file.read()
-    save_file(file.filename, contents)
+    for file in files:
+        contents = await file.read()
+        save_file(file.filename, contents)
 
-    return {"Uploaded Filenames": file.filename, "uploaded file": file}
+    return {"Uploaded Filenames": [file.filename for file in files]}
 
 
 def save_file(filename, data):

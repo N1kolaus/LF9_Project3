@@ -6,7 +6,7 @@ import classes from "./NewTicketForm.module.css";
 import FormData from "form-data";
 
 const NewTicketForm = (props) => {
-    const [selectedFile, setSelectedFile] = useState();
+    const [selectedFile, setSelectedFile] = useState([]);
     const [isFilePicked, setIsFilePicked] = useState(false);
     const [attachmentsList, setAttachmentsList] = useState([]);
     const emailInputRef = useRef();
@@ -42,8 +42,9 @@ const NewTicketForm = (props) => {
         const currentDomain = window.location.hostname;
 
         const formData = new FormData();
-        console.log(selectedFile);
-        formData.append("file", selectedFile, selectedFile.name);
+        for (var i = 0; i < selectedFile.length; i++) {
+            formData.append("files", selectedFile[i]);
+        }
 
         return await axios
             .post(`http://${currentDomain}:8000/api/upload`, formData)
@@ -59,32 +60,28 @@ const NewTicketForm = (props) => {
     };
 
     const changeHandler = async (event) => {
-        const imageData = event.target.files[0];
-        const currentTimestamp = Math.floor(new Date().getTime() / 1000);
-        const imageSaveName = `${currentTimestamp}_${imageData.name}`;
+        const files = event.target.files;
+        const filenames = [];
+        Array.from(files).forEach((file) => {
+            filenames.push(file.name);
+        });
 
-        // setSelectedFile({
-        //     name: imageSaveName,
-        //     size: imageData.size,
-        //     type: imageData.type,
-        //     lastModified: imageData.lastModified,
-        // });
+        console.log(files);
 
-        const file = new File(imageData, imageSaveName);
+        setSelectedFile((prevState) => [...prevState, ...files]);
 
-        console.log(file);
-
-        console.log(imageData);
-        setSelectedFile(imageData);
-
-        setAttachmentsList((prevState) => [...prevState, imageSaveName]);
+        setAttachmentsList((prevState) => [...prevState, ...filenames]);
 
         setIsFilePicked(true);
     };
 
     return (
         <Card>
-            <form className={classes.form} onSubmit={handleOnSubmit}>
+            <form
+                className={classes.form}
+                onSubmit={handleOnSubmit}
+                encType="multipart/form-data"
+            >
                 <div className={classes.control}>
                     <label htmlFor="title">Titel</label>
                     <input
@@ -136,7 +133,12 @@ const NewTicketForm = (props) => {
                     />
                 </div>
                 <div className={classes.control}>
-                    <input type="file" name="file" onChange={changeHandler} />
+                    <input
+                        type="file"
+                        name="file"
+                        onChange={changeHandler}
+                        multiple
+                    />
                     {isFilePicked ? (
                         <div>
                             <p>Files:</p>
