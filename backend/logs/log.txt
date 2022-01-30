@@ -4160,3 +4160,138 @@ INFO:uvicorn.error:Shutting down
 INFO:uvicorn.error:Waiting for application shutdown.
 INFO:uvicorn.error:Application shutdown complete.
 INFO:uvicorn.error:Finished server process [18934]
+INFO:uvicorn.error:Started server process [20085]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[61:80]
+DEBUG:multipart.multipart:Calling on_header_value with data[82:105]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[109:121]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[184:203]
+DEBUG:multipart.multipart:Calling on_header_value with data[205:230]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[234:242]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[305:324]
+DEBUG:multipart.multipart:Calling on_header_value with data[326:349]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[353:369]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[432:451]
+DEBUG:multipart.multipart:Calling on_header_value with data[453:476]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[480:513]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[576:595]
+DEBUG:multipart.multipart:Calling on_header_value with data[597:626]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[630:683]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[746:765]
+DEBUG:multipart.multipart:Calling on_header_value with data[767:791]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[795:800]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[863:882]
+DEBUG:multipart.multipart:Calling on_header_value with data[884:911]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[915:925]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[988:1007]
+DEBUG:multipart.multipart:Calling on_header_value with data[1009:1062]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[1064:1076]
+DEBUG:multipart.multipart:Calling on_header_value with data[1078:1087]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[1091:43600]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[43663:43682]
+DEBUG:multipart.multipart:Calling on_header_value with data[43684:43732]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[43734:43746]
+DEBUG:multipart.multipart:Calling on_header_value with data[43748:43757]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[43761:57248]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[57311:57330]
+DEBUG:multipart.multipart:Calling on_header_value with data[57332:57388]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[57390:57402]
+DEBUG:multipart.multipart:Calling on_header_value with data[57404:57414]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[57418:81221]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[81222:111386]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[111387:111430]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:main:Data posted.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO issue (email, section, title, issue, attachments, solved, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?)
+INFO:sqlalchemy.engine.Engine:[generated in 0.00021s] ('asdf@asdf.de', 'hardware', 'Test mit Bildern', 'Hier sind drei Bilder angehangen.', 'class_example.png, examples.png, Guido_van_Rossum.jpg', 0, 1643576693)
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[generated in 0.00007s] (1,)
+INFO:main:Issue saved to DB.
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00017s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK

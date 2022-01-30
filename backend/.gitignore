@@ -141,3 +141,9 @@ dmypy.json
 # Databases
 .db
 *.db
+
+# Logs
+logs
+
+# pictures
+pictures
