@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import TicketsList from "../components/tickets/TicketsList";
+import LoadingSpinner from "../components/helpers/loading-spinner";
 
 const AllTicketsPage = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -21,14 +22,10 @@ const AllTicketsPage = () => {
                 toast.error("Daten konnten nicht abgerufen werden. 😞");
                 setIsLoading(false);
             });
-    }, []);
+    }, [currentDomain]);
 
     if (isLoading) {
-        return (
-            <section>
-                <p>Loading...</p>
-            </section>
-        );
+        return <LoadingSpinner isLoading={isLoading} />;
     }
 
     return (

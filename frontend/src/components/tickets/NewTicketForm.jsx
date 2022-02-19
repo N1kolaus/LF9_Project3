@@ -25,7 +25,7 @@ const NewTicketForm = (props) => {
                     ? attachmentsList.join(", ")
                     : "no attachments",
             solved: false,
-            timestamp: Math.floor(new Date().getTime() / 1000), // get current timestamp
+            timestamp: Date.now(), // get current timestamp
         };
 
         const formData = new FormData();
@@ -76,10 +76,10 @@ const NewTicketForm = (props) => {
                         id="section"
                         ref={sectionInputRef}
                     >
-                        <option value="hardware">Hardware</option>
-                        <option value="network">Netzwerk</option>
-                        <option value="security">Sicherheit</option>
-                        <option value="software">Software</option>
+                        <option value="Hardware">Hardware</option>
+                        <option value="Network">Netzwerk</option>
+                        <option value="Security">Sicherheit</option>
+                        <option value="Software">Software</option>
                     </select>
                 </div>
                 <div className={classes.control}>

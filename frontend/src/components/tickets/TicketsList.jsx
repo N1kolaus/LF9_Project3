@@ -5,17 +5,19 @@ const TicketsList = (props) => {
     if (props.tickets.length > 0) {
         return (
             <ul className={classes.list}>
-                {props.tickets.map((ticket) => (
-                    <Ticket
-                        key={ticket.id}
-                        id={ticket.id}
-                        title={ticket.title}
-                        section={ticket.section}
-                        issue={ticket.issue}
-                        timestamp={ticket.timestamp}
-                        attachments={ticket.attachments}
-                    />
-                ))}
+                {props.tickets.map((ticket) => {
+                    return (
+                        <Ticket
+                            key={ticket.id}
+                            id={ticket.id}
+                            title={ticket.title}
+                            section={ticket.section}
+                            issue={ticket.issue}
+                            timestamp={ticket.timestamp}
+                            attachments={ticket.attachments}
+                        />
+                    );
+                })}
             </ul>
         );
     }

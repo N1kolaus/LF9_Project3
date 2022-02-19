@@ -1,14 +1,14 @@
 from database_context.db_context import engine, create_db_and_tables
 from fastapi import FastAPI, Request, HTTPException, File, UploadFile, Form
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import logging
 from models.ticket_model import Issue
 import os
 from pathlib import Path
-from sqlmodel import Session, select
+from sqlmodel import col, Session, select
 from typing import List, Optional
 import uvicorn
 
@@ -91,9 +91,34 @@ async def post_issue(
 
 
 @app.get("/api/allData")
-def read_current_user():
+def get_all_tickets():
     issues = get_all_issues()
     return {"Issues": issues}
+
+
+@app.get("/api/getData/{id}")
+def get_single_ticket(id):
+    ticket = get_single_issue(int(id))
+
+    return {"Ticket": ticket}
+
+
+@app.get("/api/getFiles/{timestamp}/{picture}")
+def return_file(timestamp, picture):
+    try:
+        file_path = os.path.join(os.getcwd(), "pictures", timestamp)
+
+        if picture.split(".")[-1] == "png":
+            file_path = os.path.join(file_path, picture)
+
+            return FileResponse(file_path)
+        else:
+            file_path = os.path.join(file_path, picture)
+
+            return FileResponse(file_path)
+    except Exception as e:
+        logger.debug(f"Couldn't find file: {str(e)}")
+        return HTTPException(status_code=404, detail="Couldn't find requested file.")
 
 
 def save_file(filename, data, timestamp):
@@ -108,6 +133,13 @@ def get_all_issues():
         values = session.exec(select(Issue)).all()
 
         return values
+
+
+def get_single_issue(id):
+    with Session(engine) as session:
+        ticket = session.exec(select(Issue).where(Issue.id == id))
+
+        return ticket.first()
 
 
 if __name__ == "__main__":

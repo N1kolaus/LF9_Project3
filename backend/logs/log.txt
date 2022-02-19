@@ -4295,3 +4295,2695 @@ INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue
 FROM issue
 INFO:sqlalchemy.engine.Engine:[no key 0.00012s] ()
 INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:uvicorn.error:Started server process [6463]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:104]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[108:120]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[182:201]
+DEBUG:multipart.multipart:Calling on_header_value with data[203:228]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[232:240]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[302:321]
+DEBUG:multipart.multipart:Calling on_header_value with data[323:346]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[350:395]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[457:476]
+DEBUG:multipart.multipart:Calling on_header_value with data[478:501]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[505:525]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[587:606]
+DEBUG:multipart.multipart:Calling on_header_value with data[608:637]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[641:661]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[723:742]
+DEBUG:multipart.multipart:Calling on_header_value with data[744:768]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[772:777]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[839:858]
+DEBUG:multipart.multipart:Calling on_header_value with data[860:887]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[891:901]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[963:982]
+DEBUG:multipart.multipart:Calling on_header_value with data[984:1040]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[1042:1054]
+DEBUG:multipart.multipart:Calling on_header_value with data[1056:1066]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[1070:55082]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:main:Data posted.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO issue (email, section, title, issue, attachments, solved, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?)
+INFO:sqlalchemy.engine.Engine:[generated in 0.00010s] ('asdf@asdf.de', 'hardware', 'Tolles Arrangement - nicht nur zum Geburtstag', 'Irgendwas ist kaputt', 'Guido_van_Rossum.jpg', 0, 1645301156)
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[generated in 0.00014s] (1,)
+INFO:main:Issue saved to DB.
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [6463]
+INFO:uvicorn.error:Started server process [7174]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00008s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:main:Frontend called.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [7174]
+INFO:uvicorn.error:Started server process [8609]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [8609]
+INFO:uvicorn.error:Started server process [8686]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/responses.py", line 282, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/1645301156'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 64, in app
+    await response(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/responses.py", line 285, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path /home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/1645301156 does not exist.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [8686]
+INFO:uvicorn.error:Started server process [8734]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 64, in app
+    await response(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/responses.py", line 289, in __call__
+    raise RuntimeError(f"File at path {self.path} is not a file.")
+RuntimeError: File at path /home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/pictures/1645301156 is not a file.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [8734]
+INFO:uvicorn.error:Started server process [8797]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/responses.py", line 282, in __call__
+    stat_result = await anyio.to_thread.run_sync(os.stat, self.path)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/pictures/1645301156/Guide_van_Rossum.jpg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 64, in app
+    await response(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/responses.py", line 285, in __call__
+    raise RuntimeError(f"File at path {self.path} does not exist.")
+RuntimeError: File at path /home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/pictures/1645301156/Guide_van_Rossum.jpg does not exist.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [8797]
+INFO:uvicorn.error:Started server process [8840]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [8840]
+INFO:uvicorn.error:Started server process [8867]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:104]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[108:120]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[182:201]
+DEBUG:multipart.multipart:Calling on_header_value with data[203:228]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[232:239]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[301:320]
+DEBUG:multipart.multipart:Calling on_header_value with data[322:345]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[349:360]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[422:441]
+DEBUG:multipart.multipart:Calling on_header_value with data[443:466]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[470:481]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[543:562]
+DEBUG:multipart.multipart:Calling on_header_value with data[564:593]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[597:628]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[690:709]
+DEBUG:multipart.multipart:Calling on_header_value with data[711:735]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[739:744]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[806:825]
+DEBUG:multipart.multipart:Calling on_header_value with data[827:854]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[858:868]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[930:949]
+DEBUG:multipart.multipart:Calling on_header_value with data[951:1004]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[1006:1018]
+DEBUG:multipart.multipart:Calling on_header_value with data[1020:1029]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[1033:43542]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[43604:43623]
+DEBUG:multipart.multipart:Calling on_header_value with data[43625:43673]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[43675:43687]
+DEBUG:multipart.multipart:Calling on_header_value with data[43689:43698]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[43702:45263]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[45264:57189]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:main:Data posted.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO issue (email, section, title, issue, attachments, solved, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?)
+INFO:sqlalchemy.engine.Engine:[generated in 0.00020s] ('asdf@asdf.de', 'network', 'Mit Bildern', 'mehr bilder', 'class_example.png, examples.png', 0, 1645303164)
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[generated in 0.00015s] (2,)
+INFO:main:Issue saved to DB.
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:104]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[108:120]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[182:201]
+DEBUG:multipart.multipart:Calling on_header_value with data[203:228]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[232:240]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[302:321]
+DEBUG:multipart.multipart:Calling on_header_value with data[323:346]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[350:361]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[423:442]
+DEBUG:multipart.multipart:Calling on_header_value with data[444:467]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[471:475]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[537:556]
+DEBUG:multipart.multipart:Calling on_header_value with data[558:587]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[591:644]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[706:725]
+DEBUG:multipart.multipart:Calling on_header_value with data[727:751]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[755:760]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[822:841]
+DEBUG:multipart.multipart:Calling on_header_value with data[843:870]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[874:887]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[949:968]
+DEBUG:multipart.multipart:Calling on_header_value with data[970:1023]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[1025:1037]
+DEBUG:multipart.multipart:Calling on_header_value with data[1039:1048]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[1052:43561]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[43623:43642]
+DEBUG:multipart.multipart:Calling on_header_value with data[43644:43692]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[43694:43706]
+DEBUG:multipart.multipart:Calling on_header_value with data[43708:43717]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[43721:45282]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[45283:57208]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[57270:57289]
+DEBUG:multipart.multipart:Calling on_header_value with data[57291:57347]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[57349:57361]
+DEBUG:multipart.multipart:Calling on_header_value with data[57363:57373]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[57377:97754]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:13635]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:main:Data posted.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO issue (email, section, title, issue, attachments, solved, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?)
+INFO:sqlalchemy.engine.Engine:[cached since 1001s ago] ('asdf@asdf.de', 'hardware', 'Mit Bildern', 'test', 'class_example.png, examples.png, Guido_van_Rossum.jpg', 0, 1645304165239)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+DEBUG:main:Couldn't save data: (sqlite3.OperationalError) database is locked
+[SQL: INSERT INTO issue (email, section, title, issue, attachments, solved, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('asdf@asdf.de', 'hardware', 'Mit Bildern', 'test', 'class_example.png, examples.png, Guido_van_Rossum.jpg', 0, 1645304165239)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[60:79]
+DEBUG:multipart.multipart:Calling on_header_value with data[81:104]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[108:120]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[182:201]
+DEBUG:multipart.multipart:Calling on_header_value with data[203:228]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[232:240]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[302:321]
+DEBUG:multipart.multipart:Calling on_header_value with data[323:346]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[350:361]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[423:442]
+DEBUG:multipart.multipart:Calling on_header_value with data[444:467]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[471:475]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[537:556]
+DEBUG:multipart.multipart:Calling on_header_value with data[558:587]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[591:644]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[706:725]
+DEBUG:multipart.multipart:Calling on_header_value with data[727:751]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[755:760]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[822:841]
+DEBUG:multipart.multipart:Calling on_header_value with data[843:870]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[874:887]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[949:968]
+DEBUG:multipart.multipart:Calling on_header_value with data[970:1023]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[1025:1037]
+DEBUG:multipart.multipart:Calling on_header_value with data[1039:1048]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[1052:43561]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[43623:43642]
+DEBUG:multipart.multipart:Calling on_header_value with data[43644:43692]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[43694:43706]
+DEBUG:multipart.multipart:Calling on_header_value with data[43708:43717]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[43721:45282]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[45283:57208]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[57270:57289]
+DEBUG:multipart.multipart:Calling on_header_value with data[57291:57347]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[57349:57361]
+DEBUG:multipart.multipart:Calling on_header_value with data[57363:57373]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[57377:111389]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:main:Data posted.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO issue (email, section, title, issue, attachments, solved, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?)
+INFO:sqlalchemy.engine.Engine:[cached since 1046s ago] ('asdf@asdf.de', 'hardware', 'Mit Bildern', 'test', 'class_example.png, examples.png, Guido_van_Rossum.jpg', 0, 1645304210974)
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[cached since 1046s ago] (1,)
+INFO:main:Issue saved to DB.
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00008s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [8867]
+INFO:uvicorn.error:Started server process [17815]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [17815]
+INFO:uvicorn.error:Started server process [17884]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00008s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00011s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00008s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00006s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] (<built-in function id>,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.InterfaceError: Error binding parameter 0 - probably unsupported type.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/main.py", line 95, in get_all_tickets
+    issues = get_all_issues()
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/main.py", line 133, in get_all_issues
+    values = session.exec(select(Issue).where(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlmodel/orm/session.py", line 60, in exec
+    results = super().execute(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1692, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1614, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1481, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1845, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2026, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 0 - probably unsupported type.
+[SQL: SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?]
+[parameters: (<built-in function id>,)]
+(Background on this error at: https://sqlalche.me/e/14/rvf5)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00009s] (<built-in function id>,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.InterfaceError: Error binding parameter 0 - probably unsupported type.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/main.py", line 95, in get_all_tickets
+    issues = get_all_issues()
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/main.py", line 133, in get_all_issues
+    values = session.exec(select(Issue).where(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlmodel/orm/session.py", line 60, in exec
+    results = super().execute(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1692, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1614, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1481, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1845, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2026, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 0 - probably unsupported type.
+[SQL: SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?]
+[parameters: (<built-in function id>,)]
+(Background on this error at: https://sqlalche.me/e/14/rvf5)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [17884]
+INFO:uvicorn.error:Started server process [19961]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/main.py", line 101, in get_single_ticket
+    ticket = get_single_issue(id)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/main.py", line 140, in get_single_issue
+    ticket = session.exec(select(Issue)).where(Issue.id == id)
+AttributeError: 'ScalarResult' object has no attribute 'where'
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [19961]
+INFO:uvicorn.error:Started server process [19981]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00008s] ('1',)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+ERROR:sqlalchemy.pool.impl.NullPool:Error closing cursor
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/cursor.py", line 977, in fetchall
+    rows = dbapi_cursor.fetchall()
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1897, in _safe_close_cursor
+    cursor.close()
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 137, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'RMKeyView' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 141, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 234, in app
+    response_data = await serialize_response(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 148, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 145, in jsonable_encoder
+    return jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 145, in jsonable_encoder
+    return jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 144, in jsonable_encoder
+    raise ValueError(errors)
+ValueError: [TypeError("'RMKeyView' object is not callable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ('1',)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+ERROR:sqlalchemy.pool.impl.NullPool:Error closing cursor
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/cursor.py", line 977, in fetchall
+    rows = dbapi_cursor.fetchall()
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1897, in _safe_close_cursor
+    cursor.close()
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 137, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'RMKeyView' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 141, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 234, in app
+    response_data = await serialize_response(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 148, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 145, in jsonable_encoder
+    return jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 145, in jsonable_encoder
+    return jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 144, in jsonable_encoder
+    raise ValueError(errors)
+ValueError: [TypeError("'RMKeyView' object is not callable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [19981]
+INFO:uvicorn.error:Started server process [20023]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00018s] ('1',)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+ERROR:sqlalchemy.pool.impl.NullPool:Error closing cursor
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/cursor.py", line 977, in fetchall
+    rows = dbapi_cursor.fetchall()
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1897, in _safe_close_cursor
+    cursor.close()
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 137, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'RMKeyView' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 141, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 234, in app
+    response_data = await serialize_response(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 148, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 145, in jsonable_encoder
+    return jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 145, in jsonable_encoder
+    return jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 144, in jsonable_encoder
+    raise ValueError(errors)
+ValueError: [TypeError("'RMKeyView' object is not callable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [20023]
+INFO:uvicorn.error:Started server process [20173]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] ('1',)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+ERROR:sqlalchemy.pool.impl.NullPool:Error closing cursor
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/cursor.py", line 977, in fetchall
+    rows = dbapi_cursor.fetchall()
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1897, in _safe_close_cursor
+    cursor.close()
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 137, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'RMKeyView' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 141, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 234, in app
+    response_data = await serialize_response(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 148, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 145, in jsonable_encoder
+    return jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 145, in jsonable_encoder
+    return jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 144, in jsonable_encoder
+    raise ValueError(errors)
+ValueError: [TypeError("'RMKeyView' object is not callable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] ('1',)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+ERROR:sqlalchemy.pool.impl.NullPool:Error closing cursor
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/cursor.py", line 977, in fetchall
+    rows = dbapi_cursor.fetchall()
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1897, in _safe_close_cursor
+    cursor.close()
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 137, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'RMKeyView' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 141, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 234, in app
+    response_data = await serialize_response(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 148, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 145, in jsonable_encoder
+    return jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 145, in jsonable_encoder
+    return jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 144, in jsonable_encoder
+    raise ValueError(errors)
+ValueError: [TypeError("'RMKeyView' object is not callable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [20173]
+INFO:uvicorn.error:Started server process [20333]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00015s] ('1',)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+ERROR:sqlalchemy.pool.impl.NullPool:Error closing cursor
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/cursor.py", line 977, in fetchall
+    rows = dbapi_cursor.fetchall()
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1897, in _safe_close_cursor
+    cursor.close()
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 137, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'RMKeyView' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 141, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 234, in app
+    response_data = await serialize_response(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 148, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 145, in jsonable_encoder
+    return jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 145, in jsonable_encoder
+    return jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 144, in jsonable_encoder
+    raise ValueError(errors)
+ValueError: [TypeError("'RMKeyView' object is not callable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [20333]
+INFO:uvicorn.error:Started server process [20367]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00008s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+ERROR:sqlalchemy.pool.impl.NullPool:Error closing cursor
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/cursor.py", line 977, in fetchall
+    rows = dbapi_cursor.fetchall()
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1897, in _safe_close_cursor
+    cursor.close()
+sqlite3.ProgrammingError: Cannot operate on a closed database.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 137, in jsonable_encoder
+    data = dict(obj)
+TypeError: 'RMKeyView' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 141, in jsonable_encoder
+    data = vars(obj)
+TypeError: vars() argument must have __dict__ attribute
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 234, in app
+    response_data = await serialize_response(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 148, in serialize_response
+    return jsonable_encoder(response_content)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 145, in jsonable_encoder
+    return jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 145, in jsonable_encoder
+    return jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 93, in jsonable_encoder
+    encoded_value = jsonable_encoder(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/encoders.py", line 144, in jsonable_encoder
+    raise ValueError(errors)
+ValueError: [TypeError("'RMKeyView' object is not callable"), TypeError('vars() argument must have __dict__ attribute')]
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [20367]
+INFO:uvicorn.error:Started server process [20452]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [20452]
+INFO:uvicorn.error:Started server process [20478]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00008s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [20478]
+INFO:uvicorn.error:Started server process [20636]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00008s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/main.py", line 101, in get_single_ticket
+    ticket = get_single_issue(id)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/main.py", line 145, in get_single_issue
+    return ticket[0]
+TypeError: 'ScalarResult' object is not subscriptable
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [20636]
+INFO:uvicorn.error:Started server process [20767]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [20767]
+INFO:uvicorn.error:Started server process [20782]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00008s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/fastapi/routing.py", line 161, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/to_thread.py", line 28, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(func, *args, cancellable=cancellable,
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 818, in run_sync_in_worker_thread
+    return await future
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 754, in run
+    result = context.run(func, *args)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/main.py", line 101, in get_single_ticket
+    ticket = get_single_issue(id)
+  File "/home/johannes/Documents/Schule/Lehrjahr_2/LF9/Project3/backend/main.py", line 145, in get_single_issue
+    print(ticket[0])
+TypeError: 'ScalarResult' object is not subscriptable
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [20782]
+INFO:uvicorn.error:Started server process [20860]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:PRAGMA main.table_info("issue")
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:main:DB created.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00008s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00006s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00010s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00008s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00006s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00008s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00015s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00010s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00019s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00010s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00016s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00016s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00016s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00010s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00016s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00009s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00018s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00016s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00015s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00011s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00015s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00011s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00016s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00009s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00015s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00010s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00015s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00017s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00016s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00008s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00015s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00010s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00021s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00018s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00007s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00015s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00015s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00009s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00015s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00017s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00012s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00014s] (1,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[58:77]
+DEBUG:multipart.multipart:Calling on_header_value with data[79:102]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[106:120]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[180:199]
+DEBUG:multipart.multipart:Calling on_header_value with data[201:226]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[230:238]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[298:317]
+DEBUG:multipart.multipart:Calling on_header_value with data[319:342]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[346:391]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[451:470]
+DEBUG:multipart.multipart:Calling on_header_value with data[472:495]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[499:520]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[580:599]
+DEBUG:multipart.multipart:Calling on_header_value with data[601:630]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[634:646]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[706:725]
+DEBUG:multipart.multipart:Calling on_header_value with data[727:751]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[755:760]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[820:839]
+DEBUG:multipart.multipart:Calling on_header_value with data[841:868]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[872:885]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_part_begin with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[945:964]
+DEBUG:multipart.multipart:Calling on_header_value with data[966:1014]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_header_field with data[1016:1028]
+DEBUG:multipart.multipart:Calling on_header_value with data[1030:1039]
+DEBUG:multipart.multipart:Calling on_header_end with no data
+DEBUG:multipart.multipart:Calling on_headers_finished with no data
+DEBUG:multipart.multipart:Calling on_part_data with data[1043:130454]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:1]
+DEBUG:multipart.multipart:Calling on_part_data with data[130455:130470]
+DEBUG:multipart.multipart:Calling on_part_data with data[0:20635]
+DEBUG:multipart.multipart:Calling on_part_end with no data
+DEBUG:multipart.multipart:Calling on_end with no data
+INFO:main:Data posted.
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:INSERT INTO issue (email, section, title, issue, attachments, solved, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?)
+INFO:sqlalchemy.engine.Engine:[generated in 0.00020s] ('test1@test1.de', 'Software', 'Tolles Arrangement - nicht nur zum Geburtstag', 'Ein weiterer Test. :)', 'librarys.png', 0, 1645312302234)
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[generated in 0.00007s] (2,)
+INFO:main:Issue saved to DB.
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00006s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00019s] (2,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] ()
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT issue.id, issue.email, issue.section, issue.title, issue.issue, issue.attachments, issue.solved, issue.timestamp 
+FROM issue 
+WHERE issue.id = ?
+INFO:sqlalchemy.engine.Engine:[no key 0.00013s] (2,)
+INFO:sqlalchemy.engine.Engine:ROLLBACK
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [20860]
