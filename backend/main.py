@@ -6,9 +6,10 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import logging
 from models.ticket_model import Issue
+from models.update_model import UpdateModel
 import os
 from pathlib import Path
-from sqlmodel import col, Session, select
+from sqlmodel import Session, select
 from typing import List, Optional
 import uvicorn
 
@@ -97,14 +98,14 @@ def get_all_tickets():
 
 
 @app.get("/api/getData/{id}")
-def get_single_ticket(id):
+def get_single_ticket(id: int):
     ticket = get_single_issue(int(id))
 
     return {"Ticket": ticket}
 
 
 @app.get("/api/getFiles/{timestamp}/{picture}")
-def return_file(timestamp, picture):
+def return_file(timestamp: str, picture: str):
     try:
         file_path = os.path.join(os.getcwd(), "pictures", timestamp)
 
@@ -121,7 +122,14 @@ def return_file(timestamp, picture):
         return HTTPException(status_code=404, detail="Couldn't find requested file.")
 
 
-def save_file(filename, data, timestamp):
+@app.patch("/api/updateData/{id}", response_model=Issue)
+def update_single_ticket(id: int, update: UpdateModel):
+    ticket = update_single_issue(id, update)
+
+    return ticket
+
+
+def save_file(filename: str, data: Issue, timestamp: str):
     Path(f"{os.getcwd()}/pictures/{timestamp}/").mkdir(parents=True, exist_ok=True)
     file = os.path.join(f"{os.getcwd()}/pictures/{timestamp}/", filename)
     with open(file, "wb") as f:
@@ -135,11 +143,23 @@ def get_all_issues():
         return values
 
 
-def get_single_issue(id):
+def get_single_issue(id: int):
     with Session(engine) as session:
         ticket = session.exec(select(Issue).where(Issue.id == id))
 
         return ticket.first()
+
+
+def update_single_issue(id: int, update: UpdateModel):
+    with Session(engine) as session:
+        results = session.exec(select(Issue).where(Issue.id == id))
+        ticket = results.one()
+        ticket.solved = update.solved
+        session.add(ticket)
+        session.commit()
+        session.refresh(ticket)
+
+        return ticket
 
 
 if __name__ == "__main__":

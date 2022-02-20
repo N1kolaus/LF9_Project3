@@ -14,6 +14,10 @@ const Ticket = (props) => {
         navigate(`/tickets/${props.id}`);
     };
 
+    const truncateString = (issue) => {
+        return issue.length > 50 ? issue.substring(0, 47) + "..." : issue;
+    };
+
     return (
         <li className={classes.item}>
             <Card>
@@ -26,7 +30,7 @@ const Ticket = (props) => {
                         {props.title}
                     </h3>
                     <section>Bereich: {props.section}</section>
-                    <p>Problembeschreibung: {props.issue}</p>
+                    <p>Problembeschreibung: {truncateString(props.issue)}</p>
                     <p>Datum: {outputDate}</p>
                     {attachments.length > 1 ? (
                         <p>{attachments.length} Anhänge</p>

@@ -12,12 +12,10 @@ const NewTicket = () => {
         axios
             .post(`http://${currentDomain}:8000/api/postIssue`, ticketData)
             .then((response) => {
-                console.log(response);
                 toast.success("Daten erfolgreich gespeichert. 😊");
                 navigate("/");
             })
             .catch((err) => {
-                console.log(err);
                 toast.error("Daten konnten nicht gesendet werden. 😞");
             });
     };
