@@ -34,8 +34,10 @@ const Ticket = (props) => {
                     <p>Datum: {outputDate}</p>
                     {attachments.length > 1 ? (
                         <p>{attachments.length} Anhänge</p>
-                    ) : (
+                    ) : attachments[0] !== "no attachments" ? (
                         <p>1 Anhang</p>
+                    ) : (
+                        <p>Keine Anhänge</p>
                     )}
                 </div>
             </Card>
