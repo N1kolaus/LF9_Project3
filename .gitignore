@@ -462,4 +462,4 @@ TSWLatexianTemp*
 *.xwm
 
 # Logs
-log.txt
+backend/logs/log.txt
