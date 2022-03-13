@@ -9,10 +9,10 @@ const TicketsList = (props) => {
                     return (
                         <Ticket
                             key={ticket.id}
+                            status={ticket.solved}
                             id={ticket.id}
                             title={ticket.title}
                             section={ticket.section}
-                            issue={ticket.issue}
                             timestamp={ticket.timestamp}
                             attachments={ticket.attachments}
                         />

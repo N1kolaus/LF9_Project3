@@ -95,7 +95,7 @@ const SingleTicket = () => {
     return (
         <Card>
             <div className={classes.content}>
-                <h3>{data.title}</h3>
+                <h2>{data.title}</h2>
                 <section>Bereich: {data.section}</section>
                 <p>Problembeschreibung: {data.issue}</p>
                 <p>Datum: {outputDate}</p>

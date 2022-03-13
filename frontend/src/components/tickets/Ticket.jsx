@@ -14,23 +14,23 @@ const Ticket = (props) => {
         navigate(`/tickets/${props.id}`);
     };
 
-    const truncateString = (issue) => {
-        return issue.length > 50 ? issue.substring(0, 47) + "..." : issue;
-    };
-
     return (
         <li className={classes.item}>
             <Card>
                 <div className={classes.content}>
-                    <h3
+                    <h2
                         onClick={() => {
                             handleOnClick(props);
                         }}
                     >
                         {props.title}
-                    </h3>
-                    <section>Bereich: {props.section}</section>
-                    <p>Problembeschreibung: {truncateString(props.issue)}</p>
+                    </h2>
+                    <section>
+                        <b>
+                            Status: {props.status ? "Abgeschlossen" : "Offen"}
+                        </b>
+                    </section>
+                    <p>Bereich: {props.section}</p>
                     <p>Datum: {outputDate}</p>
                     {attachments.length > 1 ? (
                         <p>{attachments.length} Anhänge</p>
