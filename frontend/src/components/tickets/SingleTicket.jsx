@@ -50,28 +50,30 @@ const SingleTicket = () => {
                 const attachments = ticket.attachments.split(", ");
                 const timestamp = ticket.timestamp;
 
-                attachments.forEach((image) => {
-                    axios
-                        .get(
-                            `http://${currentDomain}:8000/api/getFiles/${timestamp}/${image}`,
-                            {
-                                responseType: "arraybuffer",
-                            }
-                        )
-                        .then((response) => {
-                            let blob = new Blob([response.data], {
-                                type: response.headers["content-type"],
+                if (attachments[0] !== "no attachments") {
+                    attachments.forEach((image) => {
+                        axios
+                            .get(
+                                `http://${currentDomain}:8000/api/getFiles/${timestamp}/${image}`,
+                                {
+                                    responseType: "arraybuffer",
+                                }
+                            )
+                            .then((response) => {
+                                let blob = new Blob([response.data], {
+                                    type: response.headers["content-type"],
+                                });
+                                let image = URL.createObjectURL(blob);
+                                setImages((oldImages) => [...oldImages, image]);
+                            })
+                            .catch((err) => {
+                                console.log(err);
+                                toast.error(
+                                    "Daten konnten nicht abgerufen werden. 😞"
+                                );
                             });
-                            let image = URL.createObjectURL(blob);
-                            setImages((oldImages) => [...oldImages, image]);
-                        })
-                        .catch((err) => {
-                            console.log(err);
-                            toast.error(
-                                "Daten konnten nicht abgerufen werden. 😞"
-                            );
-                        });
-                });
+                    });
+                }
 
                 setIsLoading(false);
             })
@@ -103,8 +105,10 @@ const SingleTicket = () => {
                 <p>Status: {solvedStatus ? "Abgeschlossen" : "Offen"}</p>
                 {attachments.length > 1 ? (
                     <p>{attachments.length} Anhänge</p>
-                ) : (
+                ) : attachments[0] !== "no attachments" ? (
                     <p>1 Anhang</p>
+                ) : (
+                    <p>Keine Anhänge</p>
                 )}
             </div>
             <div className={classes.actions}>

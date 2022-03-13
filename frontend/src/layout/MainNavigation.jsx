@@ -5,7 +5,7 @@ const MainNavigation = () => {
     return (
         <header className={classes.header}>
             <Link to="/">
-                <div className={classes.logo}>Doubtful-Joy SE Tickets</div>
+                <div className={classes.logo}>Doubtful-Joy SE</div>
             </Link>
 
             <nav>
