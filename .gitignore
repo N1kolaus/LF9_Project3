@@ -460,3 +460,6 @@ TSWLatexianTemp*
 
 # xwatermark package
 *.xwm
+
+# Logs
+log.txt
