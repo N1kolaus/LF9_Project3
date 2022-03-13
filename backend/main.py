@@ -93,12 +93,15 @@ async def post_issue(
 
 @app.get("/api/allData")
 def get_all_tickets():
+    logger.info("allData called.")
     issues = get_all_issues()
+
     return {"Issues": issues}
 
 
 @app.get("/api/getData/{id}")
 def get_single_ticket(id: int):
+    logger.info(f"getData id: {id} called.")
     ticket = get_single_issue(int(id))
 
     return {"Ticket": ticket}
@@ -124,12 +127,14 @@ def return_file(timestamp: str, picture: str):
 
 @app.patch("/api/updateData/{id}", response_model=Issue)
 def update_single_ticket(id: int, update: UpdateModel):
+    logger.info(f"updateData id: {id} called.")
     ticket = update_single_issue(id, update)
 
     return ticket
 
 
 def save_file(filename: str, data: Issue, timestamp: str):
+    logger.info(f"save_faile filename: {filename}, timestamp: {timestamp} called.")
     Path(f"{os.getcwd()}/pictures/{timestamp}/").mkdir(parents=True, exist_ok=True)
     file = os.path.join(f"{os.getcwd()}/pictures/{timestamp}/", filename)
     with open(file, "wb") as f:
