@@ -410,7 +410,7 @@ Ebenso wird der im Anhang \cpageref{fig:Netzwerkplan} zu betrachtende Netzwerkpl
   \label{fig:Projektstrukturplan}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[htbp]"-
   \centering
   \includegraphics[width=0.95\textwidth]{data/Gantt.png}
   \caption{Gantt-Diagramm}
@@ -487,7 +487,7 @@ Die erste Regel dient der Kommunikation zwischen Webserver (\ac{DMZ}) und Datenb
 
 Nach der Standard-Installation von CentOS 8 Stream wurden das Netzwerk der \ac{VM} angepasst. Hier wurde der \ac{DNS} auf die IP-Adresse des \ac{DHCP}-\ac{DNS}-\ac{DB}-Servers gesetzt.
 
-Da in CentOS 8 Stream SSH-Client und -Server bereits installiert und aktiviert sind, konnte der Webserver direkt angesprochen werden. Dies erfolgte ueber das Gateway des grünen Netzes, wie in \vref{fig:PythonScriptRunning} zu sehen. Um zu sehen, ob der Webserver aktiv ist, können mittels \texttt{ps -ef | grep python} alle laufenden Python-Anwendungen aufgelistet werden, was ebenfalls in \vref{fig:PythonScriptRunning} zu sehen ist.
+Da in CentOS 8 Stream SSH-Client und -Server bereits installiert und aktiviert sind, konnte der Webserver direkt angesprochen werden. Dies erfolgte über das Gateway des grünen Netzes, wie in \vref{fig:PythonScriptRunning} zu sehen. Um zu sehen, ob der Webserver aktiv ist, können mittels \texttt{ps -ef | grep python} alle laufenden Python-Anwendungen aufgelistet werden, was ebenfalls in \vref{fig:PythonScriptRunning} zu sehen ist.
 
 \begin{figure}[htbp]
   \centering
@@ -521,10 +521,40 @@ Soll der Webserver gestartet werden, kann dies mittels Navigation in den Ordner,
 
 \subsection{Einrichtung der CentOS-Installation}
 
+Wie auch der Admin-PC wurde der \ac{DHCP}-\ac{DNS}-\ac{DB}-Server mit CentOS 8 Stream eingerichtet. In den Netzwerkeinstellungen wurde die IP-Adresse fest auf \texttt{192.168.17.100}, die Netzwerkmaske auf \texttt{255.255.255.0} und dsa Gateway auf \texttt{192.169.17.3} gesetzt. Außerdem wurden die Dienst \ac{DNS} und \ac{DHCP} in der Firewall freigegeben, zu sehen in \vref{lst:DienstFreigabe}.
+
+\begin{lstlisting}[language=bash,caption={Dienste-Freigabe einer CentOS-Firewall},label={lst:DienstFreigabe}]
+  # firewall-cmd --add-service=dns --permanent
+  # firewall-cmd --add-service=dhcp --permanent
+  # firewall-cmd --reload
+\end{lstlisting}
+
 
 \subsection{Einrichtung des DHCP und DNS}
 
-Die Funktion des \ac{DNS} kann mittels \texttt{nslookup}, zu sehen in \vref{fig:DNSNslookup}, oder ueber das Aufrufen des Frontends des Webservers, zu sehen in \vref{fig:Frontend}, überprüft werden.
+Die Installation und Einrichtung des \ac{DHCP}s und \ac{DNS} erfolgte mittels der Anleitung für dnsmasq von Michelle Ferron. \autocite{zextras:DHCPDNS}
+
+Die Einstellungen des \ac{DHCP} wurden mittels der in \vref{lst:DHCPSettings} zu sehenden Befehle und Einstellungen angepasst.
+
+\begin{lstlisting}[language=bash,caption={DHCP-Einstellungen},label={lst:DHCPSettings}]
+  # nano /etc/dnsmasq.conf
+  listen-address=::1,127.0.0.1,192.168.17.100
+  interface=ens160
+  domain=doubtful-joy07.com
+\end{lstlisting}
+
+Nach der Einrichtung wurde das Netzwerk des Admin-PCs ausgeschaltet, die \ac{DHCP}-Ein"-stel"-lungs-Option ausgewählt und das Netzwerk wieder angeschaltet. Der Admin-PC bekam durch den DHCP automatisch eine neue IP-Adresse.
+
+Die Einstellungen des \ac{DNS} wurden mittels der \texttt{/etc/hosts}-Datei angepasst. Die hier eingestellten Werte sind in \vref{fig:DNSSettings} zu sehen.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{data/dns-hosts-file.png}
+  \caption{DNS-Einstellungen}
+  \label{fig:DNSSettings}
+\end{figure}
+
+Die Funktion des \ac{DNS} kann mittels \texttt{nslookup}, zu sehen in \vref{fig:DNSNslookup}, oder über das Aufrufen des Frontends des Webservers, zu sehen in \vref{fig:Frontend}, überprüft werden.
 
 \begin{figure}[htbp]
   \centering
@@ -576,6 +606,7 @@ Da im Front- und Backend Timestamps als Zahlen verwendet werden, muss die Tabell
 
 
 
+\newpage
 \section{Einrichtung Webserver}
 
 
