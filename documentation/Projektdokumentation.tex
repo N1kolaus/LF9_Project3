@@ -236,6 +236,7 @@
   \acro{DHCP}{Dynamic Host Configuration Protocol}
   \acro{DNS}{Domain Name System}
   \acro{DMZ}{Demilitarisierte Zone}
+  \acro{SSH}{Secure Shell}
   \acro{VM}{virtuelle Machine}
   \acrodefplural{VM}{virtuelle Machinen}
 \end{acronym}
@@ -432,7 +433,8 @@ Eine Kosten-Nutzen-Analyse ist zum jetzigen Zeitpunkt nicht notwendig, da der Su
 
 \section{Ablaufdokumentation}
 
-In diesem Projekt wurden drei Netze eingerichtet, um ein echtes Netzwerk wiederzugeben. Dabei handelt es sich um das rote Netz, das das Internet wiedergeben soll, das orange Netz, was eine sogenannte \ac{DMZ} darstellt und das grüne Netz, das das interne Netz darstellt.
+In diesem Projekt werden drei virtuelle Netze eingerichtet, um den Aufbau eines echten Netzwerks zu simulieren. Dabei handelt es sich um das rote Netz, das das Internet wiedergeben soll, das orange Netz, was eine sogenannte \ac{DMZ} darstellt und das grüne Netz, welches das interne Netz darstellt.
+
 Um die Kommunikation und den Zugriff zwischen den Netzen zu regeln wird in diesem Projekt die Firewall verwendet. Somit kann aus dem roten Netz nur mit dem orangen Netz kommunizieren werden, aus dem grünen Netz ist kein Zugriff auf das Internet möglich und zwischen dem orangen und grünen Netz sind nur bestimmte Ports zur Kommunikation und Datenübertragung zugelassen.
 
 Um Maschinen in den verschiedenen Netzen darzustellen wurden vier verschiedene \acp{VM} aufgesetzt, die bis auf der IPFire auf CentOS 8 Stream basieren:
@@ -440,7 +442,7 @@ Um Maschinen in den verschiedenen Netzen darzustellen wurden vier verschiedene \
 \begin{itemize}
   \item IPFire (als Knotenpunkt für alle drei Netze)
   \item Admin-PC (grünes Netz)
-  \item \ac{DHCP}-\ac{DNS}-\ac{DB}-Server (grünes Netz)
+  \item \acs{DHCP}-\acs{DNS}-\acs{DB}-Server (grünes Netz)
   \item Webserver (\ac{DMZ}, oranges Netz)
 \end{itemize}
 
@@ -448,9 +450,9 @@ Um Maschinen in den verschiedenen Netzen darzustellen wurden vier verschiedene \
 
 \section{Einrichtung IPFire}
 
-Vor dem Einrichten der IPFire müssen noch zwei Netzwerke zu dem schon bestehenden Netzwerk hinzugefügt werden, da die Firewall mit drei verschiedenen Netzen interagieren soll. Noch dazu werden den einzelnen Netzen verschiedene MAC-Adressen zugeteilt, damit sie in der späteren Nutzung zuordenbar sind.
+Vor dem Einrichten der IPFire müssen noch zwei Netzwerke zu dem durch VMWare standardmäßig schon bestehenden Netzwerk hinzugefügt werden, da die Firewall mit drei verschiedenen Netzen interagieren soll. Dazu werden den einzelnen Netzen verschiedene MAC-Adressen zugeteilt, damit sie in der späteren Nutzung zuordenbar sind.
 
-In unserem Projekt wurden die Netzwerke wie in \vref{tab:Netzwerk} zu sehen verteilt.
+Die Netzwerke werden wie in \vref{tab:Netzwerk} zu sehen verteilt.
 
 \begin{table}[htbp]
   \centering
@@ -466,11 +468,10 @@ In unserem Projekt wurden die Netzwerke wie in \vref{tab:Netzwerk} zu sehen vert
   \label{tab:Netzwerk}
 \end{table}
 
-Als Hostname der Firewall wurde "ipfire" und als Domaine wurde "doubtful-joy07.com" festgelegt.
-Nach dem Auswählen der Sprache wurde aufgrund der Kundenspezifikation das Filesystem "ext4 Filesystem" ausgewählt. Nach dem Zuweisen der einzelnen Netze mit den IP- und MAC-Adressen wurde der \ac{DHCP} deaktiviert, damit es später mit dem \ac{DHCP}-Server im grünen Netz nicht zu Komplikationen führt.
+Als Hostname der Firewall wird \glqq{}ipfire\grqq{} und als Domaine \glqq{}doubtful-joy07.com\grqq{} festgelegt.
+Nach dem Auswählen der Sprache wird aufgrund der Kundenspezifikation das Filesystem \glqq{}ext4 Filesystem\grqq{} ausgewählt. Nach dem Zuweisen der einzelnen Netze mit den IP- und MAC-Adressen wird der \ac{DHCP} deaktiviert, damit es später mit dem \ac{DHCP}-Server im grünen Netz nicht zu Komplikationen führt.
 
-Nachdem die Firewall eingerichtet wurde können aus dem grünen Netz mittels des IPFire-WebInterfaces verschiedene Einstellungen der Firewall
-bearbeitet werden. Für die Verbindungen zwischen Admin-PC, \ac{DHCP}-\ac{DNS}-\ac{DB}-Server und Webserver sowie für die Erreichbarkeit des Webservers aus dem roten Netz wurden vier verschiedene Regeln erstellt, die in n \vref{fig:FirewallConfig} zu sehen sind.
+Nach dem Einrichten der Firewall wird aus dem grünen Netz mittels des IPFire-Web"-interfaces verschiedene Einstellungen der Firewall bearbeitet. Für die Verbindungen zwischen Admin-PC, \ac{DHCP}-\ac{DNS}-\ac{DB}-Server und Webserver sowie für die Erreichbarkeit des Webservers aus dem roten Netz werden vier verschiedene Regeln erstellt, die in \vref{fig:FirewallConfig} zu sehen sind.
 
 \begin{figure}[htbp]
   \centering
@@ -479,20 +480,20 @@ bearbeitet werden. Für die Verbindungen zwischen Admin-PC, \ac{DHCP}-\ac{DNS}-\
   \label{fig:FirewallConfig}
 \end{figure}
 
-Die erste Regel dient der Kommunikation zwischen Webserver (\ac{DMZ}) und Datenbank (grünes Netz), sodass Tickets abgerufen und gespeichert werden können. Damit aus dem grünen Netz der Webserver gestartet und gestoppt werden kann, wurde Regel 2 implementiert. Die Erreichbarkeit des WebInterface der Ticket-Seite durch die Mitarbeiter aus dem grünen Netz wurde mit Regel 3 erreicht. Die letzte Regel erlaubt den Zugriff aus dem Internet auf die Ticket-Website.
+Die erste Regel dient der Kommunikation zwischen Webserver (\ac{DMZ}) und Datenbank (grünes Netz), sodass Tickets abgerufen und gespeichert werden können. Damit aus dem grünen Netz der Webserver gestartet und gestoppt werden kann, wird Regel 2 implementiert, welche einen \ac{SSH}-Zugang aus dem grünen Netz erlaubt. Die Erreichbarkeit des Webinterface der Ticket-Seite durch die Mitarbeiter aus dem grünen Netz wird mit Regel 3 erreicht. Die letzte Regel erlaubt den Zugriff aus dem Internet auf die Ticket-Website.
 
 
 
 \section{Einrichtung Admin-PC}
 
-Nach der Standard-Installation von CentOS 8 Stream wurden das Netzwerk der \ac{VM} angepasst. Hier wurde der \ac{DNS} auf die IP-Adresse des \ac{DHCP}-\ac{DNS}-\ac{DB}-Servers gesetzt.
+Nach der Standard-Installation von CentOS 8 Stream wird das Netzwerk der \ac{VM} angepasst. Hier wird der \ac{DNS} auf die IP-Adresse des \ac{DHCP}-\ac{DNS}-\ac{DB}-Servers gesetzt.
 
-Da in CentOS 8 Stream SSH-Client und -Server bereits installiert und aktiviert sind, konnte der Webserver direkt angesprochen werden. Dies erfolgte über das Gateway des grünen Netzes, wie in \vref{fig:PythonScriptRunning} zu sehen. Um zu sehen, ob der Webserver aktiv ist, können mittels \texttt{ps -ef | grep python} alle laufenden Python-Anwendungen aufgelistet werden, was ebenfalls in \vref{fig:PythonScriptRunning} zu sehen ist.
+Da in CentOS 8 Stream \ac{SSH}-Client und -Server bereits installiert und aktiviert sind, kann der Webserver direkt angesprochen werden. Dies erfolgt über das Gateway des grünen Netzes, wie in \vref{fig:PythonScriptRunning} zu sehen. Um zu sehen, ob der Webserver aktiv ist, können mittels \texttt{ps -ef | grep python} alle laufenden Python-Anwendungen aufgelistet werden, was ebenfalls in \vref{fig:PythonScriptRunning} zu sehen ist.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.95\textwidth]{data/py-script-running.png}
-  \caption{SSH-Login sowie Auflisten aller laufenden Python-Anwendungen}
+  \caption{\ac{SSH}-Login sowie Auflisten aller laufenden Python-Anwendungen}
   \label{fig:PythonScriptRunning}
 \end{figure}
 
@@ -505,7 +506,7 @@ Ist der Webserver aktiv und soll gestoppt werden, kann mittels \texttt{ps -ef | 
   \label{fig:PythonScriptStop}
 \end{figure}
 
-Soll der Webserver gestartet werden, kann dies mittels Navigation in den Ordner, in dem die auszuführende Datei liegt und \texttt{python3.10 name-der-datei \&} gestartet werden, zu sehen in der \vref{fig:PythonScriptStart}. Das \& erlaubt das Laufen der Anwendung im Hintergrund und wird so nicht gestoppt, wenn die SSH-Verbindung geschlossen wird.
+Soll der Webserver gestartet werden, kann dies mittels Navigation in den Ordner, in dem die auszuführende Datei liegt und \texttt{python3.10 name-der-datei \&} gestartet werden, zu sehen in der \vref{fig:PythonScriptStart}. Das \& erlaubt das Laufen der Anwendung im Hintergrund und wird so nicht gestoppt, wenn die \ac{SSH}-Verbindung geschlossen wird.
 
 \begin{figure}[htbp]
   \centering
@@ -521,7 +522,7 @@ Soll der Webserver gestartet werden, kann dies mittels Navigation in den Ordner,
 
 \subsection{Einrichtung der CentOS-Installation}
 
-Wie auch der Admin-PC wurde der \ac{DHCP}-\ac{DNS}-\ac{DB}-Server mit CentOS 8 Stream eingerichtet. In den Netzwerkeinstellungen wurde die IP-Adresse fest auf \texttt{192.168.17.100}, die Netzwerkmaske auf \texttt{255.255.255.0} und dsa Gateway auf \texttt{192.169.17.3} gesetzt. Außerdem wurden die Dienst \ac{DNS} und \ac{DHCP} in der Firewall freigegeben, zu sehen in \vref{lst:DienstFreigabe}.
+Wie auch der Admin-PC wird der \ac{DHCP}-\ac{DNS}-\ac{DB}-Server mit CentOS 8 Stream eingerichtet. In den Netzwerkeinstellungen wird die IP-Adresse fest auf \texttt{192.168.17.100}, die Netzwerkmaske auf \texttt{255.255.255.0} und dsa Gateway auf \texttt{192.169.17.3} gesetzt. Außerdem werden die Dienste \ac{DNS} und \ac{DHCP} in der Firewall freigegeben, zu sehen in \vref{lst:DienstFreigabe}.
 
 \begin{lstlisting}[language=bash,caption={Dienste-Freigabe einer CentOS-Firewall},label={lst:DienstFreigabe}]
   # firewall-cmd --add-service=dns --permanent
@@ -532,9 +533,9 @@ Wie auch der Admin-PC wurde der \ac{DHCP}-\ac{DNS}-\ac{DB}-Server mit CentOS 8 S
 
 \subsection{Einrichtung des DHCP und DNS}
 
-Die Installation und Einrichtung des \ac{DHCP}s und \ac{DNS} erfolgte mittels der Anleitung für dnsmasq von Michelle Ferron. \autocite{zextras:DHCPDNS}
+Die Installation und Einrichtung des \ac{DHCP}s und \ac{DNS} erfolgt mittels der Anleitung für dnsmasq von Michelle Ferron. \autocite{zextras:DHCPDNS}
 
-Die Einstellungen des \ac{DHCP} wurden mittels der in \vref{lst:DHCPSettings} zu sehenden Befehle und Einstellungen angepasst.
+Die Einstellungen des \ac{DHCP} wird mittels der in \vref{lst:DHCPSettings} zu sehenden Befehle und Einstellungen angepasst.
 
 \begin{lstlisting}[language=bash,caption={DHCP-Einstellungen},label={lst:DHCPSettings}]
   # nano /etc/dnsmasq.conf
@@ -543,9 +544,9 @@ Die Einstellungen des \ac{DHCP} wurden mittels der in \vref{lst:DHCPSettings} zu
   domain=doubtful-joy07.com
 \end{lstlisting}
 
-Nach der Einrichtung wurde das Netzwerk des Admin-PCs ausgeschaltet, die \ac{DHCP}-Ein"-stel"-lungs-Option ausgewählt und das Netzwerk wieder angeschaltet. Der Admin-PC bekam durch den DHCP automatisch eine neue IP-Adresse.
+Nach der Einrichtung wird das Netzwerk des Admin-PCs ausgeschaltet, die \ac{DHCP}-Ein"-stel"-lungs-Option ausgewählt und das Netzwerk wieder angeschaltet. Der Admin-PC bekommt durch den DHCP automatisch eine neue IP-Adresse.
 
-Die Einstellungen des \ac{DNS} wurden mittels der \texttt{/etc/hosts}-Datei angepasst. Die hier eingestellten Werte sind in \vref{fig:DNSSettings} zu sehen.
+Die Einstellungen des \ac{DNS} wird mittels der \texttt{/etc/hosts}-Datei angepasst. Die hier einzustellenden Werte sind in \vref{fig:DNSSettings} zu sehen.
 
 \begin{figure}[htbp]
   \centering
@@ -573,9 +574,9 @@ Die Funktion des \ac{DNS} kann mittels \texttt{nslookup}, zu sehen in \vref{fig:
 
 \subsection{Einrichtung des Datenbank-Servers}
 
-Die Einrichtung eines Datenbank-Servers erfolgte mittels der Anleitung von Aaron Kili. \autocite{tecmint:PostgreSQLAndpgAdmin} Mit dieser wurde PostGreSQL, ein \glqq{}leistungsstarkes, weit verbreitetes, quelloffenes, plattformübergreifendes und fortschrittliches objektrelationales Datenbanksystem\grqq{} \autocite{tecmint:PostgreSQLAndpgAdmin} und pgAdmin, ein \glqq{}fortschrittliches, quelloffenes, voll funktionsfähiges und webbasiertes Verwaltungs- und Managementwerkzeug\grqq{} \autocite{tecmint:PostgreSQLAndpgAdmin}, installiert.
+Die Einrichtung eines Datenbank-Servers erfolgt mittels der Anleitung von Aaron Kili. \autocite{tecmint:PostgreSQLAndpgAdmin} Mit dieser wird PostGreSQL, ein \glqq{}leistungsstarkes, weit verbreitetes, quelloffenes, plattformübergreifendes und fortschrittliches objektrelationales Datenbanksystem\grqq{} \autocite{tecmint:PostgreSQLAndpgAdmin} und pgAdmin, ein \glqq{}fortschrittliches, quelloffenes, voll funktionsfähiges und webbasiertes Verwaltungs- und Managementwerkzeug\grqq{} \autocite{tecmint:PostgreSQLAndpgAdmin}, installiert.
 
-Mittels des WebInterfaces, das pgAdmin bereitstellt, lässt sich eine Datenbank erstellen, zu sehen in \vref{fig:DBErstellung}. Der Name der Datenbank wurde auf \glqq{}tickets\grqq{}, der Benutzername auf \glqq{}ticketadmin\grqq{} und das Passwort auf \glqq{}adminadmin\grqq{} festgelgt.
+Mittels des Webinterfaces, das pgAdmin bereitstellt, lässt sich eine Datenbank erstellen, zu sehen in \vref{fig:DBErstellung}. Der Name der Datenbank wird auf \glqq{}tickets\grqq{}, der Benutzername auf \glqq{}ticketadmin\grqq{} und das Passwort auf \glqq{}adminadmin\grqq{} festgelegt.
 
 \begin{figure}[htbp]
   \centering
@@ -598,7 +599,7 @@ Ebenso muss die \texttt{postgresql.conf} angepasst werden, so dass ein Zugriff v
   listen_addresses = '*'
 \end{lstlisting}
 
-Da im Front- und Backend Timestamps als Zahlen verwendet werden, muss die Tabelle noch geändert werden, damit kein \texttt{integer-out-of-range}-Fehler geworfen wird. Dies wurde wie in \vref{lst:AlterSQL} umgesetzt.
+Da im Front- und Backend Timestamps als Zahlen verwendet werden, muss die Tabelle noch geändert werden, damit kein \texttt{integer-out-of-range}-Fehler geworfen wird. Dies wird mittels der Befehls \texttt{ALTER TABLE} wie in \vref{lst:AlterSQL} umgesetzt.
 
 \begin{lstlisting}[language=SQL,caption={Ändern der tickets-Tabelle},label={lst:AlterSQL}]
   ALTER TABLE order_detail ALTER COLUMN amount TYPE BIGINT;
@@ -612,38 +613,38 @@ Da im Front- und Backend Timestamps als Zahlen verwendet werden, muss die Tabell
 
 \subsection{Einrichtung der CentOS-Installation}
 
-Nach der Standard-Installation von CentOS 8 Stream wurden das Netzwerk der \ac{VM} angepasst. Hier wurde die IP-Adresse fest auf \texttt{192.168.244.10}, die Netzwerkmaske auf \texttt{255.255.255.0} und dsa Gateway auf \texttt{192.169.244.3} gesetzt. Außerdem wurde der Port 8000 und Port 22 freigeben. Port 8000 dient dem Zugriff auf die Website von den beiden anderen Netzen aus und Port 22 erlaubt den SSH-Zugriff des Admin-Pcs. Als Beispiel ist die Port-Freigabe für Port 8000 im \vref{lst:PortFreigabe} zu sehen.
+Nach der Standard-Installation von CentOS 8 Stream wird das Netzwerk der \ac{VM} angepasst. Hier wird die IP-Adresse fest auf \texttt{192.168.244.10}, die Netzwerkmaske auf \texttt{255.255.255.0} und das Gateway auf \texttt{192.169.244.3} gesetzt. Außerdem wird der Port 8000 und Port 22 freigeben. Port 8000 dient dem Zugriff auf die Website von den beiden anderen Netzen aus und Port 22 erlaubt den \ac{SSH}-Zugriff des Admin-Pcs. Als Beispiel ist die Port-Freigabe für Port 8000 im \vref{lst:PortFreigabe} zu sehen.
 
 \begin{lstlisting}[language=bash,caption={Port-Freigabe einer CentOS-Firewall},label={lst:PortFreigabe}]
   # firewall-cmd --zone=public --add-port=8000/tcp --permanent
   # firewall-cmd --reload
 \end{lstlisting}
 
-Abschließend wurde Python3.10 installiert, um das Backend betreiben zu können.
+Abschließend wird Python3.10 installiert, um das Backend betreiben zu können.
 
 
 \subsection{Einrichtung des Backends}
 
-Das Backend wurde mit Python3.10 umgesetzt. Hierfür wurde mit Hilfe von FastAPI eine \ac{API} geschrieben, die verschiedene Routen bereitstellt, mit denen \ac{CRUD}-Anweisungen ausgeführt werden können. Außerdem dient das Backend auch gleich als Server für das Frontend, da es eben dieses bereitstellt.
+Das Backend wird mit Python3.10 umgesetzt. Hierfür wird mit Hilfe von FastAPI eine \ac{API} geschrieben, die verschiedene Routen bereitstellt, mit denen \ac{CRUD}-Anweisungen ausgeführt werden können. Außerdem dient das Backend auch gleich als Server für das Frontend, da es eben dieses bereitstellt.
 
 Die benötigten Pakete können mittels \texttt{pip3.10 requirements.txt} installiert werden.
 
 
 \subsection{Einrichtung des Frontends}
 
-Für das Frontend wurde JavaScript-Softwarebibliothek React verwendet. Hier wurden alle vom Kunden geforderten Anzeige und Bedienelemente implementiert. Da das Frontend bereits nach der Umsetzung gebaut wurde und durch das Backend bereitgestellt wird, müssen keine Pakete installiert werden.
+Für das Frontend wird die JavaScript-Softwarebibliothek React verwendet. Hier werden alle vom Kunden geforderten Anzeige und Bedienelemente implementiert. Da das Frontend bereits nach der Umsetzung gebaut und durch das Backend bereitgestellt wird, müssen keine Pakete installiert werden.
 
 
 
 \section{Soll-Ist-Vergleich}
 
-Der Zustand der abgelieferten Arbeit entspricht dem Soll-Zustand und somit den Kundenwünschen. Es wurden alle Kriterien umgesetzt. Das Firewall-System, DHCP und DNS, Webserver und Datenbanksystem funktionieren einwandfrei.
+Der Zustand der abgelieferten Arbeit entspricht dem Soll-Zustand und somit den Kundenwünschen. Es werden alle Kriterien umgesetzt. Das Firewall-System, DHCP und DNS, Webserver und Datenbanksystem funktionieren einwandfrei.
 
 
 
 \section{Abweichung zum Zeitplanung}
 
-Der ursprüngliche Zeitplan, zu sehen in \vref{fig:GanttKlein}, bzw. \vref{fig:Gantt}, konnte nicht eingehalten werden. Es gab zwei Probleme:
+Der ursprüngliche Zeitplan, zu sehen in \vref{fig:GanttKlein}, bzw. \vref{fig:Gantt}, konnten nicht eingehalten werden. Es gab zwei Probleme:
 
 \begin{itemize}
   \item Die Linux-Clients im IPFire Netz konnten keine Software installieren. \\
@@ -664,7 +665,7 @@ Das aktualisierte Gantt-Diagramm ist in klein in \vref{fig:GanttUpdateKlein} und
 
 \section{Optimierungsvorschläge zur Projektrealisierung}
 
-Das Projektteam IT20/2 Gruppe 7 bestand aus drei Anwendungsentwicklern, was die Sache deutlich erschwert hat. Hier wäre eine Überarbeitung der Gruppeneinteilung von Vorteil gewesen, so dass ein Systemintegrator und ein Anwendungsentwickler ein Team bilden, wodurch sich gewisse Synergieeffekte ergeben könnten.
+Das Projektteam IT20/2 Gruppe 7 besteht aus drei Anwendungsentwicklern, was die Sache deutlich erschwert hat. Hier wäre eine Überarbeitung der Gruppeneinteilung von Vorteil gewesen, so dass ein Team durch einen Systemintegrator und einen Anwendungsentwickler gebildet wird, wodurch sich gewisse Synergieeffekte ergeben könnten.
 
 
 \newpage
