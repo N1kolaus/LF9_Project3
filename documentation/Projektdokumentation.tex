@@ -58,6 +58,7 @@
 \usepackage{bookmark}% Weil das hyperref deutlich verbesser.
 \usepackage{cleveref}
 \crefname{paragraph}{Abschnitt}{Abschnitt}
+\crefname{lstlisting}{Listing}{Listings}
 
 %%% Für Textübergreifende Numerierung %%%
 \usepackage{enumitem}
@@ -230,6 +231,7 @@
 
 \begin{acronym}[DHCP]
   \acro{API}{Application Programming Interface}
+  \acro{CRUD}{create, read, update und delete}
   \acro{DB}{Datenbank}
   \acro{DHCP}{Dynamic Host Configuration Protocol}
   \acro{DNS}{Domain Name System}
@@ -244,9 +246,10 @@
 \ohead{Projekt 3, Lehrjahr 21/22}
 \ihead{\rightmark}
 
-%%% Was muss in ein Pflichtenheft: https://www.vario-software.de/lexikon/pflichtenheft/
 
 \chapter{Pflichtenheft}
+
+
 
 \section{Auftraggeber und Auftragnehmer }
 
@@ -280,9 +283,11 @@ Beim Auftragnehmer handelt es sich um das \textbf{High-Secure GmbH - Projektteam
 \end{table}
 
 
+
 \section{Ausgangslage}
 
 Die existierende Support-Infrastruktur der Gaming-Plattform Doubtful-Joy SE lässt sich über Mail und Telefon kontaktieren. Dabei wird jeder Anruf und jede Mail individuell von einem Mitarbeiter als Ticket gespeichert und in einem zentralen Laufwerk abgelegt. Effizienz, Ordnung und Übersichtlichkeit sind nicht ausreichend vorhanden.
+
 
 
 \section{Projektziel}
@@ -292,6 +297,7 @@ Die Gaming-Plattform Doubtful-Joy SE möchte ihre existierende Support-Infrastru
 Außerdem soll eine Segmentierung der Netzinfrastruktur mit einer sichereren Trennung von öffentlich erreichbaren Diensten und dem Intranet eingerichtet werden. Ebenso sollen die internen Dienste \ac{DNS} und \ac{DHCP} auf einem separatem System bereitgestellt werden, um eine Abhängigkeit von der Firewall auszuschließen.
 
 Doubtful-Joy SE setzt auf RedHat und binärkompatible Systeme, weshalb diese System-Strategie weiterhin umgesetzt werden soll.
+
 
 
 \section{Funktionsspezifikation}
@@ -328,6 +334,7 @@ Von der Realisierung sind betroffen:
 \end{description}
 
 
+
 \section{Datenspezifikation}
 
 Da von etwa 1000 Telefonanrufen  und Emails pro Tag ausgegangen wird, kann dies etwa 1:1 in 1000 Tickets übertragen werden. Der Speicherbedarf pro Ticket wird hier im Schnitt auf etwa \SI{5}{\mega\byte} geschätzt, da wahrscheinlich häufiger Anhänge in Bildform zur besseren Problembeschreibung genutzt werden. Zusätzlich wird davon ausgegangen, dass die Daten zur Sicherheit und Nachvollziehbarkeit für ein Jahr gespeichert werden, wodurch die Datenbank \SI{1830}{\giga\byte} Speicher in einem Jahr benötigt.
@@ -355,6 +362,7 @@ Die Art von Daten sind personenbezogene Daten in Text- und Bildform.
 Der Datenfluss geht vom Clienten zur \ac{DMZ} und zur Bearbeitung dann zum PC des Support-Mitarbeiters, grafisch dargestellt in \vref{fig:Schnittstellenspezifikation}.
 
 
+
 \newpage
 \section{Schnittstellenspezifikation}
 
@@ -364,6 +372,7 @@ Der Datenfluss geht vom Clienten zur \ac{DMZ} und zur Bearbeitung dann zum PC de
   \caption{Schnittstellenspezifikation}
   \label{fig:Schnittstellenspezifikation}
 \end{figure}
+
 
 
 \section{Rahmenbedigungen}
@@ -378,13 +387,15 @@ Der Auftraggeber hat folgende Ressourcen bereitzustellen und Mitwirklungspflicht
 \end{itemize}
 
 
+
 \section{Qualitätsbetrachtung}
 
 Die Arbeitspakete werden stets während der Bearbeitung sowie nach der Fertigstellung auf Funktion und Qualität überprüft.
 
 Wöchentlich werden Meetings abgehalten um den Stand des Projekts zu erörtern und auf eventuell auftretende Probleme zeitnah reagieren zu können.
 
-Die Zeitplanung und damit der Aufwand ist in \vref{fig:Gantt} in kleinem Format und groß in \vref{fig:Gantt} zu sehen.  Für einen langfristigen Support für nach der der Fertigstellung wird ein zusätzliches Angebot vorgelegt.
+Die Zeitplanung und damit der Aufwand ist in \vref{fig:GanttKlein} in kleinem Format und groß in \vref{fig:Gantt} zu sehen.  Für einen langfristigen Support für nach der der Fertigstellung wird ein zusätzliches Angebot vorgelegt.
+
 
 
 \section{Projektplanung}
@@ -407,12 +418,17 @@ Ebenso wird der im Anhang \cpageref{fig:Netzwerkplan} zu betrachtende Netzwerkpl
 \end{figure}
 
 
+
 \section{Kosten-Nutzen-Analyse}
 
 Eine Kosten-Nutzen-Analyse ist zum jetzigen Zeitpunkt nicht notwendig, da der Support erst mal entlastet werden muss. Dies ist durch das neue System auf jeden Fall der Fall, da quasi der Kunde das Ticket erstellt und nicht der Support-Mitarbeiter. Somit kann sich voll auf das Beheben des Problems konzentriert werden.
 
 
+
+
 \chapter{Auswertung und Reflexion}
+
+
 
 \section{Ablaufdokumentation}
 
@@ -427,6 +443,7 @@ Um Maschinen in den verschiedenen Netzen darzustellen wurden vier verschiedene \
   \item \ac{DHCP}-\ac{DNS}-\ac{DB}-Server (grünes Netz)
   \item Webserver (\ac{DMZ}, oranges Netz)
 \end{itemize}
+
 
 
 \section{Einrichtung IPFire}
@@ -465,6 +482,7 @@ bearbeitet werden. Für die Verbindungen zwischen Admin-PC, \ac{DHCP}-\ac{DNS}-\
 Die erste Regel dient der Kommunikation zwischen Webserver (\ac{DMZ}) und Datenbank (grünes Netz), sodass Tickets abgerufen und gespeichert werden können. Damit aus dem grünen Netz der Webserver gestartet und gestoppt werden kann, wurde Regel 2 implementiert. Die Erreichbarkeit des WebInterface der Ticket-Seite durch die Mitarbeiter aus dem grünen Netz wurde mit Regel 3 erreicht. Die letzte Regel erlaubt den Zugriff aus dem Internet auf die Ticket-Website.
 
 
+
 \section{Einrichtung Admin-PC}
 
 Nach der Standard-Installation von CentOS 8 Stream wurden das Netzwerk der \ac{VM} angepasst. Hier wurde der \ac{DNS} auf die IP-Adresse des \ac{DHCP}-\ac{DNS}-\ac{DB}-Servers gesetzt.
@@ -497,10 +515,125 @@ Soll der Webserver gestartet werden, kann dies mittels Navigation in den Ordner,
 \end{figure}
 
 
+
 \section{Einrichtung DHCP-DNS-DB-Server}
 
 
+\subsection{Einrichtung der CentOS-Installation}
+
+
+\subsection{Einrichtung des DHCP und DNS}
+
+Die Funktion des \ac{DNS} kann mittels \texttt{nslookup}, zu sehen in \vref{fig:DNSNslookup}, oder ueber das Aufrufen des Frontends des Webservers, zu sehen in \vref{fig:Frontend}, überprüft werden.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{data/dns-works-nslookup.png}
+  \caption{Überprüfen des DNS mittels Namens}
+  \label{fig:DNSNslookup}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{data/dns-names-working.png}
+  \caption{Aufrufen des Frontends mittels Name}
+  \label{fig:Frontend}
+\end{figure}
+
+
+\subsection{Einrichtung des Datenbank-Servers}
+
+Die Einrichtung eines Datenbank-Servers erfolgte mittels der Anleitung von Aaron Kili. \autocite{tecmint:PostgreSQLAndpgAdmin} Mit dieser wurde PostGreSQL, ein \glqq{}leistungsstarkes, weit verbreitetes, quelloffenes, plattformübergreifendes und fortschrittliches objektrelationales Datenbanksystem\grqq{} \autocite{tecmint:PostgreSQLAndpgAdmin} und pgAdmin, ein \glqq{}fortschrittliches, quelloffenes, voll funktionsfähiges und webbasiertes Verwaltungs- und Managementwerkzeug\grqq{} \autocite{tecmint:PostgreSQLAndpgAdmin}, installiert.
+
+Mittels des WebInterfaces, das pgAdmin bereitstellt, lässt sich eine Datenbank erstellen, zu sehen in \vref{fig:DBErstellung}. Der Name der Datenbank wurde auf \glqq{}tickets\grqq{}, der Benutzername auf \glqq{}ticketadmin\grqq{} und das Passwort auf \glqq{}adminadmin\grqq{} festgelgt.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{data/PostGreSQL-Einrichtung.png}
+  \caption{Einrichtung der Tickets-Datenbank}
+  \label{fig:DBErstellung}
+\end{figure}
+
+Um die Kommunikation zwischen der Datenbank und dem Backend des Webservers zu erlauben, muss der Port 5432 freigegeben werden, zu sehen in \vref{lst:PGPortFreigabe}.
+
+\begin{lstlisting}[language=bash,caption={Port-Freigabe einer CentOS-Firewall},label={lst:PGPortFreigabe}]
+  # firewall-cmd --zone=public --add-port=5432/tcp --permanent
+  # firewall-cmd --reload
+\end{lstlisting}
+
+Ebenso muss die \texttt{postgresql.conf} angepasst werden, so dass ein Zugriff von außerhalb überhaupt möglich ist. \autocite{vitux:PostgreSQL} Dies ist in folgendem \vref{lst:PostGreConfig} zu sehen.
+
+\begin{lstlisting}[language=bash,caption={Einrichtung Zugriff PostGreSQL},label={lst:PostGreConfig}]
+  # nano /var/lib/pgsql/data/postgresql.conf
+  listen_addresses = '*'
+\end{lstlisting}
+
+Da im Front- und Backend Timestamps als Zahlen verwendet werden, muss die Tabelle noch geändert werden, damit kein \texttt{integer-out-of-range}-Fehler geworfen wird. Dies wurde wie in \vref{lst:AlterSQL} umgesetzt.
+
+\begin{lstlisting}[language=SQL,caption={Ändern der tickets-Tabelle},label={lst:AlterSQL}]
+  ALTER TABLE order_detail ALTER COLUMN amount TYPE BIGINT;
+\end{lstlisting}
+
+
+
 \section{Einrichtung Webserver}
+
+
+\subsection{Einrichtung der CentOS-Installation}
+
+Nach der Standard-Installation von CentOS 8 Stream wurden das Netzwerk der \ac{VM} angepasst. Hier wurde die IP-Adresse fest auf \texttt{192.168.244.10}, die Netzwerkmaske auf \texttt{255.255.255.0} und dsa Gateway auf \texttt{192.169.244.3} gesetzt. Außerdem wurde der Port 8000 und Port 22 freigeben. Port 8000 dient dem Zugriff auf die Website von den beiden anderen Netzen aus und Port 22 erlaubt den SSH-Zugriff des Admin-Pcs. Als Beispiel ist die Port-Freigabe für Port 8000 im \vref{lst:PortFreigabe} zu sehen.
+
+\begin{lstlisting}[language=bash,caption={Port-Freigabe einer CentOS-Firewall},label={lst:PortFreigabe}]
+  # firewall-cmd --zone=public --add-port=8000/tcp --permanent
+  # firewall-cmd --reload
+\end{lstlisting}
+
+Abschließend wurde Python3.10 installiert, um das Backend betreiben zu können.
+
+
+\subsection{Einrichtung des Backends}
+
+Das Backend wurde mit Python3.10 umgesetzt. Hierfür wurde mit Hilfe von FastAPI eine \ac{API} geschrieben, die verschiedene Routen bereitstellt, mit denen \ac{CRUD}-Anweisungen ausgeführt werden können. Außerdem dient das Backend auch gleich als Server für das Frontend, da es eben dieses bereitstellt.
+
+Die benötigten Pakete können mittels \texttt{pip3.10 requirements.txt} installiert werden.
+
+
+\subsection{Einrichtung des Frontends}
+
+Für das Frontend wurde JavaScript-Softwarebibliothek React verwendet. Hier wurden alle vom Kunden geforderten Anzeige und Bedienelemente implementiert. Da das Frontend bereits nach der Umsetzung gebaut wurde und durch das Backend bereitgestellt wird, müssen keine Pakete installiert werden.
+
+
+
+\section{Soll-Ist-Vergleich}
+
+Der Zustand der abgelieferten Arbeit entspricht dem Soll-Zustand und somit den Kundenwünschen. Es wurden alle Kriterien umgesetzt. Das Firewall-System, DHCP und DNS, Webserver und Datenbanksystem funktionieren einwandfrei.
+
+
+
+\section{Abweichung zum Zeitplanung}
+
+Der ursprüngliche Zeitplan, zu sehen in \vref{fig:GanttKlein}, bzw. \vref{fig:Gantt}, konnte nicht eingehalten werden. Es gab zwei Probleme:
+
+\begin{itemize}
+  \item Die Linux-Clients im IPFire Netz konnten keine Software installieren. \\
+        Hier wurde vermutet, dass es an der Einrichtung der Firewall-Regeln lag, weswegen eine komplette Neuinstallation vorgenommen wurde. Dies hat unnötig Zeit gefressen. Die Lösung war dann, die System zu Hause einzurichten.
+  \item Durch den Zeitverzug, den das erste Problem mit sich trug, konnte die Dokumentation nicht rechtzeitig fertiggestellt werden.
+\end{itemize}
+
+Das aktualisierte Gantt-Diagramm ist in klein in \vref{fig:GanttUpdateKlein} und groß im Anhang in \vref{fig:GanttUpdate} zu sehen.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{data/Gantt_Abschluss.png}
+  \caption{Gantt-Diagramm}
+  \label{fig:GanttUpdateKlein}
+\end{figure}
+
+
+
+\section{Optimierungsvorschläge zur Projektrealisierung}
+
+Das Projektteam IT20/2 Gruppe 7 bestand aus drei Anwendungsentwicklern, was die Sache deutlich erschwert hat. Hier wäre eine Überarbeitung der Gruppeneinteilung von Vorteil gewesen, so dass ein Systemintegrator und ein Anwendungsentwickler ein Team bilden, wodurch sich gewisse Synergieeffekte ergeben könnten.
 
 
 \newpage
@@ -518,7 +651,8 @@ Soll der Webserver gestartet werden, kann dies mittels Navigation in den Ordner,
 \ihead{Anhang}
 
 
-\chapter{Gantt-Diagramm}
+
+\chapter{Gantt-Diagramme}
 
 \begin{figure}[h!]
   \centering
@@ -526,6 +660,16 @@ Soll der Webserver gestartet werden, kann dies mittels Navigation in den Ordner,
   \caption{Gantt-Diagramm}
   \label{fig:Gantt}
 \end{figure}
+
+\newpage
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[angle=90,origin=c,width=0.75\textwidth]{data/Gantt_Abschluss.png}
+  \caption{Update Gantt-Diagramm}
+  \label{fig:GanttUpdate}
+\end{figure}
+
 
 
 \chapter{Netzwerkplan}
