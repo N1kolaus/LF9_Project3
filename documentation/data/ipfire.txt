@@ -1,0 +1,15 @@
+red nat: 00:50:56:32:BA:0F
+green vmnet 1: 00:50:56:3D:EC:D6
+orange vmnet 2: 00:50:56:3E:56:B7
+
+ipfire
+hostname: ipfire
+domainname: doubtful-joy07.com
+root: adminadmin
+admin: adminadmin
+
+Admin-Pc:
+vmnet 1: 192.168.17.10
+mac: 00:50:56:31:65:0D
+root: adminadmin
+admin: adminadmin
