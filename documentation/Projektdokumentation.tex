@@ -435,9 +435,9 @@ Eine Kosten-Nutzen-Analyse ist zum jetzigen Zeitpunkt nicht notwendig, da der Su
 
 In diesem Projekt werden drei virtuelle Netze eingerichtet, um den Aufbau eines echten Netzwerks zu simulieren. Dabei handelt es sich um das rote Netz, das das Internet wiedergeben soll, das orange Netz, was eine sogenannte \ac{DMZ} darstellt und das grüne Netz, welches das interne Netz darstellt.
 
-Um die Kommunikation und den Zugriff zwischen den Netzen zu regeln wird in diesem Projekt die Firewall verwendet. Somit kann aus dem roten Netz nur mit dem orangen Netz kommunizieren werden, aus dem grünen Netz ist kein Zugriff auf das Internet möglich und zwischen dem orangen und grünen Netz sind nur bestimmte Ports zur Kommunikation und Datenübertragung zugelassen.
+Um die Kommunikation und den Zugriff zwischen den Netzen zu regeln wird in diesem Projekt die Firewall verwendet. Somit kann aus dem roten Netz nur mit dem orangen Netz kommuniziert werden, aus dem grünen Netz ist kein Zugriff auf das Internet möglich und zwischen dem orangen und grünen Netz sind nur bestimmte Ports zur Kommunikation und Datenübertragung zugelassen.
 
-Um Maschinen in den verschiedenen Netzen darzustellen wurden vier verschiedene \acp{VM} aufgesetzt, die bis auf der IPFire auf CentOS 8 Stream basieren:
+Um Maschinen in den verschiedenen Netzen darzustellen wurden vier verschiedene \acp{VM} aufgesetzt, die bis auf die IPFire auf CentOS 8 Stream basieren:
 
 \begin{itemize}
   \item IPFire (als Knotenpunkt für alle drei Netze)
@@ -471,7 +471,7 @@ Die Netzwerke werden wie in \vref{tab:Netzwerk} zu sehen verteilt.
 Als Hostname der Firewall wird \glqq{}ipfire\grqq{} und als Domaine \glqq{}doubtful-joy07.com\grqq{} festgelegt.
 Nach dem Auswählen der Sprache wird aufgrund der Kundenspezifikation das Filesystem \glqq{}ext4 Filesystem\grqq{} ausgewählt. Nach dem Zuweisen der einzelnen Netze mit den IP- und MAC-Adressen wird der \ac{DHCP} deaktiviert, damit es später mit dem \ac{DHCP}-Server im grünen Netz nicht zu Komplikationen führt.
 
-Nach dem Einrichten der Firewall wird aus dem grünen Netz mittels des IPFire-Web"-interfaces verschiedene Einstellungen der Firewall bearbeitet. Für die Verbindungen zwischen Admin-PC, \ac{DHCP}-\ac{DNS}-\ac{DB}-Server und Webserver sowie für die Erreichbarkeit des Webservers aus dem roten Netz werden vier verschiedene Regeln erstellt, die in \vref{fig:FirewallConfig} zu sehen sind.
+Nach dem Einrichten der Firewall werden aus dem grünen Netz mittels des IPFire-Web"-interfaces verschiedene Einstellungen der Firewall bearbeitet. Für die Verbindungen zwischen Admin-PC, \ac{DHCP}-\ac{DNS}-\ac{DB}-Server und Webserver sowie für die Erreichbarkeit des Webservers aus dem roten Netz werden vier verschiedene Regeln erstellt, die in \vref{fig:FirewallConfig} zu sehen sind.
 
 \begin{figure}[htbp]
   \centering
@@ -522,7 +522,7 @@ Soll der Webserver gestartet werden, kann dies mittels Navigation in den Ordner,
 
 \subsection{Einrichtung der CentOS-Installation}
 
-Wie auch der Admin-PC wird der \ac{DHCP}-\ac{DNS}-\ac{DB}-Server mit CentOS 8 Stream eingerichtet. In den Netzwerkeinstellungen wird die IP-Adresse fest auf \texttt{192.168.17.100}, die Netzwerkmaske auf \texttt{255.255.255.0} und dsa Gateway auf \texttt{192.169.17.3} gesetzt. Außerdem werden die Dienste \ac{DNS} und \ac{DHCP} in der Firewall freigegeben, zu sehen in \vref{lst:DienstFreigabe}.
+Wie auch der Admin-PC wird der \ac{DHCP}-\ac{DNS}-\ac{DB}-Server mit CentOS 8 Stream eingerichtet. In den Netzwerkeinstellungen wird die IP-Adresse fest auf \texttt{192.168.17.100}, die Netzwerkmaske auf \texttt{255.255.255.0} und das Gateway auf \texttt{192.169.17.3} gesetzt. Außerdem werden die Dienste \ac{DNS} und \ac{DHCP} in der Firewall freigegeben, zu sehen in \vref{lst:DienstFreigabe}.
 
 \begin{lstlisting}[language=bash,caption={Dienste-Freigabe einer CentOS-Firewall},label={lst:DienstFreigabe}]
   # firewall-cmd --add-service=dns --permanent
