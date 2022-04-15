@@ -1,5 +1,5 @@
 from database_context.db_context import engine
-from fastapi import HTTPException, File, UploadFile, Form, APIRouter
+from fastapi import HTTPException, File, UploadFile, Form, APIRouter, Depends
 from fastapi.responses import FileResponse
 from models.ticket_model import Issue
 from models.update_model import UpdateModel
@@ -8,19 +8,30 @@ from sqlmodel import Session
 from typing import List, Optional
 import logging
 
-from components.database_helpers import (
+from dependencies import get_token_header
+from components.db_issues_helpers import (
     get_all_issues,
     get_single_issue,
     update_single_issue,
 )
 from components.file_system_helpers import save_file
+from components.tags import Tags
 
 logger = logging.getLogger(__name__)
 
 router = APIRouter()
 
 
-@router.post("/api/issues/postIssue")
+router = APIRouter(
+    prefix="/api/issues",
+    tags=[Tags.issues],
+    dependencies=[Depends(get_token_header)],
+    responses={404: {"description": "Not found"}},
+)
+
+
+@router.post("/postIssue", summary="Create an issue.",
+    description="Create an issue with all the information, email, section, title and attachments.", response_model=Issue)
 async def post_issue(
     email: str = Form(...),
     section: str = Form(...),
@@ -60,7 +71,8 @@ async def post_issue(
         return HTTPException(status_code=404, detail="Couldn't save data.")
 
 
-@router.get("/api/issues/allData")
+@router.get("/allData", summary="Get all issues.",
+    description="Get all issues from db.")
 def get_all_tickets():
     logger.info("allData called.")
     issues = get_all_issues()
@@ -68,7 +80,8 @@ def get_all_tickets():
     return {"Issues": issues}
 
 
-@router.get("/api/issues/getData/{id}")
+@router.get("/getData/{id}", summary="Get an issue by its id.",
+    description="Get an issue by its id for further information and the possibility to update.")
 def get_single_ticket(id: int):
     logger.info(f"getData id: {id} called.")
     ticket = get_single_issue(int(id))
@@ -76,7 +89,8 @@ def get_single_ticket(id: int):
     return {"Ticket": ticket}
 
 
-@router.get("/api/issues/getFiles/{timestamp}/{picture}")
+@router.get("/getFiles/{timestamp}/{picture}", summary="Get attachments of an issue.",
+    description="Get the attachmetns of an issue for visualization in the frontend.")
 def return_file(timestamp: str, picture: str):
     try:
         file_path = os.path.join(os.getcwd(), "pictures", timestamp)
@@ -94,7 +108,8 @@ def return_file(timestamp: str, picture: str):
         return HTTPException(status_code=404, detail="Couldn't find requested file.")
 
 
-@router.patch("/api/issues/updateData/{id}", response_model=Issue)
+@router.patch("/updateData/{id}", summary="Update the status of an issue.",
+    description="Being able to update the status of an issue." , response_model=Issue)
 def update_single_ticket(id: int, update: UpdateModel):
     logger.info(f"updateData id: {id} called.")
     ticket = update_single_issue(id, update)
