@@ -9,6 +9,7 @@ from typing import List, Optional
 import logging
 
 from dependencies import get_token_header
+from components.auth_helpers import get_current_active_user
 from components.db_issues_helpers import (
     get_all_issues,
     get_single_issue,
@@ -25,7 +26,7 @@ router = APIRouter()
 router = APIRouter(
     prefix="/api/issues",
     tags=[Tags.issues],
-    dependencies=[Depends(get_token_header)],
+    dependencies=[Depends(get_current_active_user)],
     responses={404: {"description": "Not found"}},
 )
 

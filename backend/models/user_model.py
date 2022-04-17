@@ -5,29 +5,30 @@ from typing import Optional
 class UserBase(SQLModel):
     username: str
     email: Optional[str] = None
-    role: Optional[list[str]] = []
-
-
-class User(UserBase, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
 
 
 class UserCreate(UserBase):
-    pass
+    hashed_password: str
+    role: Optional[str] = "user"
 
 
 class UserRead(UserBase):
     id: int
+    role: str
 
 
 class UserUpdate(SQLModel):
     username: Optional[str] = None
     email: Optional[str] = None
     role: Optional[str] = None
+    old_password: Optional[str] = None
+    new_password: Optional[str] = None
 
 
-class UserInDb(UserBase):
+class UserInDb(UserBase, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
     hashed_password: str
+    role: str
 
 
 class UserIn(UserBase):
@@ -35,4 +36,4 @@ class UserIn(UserBase):
 
 
 class UserOut(UserBase):
-    pass
+    role: str
