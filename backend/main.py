@@ -1,23 +1,14 @@
 from database_context.db_context import create_db_and_tables
-from fastapi import FastAPI, Request, Depends, HTTPException, status
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import logging
 import uvicorn
-from jose import JWTError, jwt
 from passlib.context import CryptContext
-from datetime import datetime, timedelta
 
 from routes import auth, issues, users
-from models.user_model import UserBase, UserInDb, UserIn, UserOut
-from components.auth_helpers import get_current_active_user, create_new_user
-from models.token import Token, TokenData
-from components.auth_helpers import authenticate_user, create_access_token
-from library.oauth2_scheme import oauth2_scheme
-
 
 logging.basicConfig(filename="./logs/log.txt", encoding="utf-8", level=logging.DEBUG)
 logger = logging.getLogger("main")

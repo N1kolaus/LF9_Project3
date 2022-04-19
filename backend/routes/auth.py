@@ -3,10 +3,9 @@ from fastapi.security import OAuth2PasswordRequestForm
 from datetime import timedelta
 import logging
 
-from dependencies import get_token_header
-from components.tags import Tags
-from models.user_model import UserIn, UserOut, UserBase, UserUpdate
-from components.auth_helpers import authenticate_user, create_access_token, create_new_user,get_current_active_user, update_user_in_db
+from components.schemas.tags import Tags
+from models.user_model import UserIn, UserOut
+from components.helpers.auth_helpers import authenticate_user, create_access_token, create_new_user
 from models.token import Token
 
 

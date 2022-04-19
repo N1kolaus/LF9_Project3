@@ -39,7 +39,7 @@ dist/
 downloads/
 eggs/
 .eggs/
-library/
+components/schemas/
 lib64/
 parts/
 sdist/

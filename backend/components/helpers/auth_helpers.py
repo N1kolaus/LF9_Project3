@@ -1,5 +1,4 @@
 from fastapi import Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer
 from sqlmodel import Session, select
 from passlib.context import CryptContext
 from jose import JWTError, jwt
@@ -9,7 +8,7 @@ from typing import Optional
 from models.token import TokenData
 from database_context.db_context import engine
 from models.user_model import UserBase, UserInDb, UserIn, UserUpdate
-from library.oauth2_scheme import oauth2_scheme
+from components.schemas.oauth2_scheme import oauth2_scheme
 
 
 

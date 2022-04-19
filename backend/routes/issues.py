@@ -8,15 +8,14 @@ from sqlmodel import Session
 from typing import List, Optional
 import logging
 
-from dependencies import get_token_header
-from components.auth_helpers import get_current_active_user
-from components.db_issues_helpers import (
+from components.helpers.auth_helpers import get_current_active_user
+from components.helpers.db_issues_helpers import (
     get_all_issues,
     get_single_issue,
     update_single_issue,
 )
-from components.file_system_helpers import save_file
-from components.tags import Tags
+from components.helpers.file_system_helpers import save_file
+from components.schemas.tags import Tags
 
 logger = logging.getLogger(__name__)
 

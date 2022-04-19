@@ -1,15 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordRequestForm
-from datetime import timedelta
 import logging
 
-from dependencies import get_token_header
-from components.tags import Tags
-from models.user_model import UserIn, UserOut, UserBase, UserUpdate
-from components.auth_helpers import authenticate_user, create_access_token, create_new_user, get_current_user, get_current_active_user, update_user_in_db
-from models.token import Token
-from library.oauth2_scheme import oauth2_scheme
-
+from components.schemas.tags import Tags
+from models.user_model import UserOut, UserBase, UserUpdate
+from components.helpers.auth_helpers import get_current_active_user, update_user_in_db
 
 # to get a string like this run:
 # openssl rand -hex 32
