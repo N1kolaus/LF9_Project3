@@ -17,11 +17,11 @@ def get_single_issue(id: int):
         return ticket.first()
 
 
-def update_single_issue(id: int, update: IssueUpdate):
+def update_single_issue(id: int, update: bool):
     with Session(engine) as session:
         results = session.exec(select(IssueInDb).where(IssueInDb.id == id))
         ticket = results.one()
-        ticket.solved = update.solved
+        ticket.solved = update
         session.add(ticket)
         session.commit()
         session.refresh(ticket)

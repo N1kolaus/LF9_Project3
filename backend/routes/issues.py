@@ -1,8 +1,7 @@
 from database_context.db_context import engine
 from fastapi import HTTPException, File, UploadFile, Form, APIRouter, Depends
 from fastapi.responses import FileResponse
-from models.ticket_model import IssueOut, IssueInDb
-from models.update_model import UpdateModel
+from models.ticket_model import IssueOut, IssueInDb, IssueUpdate
 import os
 from sqlmodel import Session
 from typing import List, Optional
@@ -18,8 +17,6 @@ from components.helpers.file_system_helpers import save_file
 from components.schemas.tags import Tags
 
 logger = logging.getLogger(__name__)
-
-router = APIRouter()
 
 
 router = APIRouter(
@@ -132,7 +129,7 @@ def return_file(timestamp: str, picture: str):
     description="Being able to update the status of an issue.",
     response_model=IssueOut,
 )
-def update_single_ticket(id: int, update: UpdateModel):
+def update_single_ticket(id: int, update: bool):
     logger.info(f"updateData id: {id} called.")
     ticket = update_single_issue(id, update)
 
