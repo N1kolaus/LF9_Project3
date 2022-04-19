@@ -45,12 +45,16 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
     user = get_user(username=token_data.username)
     if user is None:
         raise credentials_exception
+
     return user
 
 
 def create_new_user(user_in: UserIn):
+    if get_user(user_in.username):
+        raise Exception("username already taken!")
+
     hashed_password = get_password_hash(user_in.password)
-    user_create = UserInDb(**user_in.dict(), hashed_password=hashed_password)
+    user_create = UserInDb(**user_in.dict(), hashed_password=hashed_password, role="user")
 
     with Session(engine) as session:
         session.add(user_create)
@@ -78,6 +82,7 @@ def authenticate_user(username: str, password: str):
         return False
     if not verify_password(password, user.hashed_password):
         return False
+
     return user
 
 
@@ -89,6 +94,19 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
         expire = datetime.utcnow() + timedelta(minutes=15)
     to_encode.update({"exp": expire})
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+
+    return encoded_jwt
+
+
+def create_refresh_token(data: str, expires_delta: Optional[timedelta] = None):
+    to_encode = jwt.decode(data, SECRET_KEY)
+    if expires_delta:
+        expire = datetime.utcnow() + expires_delta
+    else:
+        expire = datetime.utcnow() + timedelta(minutes=15)
+    to_encode.update({"exp": expire})
+    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+
     return encoded_jwt
 
 
@@ -100,7 +118,10 @@ def update_user_in_db(username: str, user_update: UserUpdate):
         if not user:
             raise Exception("user does not exist.")
 
-        user = update_user(user, user_update)
+        try:
+            user = update_user(user, user_update)
+        except Exception as exception:
+            raise Exception(exception)
 
         session.add(user)
         session.commit()
@@ -125,6 +146,6 @@ def update_user(user: UserInDb, user_update: UserUpdate):
         if verify_password(user_update.old_password, user.hashed_password):
             user.hashed_password = get_password_hash(user_update.new_password)
         else:
-            raise Exception("Old passwort incorrect.")
+            raise Exception("old passwort incorrect.")
 
     return user

@@ -33,8 +33,8 @@ async def patch_user(user_update: UserUpdate, current_user: UserBase = Depends(g
         user = update_user_in_db(current_user.username, user_update)
     except Exception as exception:
         raise HTTPException(
-        status_code=status.HTTP_404_NOT_FOUND,
-        detail=exception,
+        status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+        detail=str(exception),
         headers={"WWW-Authenticate": "Bearer"},
     )
 

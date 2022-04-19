@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
-from datetime import timedelta
+from datetime import datetime, timedelta
 import logging
 
 from components.schemas.tags import Tags
 from models.user_model import UserIn, UserOut
-from components.helpers.auth_helpers import authenticate_user, create_access_token, create_new_user
+from components.helpers.auth_helpers import authenticate_user, create_access_token, create_new_user, create_refresh_token
 from models.token import Token
 
 
@@ -38,12 +38,27 @@ async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(
     access_token = create_access_token(
         data={"sub": user.username}, expires_delta=access_token_expires
     )
+
     return {"access_token": access_token, "token_type": "bearer"}
+
+
+@router.post("/refresh_token", response_model=Token)
+async def refresh_access_token(form_data):
+    refreshed_token = create_refresh_token(form_data)
+
+    return {"access_token": refreshed_token, "token_type": "bearer"}
 
 
 @router.post("/user/", response_model=UserOut)
 async def create_user(user_in: UserIn):
-    user_saved = create_new_user(user_in)
-    return user_saved
+    try:
+        user_saved = create_new_user(user_in)
+        return user_saved
+    except Exception as exception:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail=str(exception),
+            headers={"WWW-Authenticate": "Bearer"},
+        )
 
 
