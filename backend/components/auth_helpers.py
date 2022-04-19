@@ -9,7 +9,7 @@ from typing import Optional
 from models.token import TokenData
 from database_context.db_context import engine
 from models.user_model import UserBase, UserInDb, UserIn, UserUpdate
-from lib.oauth2_scheme import oauth2_scheme
+from library.oauth2_scheme import oauth2_scheme
 
 
 

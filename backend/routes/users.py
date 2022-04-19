@@ -8,7 +8,7 @@ from components.tags import Tags
 from models.user_model import UserIn, UserOut, UserBase, UserUpdate
 from components.auth_helpers import authenticate_user, create_access_token, create_new_user, get_current_user, get_current_active_user, update_user_in_db
 from models.token import Token
-from lib.oauth2_scheme import oauth2_scheme
+from library.oauth2_scheme import oauth2_scheme
 
 
 # to get a string like this run:

@@ -16,7 +16,7 @@ from models.user_model import UserBase, UserInDb, UserIn, UserOut
 from components.auth_helpers import get_current_active_user, create_new_user
 from models.token import Token, TokenData
 from components.auth_helpers import authenticate_user, create_access_token
-from lib.oauth2_scheme import oauth2_scheme
+from library.oauth2_scheme import oauth2_scheme
 
 
 logging.basicConfig(filename="./logs/log.txt", encoding="utf-8", level=logging.DEBUG)
