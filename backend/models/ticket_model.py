@@ -2,8 +2,8 @@ from typing import Optional
 from sqlmodel import Field, SQLModel
 
 
-class Issue(SQLModel, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
+class IssueBase(SQLModel):
+    username: str
     email: str
     section: str
     title: str
@@ -11,3 +11,19 @@ class Issue(SQLModel, table=True):
     attachments: str
     solved: bool
     timestamp: int
+
+
+class IssueInDb(IssueBase, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+
+
+class IssueIn(IssueBase):
+    pass
+
+
+class IssueOut(IssueBase):
+    id: int
+
+
+class IssueUpdate(IssueBase):
+    pass

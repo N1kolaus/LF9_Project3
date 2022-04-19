@@ -47,8 +47,12 @@ def on_startup():
     logger.info("DB created.")
 
 
-@app.get("/", summary="Serve main site.",
-    description="Serve main website with all the necessary routes for getting, posting and updating issues.", response_class=HTMLResponse)
+@app.get(
+    "/",
+    summary="Serve main site.",
+    description="Serve main website with all the necessary routes for getting, posting and updating issues.",
+    response_class=HTMLResponse,
+)
 async def serve_spa(request: Request):
     logger.info("Frontend called.")
     return templates.TemplateResponse("index.html", {"request": request})

@@ -11,7 +11,6 @@ from models.user_model import UserBase, UserInDb, UserIn, UserUpdate
 from components.schemas.oauth2_scheme import oauth2_scheme
 
 
-
 # to get a string like this run:
 # openssl rand -hex 32
 SECRET_KEY = "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
@@ -54,7 +53,9 @@ def create_new_user(user_in: UserIn):
         raise Exception("username already taken!")
 
     hashed_password = get_password_hash(user_in.password)
-    user_create = UserInDb(**user_in.dict(), hashed_password=hashed_password, role="user")
+    user_create = UserInDb(
+        **user_in.dict(), hashed_password=hashed_password, role="user"
+    )
 
     with Session(engine) as session:
         session.add(user_create)

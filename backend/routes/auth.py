@@ -1,11 +1,16 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
-from datetime import datetime, timedelta
+from datetime import timedelta
 import logging
 
 from components.schemas.tags import Tags
 from models.user_model import UserIn, UserOut
-from components.helpers.auth_helpers import authenticate_user, create_access_token, create_new_user, create_refresh_token
+from components.helpers.auth_helpers import (
+    authenticate_user,
+    create_access_token,
+    create_new_user,
+    create_refresh_token,
+)
 from models.token import Token
 
 
@@ -24,6 +29,7 @@ router = APIRouter(
     # dependencies=[Depends(get_token_header)],
     responses={404: {"description": "Not found"}},
 )
+
 
 @router.post("/token", response_model=Token)
 async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
@@ -60,5 +66,3 @@ async def create_user(user_in: UserIn):
             detail=str(exception),
             headers={"WWW-Authenticate": "Bearer"},
         )
-
-
