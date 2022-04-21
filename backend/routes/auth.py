@@ -11,7 +11,7 @@ from components.helpers.auth_helpers import (
     create_new_user,
     create_refresh_token,
 )
-from models.token import Token
+from models.token_model import Token
 
 
 # to get a string like this run:

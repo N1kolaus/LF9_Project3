@@ -5,7 +5,7 @@ from jose import JWTError, jwt
 from datetime import datetime, timedelta
 from typing import Optional
 
-from models.token import TokenData
+from models.token_model import TokenData
 from database_context.db_context import engine
 from models.user_model import UserBase, UserInDb, UserIn, UserUpdate
 from components.schemas.oauth2_scheme import oauth2_scheme

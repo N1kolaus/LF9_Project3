@@ -1,20 +1,22 @@
 from database_context.db_context import engine
-from fastapi import HTTPException, File, UploadFile, Form, APIRouter, Depends
+from fastapi import HTTPException, File, UploadFile, Form, APIRouter, Depends, status
 from fastapi.responses import FileResponse
-from models.ticket_model import IssueOut, IssueInDb, IssueUpdate
+from models.ticket_model import IssueOut, IssueInDb
 import os
 from sqlmodel import Session
 from typing import List, Optional
 import logging
 
 from components.helpers.auth_helpers import get_current_active_user
-from components.helpers.db_issues_helpers import (
+from components.helpers.issues_helpers import (
     get_all_issues,
     get_single_issue,
+    get_issues_with_username,
     update_single_issue,
 )
 from components.helpers.file_system_helpers import save_file
 from components.schemas.tags import Tags
+from models.user_model import UserRead
 
 logger = logging.getLogger(__name__)
 
@@ -76,26 +78,46 @@ async def post_issue(
 
 @router.get(
     "/allData",
-    summary="Get all issues.",
+    summary="Get all issues for specific user / all for admins.",
     description="Get all issues from db.",
     response_model=list[IssueOut],
 )
-def get_all_tickets():
-    logger.info("allData called.")
-    issues = get_all_issues()
+async def get_all_tickets(user: UserRead = Depends(get_current_active_user)):
+    logger.info(f"get users issues username: {user.username} called.")
+    issues = []
+
+    if user.role == "user":
+        issues = await get_issues_with_username(user.username)
+    elif user.role == "admin":
+        issues = await get_all_issues()
 
     return issues
 
 
 @router.get(
-    "/getData/{id}",
+    "/getData/{issue_id}",
     summary="Get an issue by its id.",
     description="Get an issue by its id for further information and the possibility to update.",
     response_model=IssueOut,
 )
-def get_single_ticket(id: int):
-    logger.info(f"getData id: {id} called.")
-    ticket = get_single_issue(int(id))
+async def get_single_ticket(
+    issue_id: int, user: UserRead = Depends(get_current_active_user)
+):
+    logger.info(f"getData id: {issue_id} called.")
+    try:
+        ticket = await get_single_issue(int(issue_id), user)
+    except FileNotFoundError as e:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=str(e),
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    except PermissionError as e:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail=str(e),
+            headers={"WWW-Authenticate": "Bearer"},
+        )
 
     return ticket
 
@@ -103,34 +125,54 @@ def get_single_ticket(id: int):
 @router.get(
     "/getFiles/{timestamp}/{picture}",
     summary="Get attachments of an issue.",
-    description="Get the attachmetns of an issue for visualization in the frontend.",
+    description="Get the attachments of an issue for visualization in the frontend.",
     response_class=FileResponse,
 )
-def return_file(timestamp: str, picture: str):
+async def return_file(timestamp: str, picture: str):
     try:
         file_path = os.path.join(os.getcwd(), "pictures", timestamp)
 
+        if not os.path.exists(file_path):
+            raise FileNotFoundError(f"there no file with name: {picture}")
+
         if picture.split(".")[-1] == "png":
             file_path = os.path.join(file_path, picture)
-
-            return FileResponse(file_path)
         else:
             file_path = os.path.join(file_path, picture)
-
-            return FileResponse(file_path)
-    except Exception as e:
+    except FileNotFoundError as e:
         logger.debug(f"Couldn't find file: {str(e)}")
-        return HTTPException(status_code=404, detail="Couldn't find requested file.")
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"couldn't find requested file {picture}",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+
+    return FileResponse(file_path)
 
 
 @router.patch(
-    "/updateData/{id}",
+    "/updateData/{issue_id}",
     summary="Update the status of an issue.",
     description="Being able to update the status of an issue.",
     response_model=IssueOut,
 )
-def update_single_ticket(id: int, update: bool):
-    logger.info(f"updateData id: {id} called.")
-    ticket = update_single_issue(id, update)
+async def update_single_ticket(
+    issue_id: int, update: bool, user: UserRead = Depends(get_current_active_user)
+):
+    logger.info(f"updateData id: {issue_id} called.")
+    try:
+        ticket = update_single_issue(issue_id, update, user)
+    except FileNotFoundError as e:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=str(e),
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    except PermissionError as e:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail=str(e),
+            headers={"WWW-Authenticate": "Bearer"},
+        )
 
     return ticket
