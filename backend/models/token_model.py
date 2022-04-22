@@ -9,3 +9,10 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     username: Optional[str] = None
+
+
+class TokenOut(BaseModel):
+    access_token: str
+    token_type: str
+    username: Optional[str] = None
+    role: Optional[str] = None

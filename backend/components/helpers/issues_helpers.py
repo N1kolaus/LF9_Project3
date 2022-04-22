@@ -39,6 +39,7 @@ async def update_single_issue(issue_id: int, update: bool, user: UserRead):
 
         if ticket is None:
             raise FileNotFoundError(f"there is no ticket with id: {issue_id}")
+
         if user.username != ticket.username and user.role != "admin":
             raise PermissionError("user is not admin and not creator of ticket.")
 

@@ -5,6 +5,7 @@ import axios from "axios";
 import Card from "../ui/Card";
 import classes from "./SingleTicket.module.css";
 import LoadingSpinner from "../helpers/loading-spinner";
+import { getSingleIssue } from "../helpers/api-calls";
 
 const SingleTicket = () => {
     const { id } = useParams();
@@ -17,10 +18,21 @@ const SingleTicket = () => {
 
     const handleOnButtonClick = () => {
         axios
-            .patch(`http://${currentDomain}:8000/api/updateData/${id}`, {
-                id: id,
-                solved: !solvedStatus,
-            })
+            .patch(
+                `http://${currentDomain}:8000/api/issues/updateData/${id}?update=${!solvedStatus}`,
+                JSON.stringify({
+                    issue_id: parseInt(id),
+                    update: !solvedStatus,
+                }),
+                {
+                    headers: {
+                        Authorization: `Bearer ${
+                            JSON.parse(sessionStorage.getItem("auth"))
+                                .access_token
+                        }`,
+                    },
+                }
+            )
             .then((response) => {
                 setData(response.data);
                 setSolvedStatus(!solvedStatus);
@@ -38,50 +50,14 @@ const SingleTicket = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        axios
-            .get(`http://${currentDomain}:8000/api/getData/${id}`)
-            .then((response) => {
-                setData(response.data.Ticket);
-                setSolvedStatus(response.data.Ticket.solved);
-                return response.data.Ticket;
-            })
-            .then((ticket) => {
-                setImages([]);
-                const attachments = ticket.attachments.split(", ");
-                const timestamp = ticket.timestamp;
-
-                if (attachments[0] !== "no attachments") {
-                    attachments.forEach((image) => {
-                        axios
-                            .get(
-                                `http://${currentDomain}:8000/api/getFiles/${timestamp}/${image}`,
-                                {
-                                    responseType: "arraybuffer",
-                                }
-                            )
-                            .then((response) => {
-                                let blob = new Blob([response.data], {
-                                    type: response.headers["content-type"],
-                                });
-                                let image = URL.createObjectURL(blob);
-                                setImages((oldImages) => [...oldImages, image]);
-                            })
-                            .catch((err) => {
-                                console.log(err);
-                                toast.error(
-                                    "Daten konnten nicht abgerufen werden. 😞"
-                                );
-                            });
-                    });
-                }
-
-                setIsLoading(false);
-            })
-            .catch((err) => {
-                console.log(err);
-                toast.error("Daten konnten nicht abgerufen werden. 😞");
-                setIsLoading(false);
-            });
+        getSingleIssue(
+            currentDomain,
+            setData,
+            setSolvedStatus,
+            setIsLoading,
+            setImages,
+            id
+        );
     }, [currentDomain, id, setSolvedStatus]);
 
     if (isLoading) {

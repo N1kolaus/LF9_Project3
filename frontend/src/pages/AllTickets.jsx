@@ -3,6 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import TicketsList from "../components/tickets/TicketsList";
 import LoadingSpinner from "../components/helpers/loading-spinner";
+import { getAllData } from "../components/helpers/api-calls";
 
 const AllTicketsPage = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -12,16 +13,7 @@ const AllTicketsPage = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        axios
-            .get(`http://${currentDomain}:8000/api/allData`)
-            .then((response) => {
-                setData(response.data.Issues);
-                setIsLoading(false);
-            })
-            .catch((err) => {
-                toast.error("Daten konnten nicht abgerufen werden. 😞");
-                setIsLoading(false);
-            });
+        getAllData(currentDomain, setData, setIsLoading);
     }, [currentDomain]);
 
     if (isLoading) {

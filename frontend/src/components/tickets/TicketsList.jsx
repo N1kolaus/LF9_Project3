@@ -2,6 +2,8 @@ import Ticket from "./Ticket";
 import classes from "./TicketsList.module.css";
 
 const TicketsList = (props) => {
+    console.log(props);
+
     if (props.tickets.length > 0) {
         return (
             <ul className={classes.list}>

@@ -11,7 +11,7 @@ from components.helpers.auth_helpers import (
     create_new_user,
     create_refresh_token,
 )
-from models.token_model import Token
+from models.token_model import Token, TokenOut
 
 
 # to get a string like this run:
@@ -31,7 +31,7 @@ router = APIRouter(
 )
 
 
-@router.post("/token", response_model=Token)
+@router.post("/token", response_model=TokenOut)
 async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
     user = authenticate_user(form_data.username, form_data.password)
     if not user:
@@ -45,7 +45,12 @@ async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(
         data={"sub": user.username}, expires_delta=access_token_expires
     )
 
-    return {"access_token": access_token, "token_type": "bearer"}
+    return {
+        "access_token": access_token,
+        "token_type": "bearer",
+        "username": user.username,
+        "role": user.role,
+    }
 
 
 @router.post("/refresh_token", response_model=Token)

@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 router = APIRouter(
     prefix="/api/issues",
     tags=[Tags.issues],
-    dependencies=[Depends(get_current_active_user)],
+    # dependencies=[Depends(get_current_active_user)],
     responses={404: {"description": "Not found"}},
 )
 
@@ -103,6 +103,8 @@ async def get_all_tickets(user: UserRead = Depends(get_current_active_user)):
 async def get_single_ticket(
     issue_id: int, user: UserRead = Depends(get_current_active_user)
 ):
+    print(user)
+
     logger.info(f"getData id: {issue_id} called.")
     try:
         ticket = await get_single_issue(int(issue_id), user)
@@ -161,7 +163,7 @@ async def update_single_ticket(
 ):
     logger.info(f"updateData id: {issue_id} called.")
     try:
-        ticket = update_single_issue(issue_id, update, user)
+        ticket = await update_single_issue(issue_id, update, user)
     except FileNotFoundError as e:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
