@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
-import { toast } from "react-toastify";
 import TicketsList from "../components/tickets/TicketsList";
 import LoadingSpinner from "../components/helpers/loading-spinner";
 import { getAllData } from "../components/helpers/api-calls";

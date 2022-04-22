@@ -1,9 +1,21 @@
-import { useState, useEffect, useContext } from "react";
-import { Navigate, Outlet } from "react-router-dom";
+import { useEffect, useContext } from "react";
+import { Navigate, Outlet, useNavigate } from "react-router-dom";
 import AuthContext from "../components/auth/auth-context";
 
-const ProtectedRoute = ({ redirectPath = "/", children }) => {
+const ProtectedRoute = ({ redirectPath = "/login", children }) => {
     const { user, setUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const auth = sessionStorage.getItem("auth");
+
+        if (!auth) {
+            setUser(null);
+            navigate("/login");
+        }
+
+        setUser(JSON.parse(auth));
+    }, [navigate, setUser]);
 
     if (!user) {
         return <Navigate to={redirectPath} replace />;

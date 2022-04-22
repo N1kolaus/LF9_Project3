@@ -10,7 +10,14 @@ const config = () => ({
     },
 });
 
-export const handleLogin = async (username, password, currentDomain) => {
+export const handleLogin = async (
+    username,
+    password,
+    currentDomain,
+    navigate,
+    setUser,
+    setError
+) => {
     const getClientCredentials = oauth.client(axios.create(), {
         url: `http://${currentDomain}:8000/api/auth/token`,
         grant_type: "",
@@ -22,10 +29,11 @@ export const handleLogin = async (username, password, currentDomain) => {
     try {
         const auth = await getClientCredentials();
         sessionStorage.setItem("auth", JSON.stringify(auth));
-
-        return { user: auth };
+        setUser(auth);
+        navigate("/all");
     } catch (error) {
-        return { error: error };
+        setUser(null);
+        setError(error);
     }
 };
 
@@ -33,19 +41,30 @@ export const handleSignUp = async (
     username,
     email,
     password,
-    currentDomain
+    currentDomain,
+    navigate,
+    setError
 ) => {
-    const signUp = axios.post(`http://${currentDomain}:8000/api/auth/user`, {
-        username,
-        email,
-        password,
-    });
-
-    return { user: signUp };
+    const signUp = axios
+        .post(`http://${currentDomain}:8000/api/auth/user`, {
+            username,
+            email,
+            password,
+        })
+        .then((response) => {
+            toast.success("Nutzer wurde angelegt. Ab zum Login! 😊");
+            navigate("/login");
+        })
+        .catch((error) => {
+            toast.error("Nutzer konnte nicht angelegt werden. 😞");
+            setError(signUp);
+            console.log(error);
+        });
 };
 
 export const handleLogout = () => {
     sessionStorage.removeItem("auth");
+    window.location = "/login";
 };
 
 export const getAllData = (currentDomain, setData, setIsLoading) => {
@@ -55,9 +74,12 @@ export const getAllData = (currentDomain, setData, setIsLoading) => {
             setData(response.data);
             setIsLoading(false);
         })
-        .catch((err) => {
+        .catch((error) => {
             toast.error("Daten konnten nicht abgerufen werden. 😞");
             setIsLoading(false);
+            if (error.response?.status === 401) {
+                handleLogout();
+            }
         });
 };
 
@@ -70,9 +92,14 @@ export const getSingleIssue = (
     id
 ) => {
     return axios
-        .get(`http://${currentDomain}:8000/api/issues/getData/${id}`, config())
+        .get(`http://${currentDomain}:8000/api/issues/getData/${id}`, {
+            headers: {
+                Authorization: `Bearer ${
+                    JSON.parse(sessionStorage.getItem("auth")).access_token
+                }`,
+            },
+        })
         .then((response) => {
-            console.log(response);
             setData(response.data);
             setSolvedStatus(response.data.solved);
             return response.data;
@@ -84,36 +111,22 @@ export const getSingleIssue = (
 
             if (attachments[0] !== "no attachments") {
                 attachments.forEach((image) => {
-                    axios
-                        .get(
-                            `http://${currentDomain}:8000/api/issues/getFiles/${timestamp}/${image}`,
-                            config(),
-                            {
-                                responseType: "arraybuffer",
-                            }
-                        )
-                        .then((response) => {
-                            let blob = new Blob([response.data], {
-                                type: response.headers["content-type"],
-                            });
-                            let image = URL.createObjectURL(blob);
-                            setImages((oldImages) => [...oldImages, image]);
-                        })
-                        .catch((err) => {
-                            console.log(err);
-                            toast.error(
-                                "Attachments konnte nicht geladen werden. 😞"
-                            );
-                        });
+                    const img =
+                        (`http://${currentDomain}:8000/api/issues/getFiles/${timestamp}/${image}`,
+                        config());
+                    setImages((oldImages) => [...oldImages, img]);
                 });
             }
 
             setIsLoading(false);
         })
-        .catch((err) => {
-            console.log(err);
+        .catch((error) => {
+            console.log(error);
             toast.error("Daten konnten nicht abgerufen werden. 😞");
             setIsLoading(false);
+            if (error.response?.status === 401) {
+                handleLogout();
+            }
         });
 };
 
@@ -126,7 +139,11 @@ export const updateSingleIssue = (
 ) => {
     return axios
         .patch(
-            `http://${currentDomain}:8000/api/issues/updateData/${id}?update=${solvedStatus}`,
+            `http://${currentDomain}:8000/api/issues/updateData/${id}?update=${!solvedStatus}`,
+            JSON.stringify({
+                issue_id: parseInt(id),
+                update: !solvedStatus,
+            }),
             config()
         )
         .then((response) => {
@@ -138,8 +155,30 @@ export const updateSingleIssue = (
                 } `
             );
         })
-        .catch((err) => {
-            console.log(err.response);
+        .catch((error) => {
+            console.log(error);
             toast.error("Ticket konnte nicht bearbeitet werden. 😞");
+            if (error.response?.status === 401) {
+                handleLogout();
+            }
+        });
+};
+
+export const postIssue = (currentDomain, ticketData, navigate) => {
+    return axios
+        .post(
+            `http://${currentDomain}:8000/api/issues/postIssue`,
+            ticketData,
+            config()
+        )
+        .then((response) => {
+            toast.success("Daten erfolgreich gespeichert. 😊");
+            navigate(`/tickets/${response.data.id}`);
+        })
+        .catch((error) => {
+            toast.error("Daten konnten nicht gesendet werden. 😞");
+            if (error.response?.status === 401) {
+                handleLogout();
+            }
         });
 };

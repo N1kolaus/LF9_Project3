@@ -6,11 +6,11 @@ import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "./auth-context";
 
 const LoginForm = (props) => {
-    const { user, setUser } = useContext(AuthContext);
+    const { setUser } = useContext(AuthContext);
     const [error, setError] = useState("");
     const usernameInputRef = useRef();
     const passwordInputRef = useRef();
-    const router = useNavigate();
+    const navigate = useNavigate();
 
     const currentDomain = window.location.hostname;
 
@@ -23,19 +23,14 @@ const LoginForm = (props) => {
             password: passwordInputRef.current.value,
         };
 
-        const login = await handleLogin(
+        await handleLogin(
             loginData.username,
             loginData.password,
-            currentDomain
+            currentDomain,
+            navigate,
+            setUser,
+            setError
         );
-
-        if ("user" in login) {
-            setUser(login.user);
-            router("/all");
-        } else {
-            setError(login);
-            console.log(login);
-        }
     };
 
     return (

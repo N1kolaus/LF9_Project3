@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import Layout from "./layout/Layout";
 import NewTicket from "./pages/NewTicket";
 import AllTicketsPage from "./pages/AllTickets";
@@ -12,15 +12,9 @@ import ProtectedRoute from "./router/ProtectedRoute";
 import AuthContext from "./components/auth/auth-context";
 
 function App() {
-    const [user, setUser] = useState(null);
-
-    useEffect(() => {
-        const auth = sessionStorage.getItem("auth");
-
-        if (auth) {
-            setUser(JSON.parse(auth));
-        }
-    }, [setUser]);
+    const [user, setUser] = useState(
+        JSON.parse(sessionStorage.getItem("auth"))
+    );
 
     return (
         <AuthContext.Provider value={{ user, setUser }}>

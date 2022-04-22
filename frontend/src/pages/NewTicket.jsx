@@ -1,23 +1,14 @@
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import axios from "axios";
 import NewTicketForm from "../components/tickets/NewTicketForm";
+import { postIssue } from "../components/helpers/api-calls";
 
 const NewTicket = () => {
     const navigate = useNavigate();
 
     const currentDomain = window.location.hostname;
 
-    const handleNewTicket = (ticketData) => {
-        axios
-            .post(`http://${currentDomain}:8000/api/postIssue`, ticketData)
-            .then((response) => {
-                toast.success("Daten erfolgreich gespeichert. 😊");
-                navigate("/");
-            })
-            .catch((err) => {
-                toast.error("Daten konnten nicht gesendet werden. 😞");
-            });
+    const handleNewTicket = async (ticketData) => {
+        await postIssue(currentDomain, ticketData, navigate);
     };
 
     return (

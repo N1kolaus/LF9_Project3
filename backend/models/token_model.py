@@ -15,4 +15,5 @@ class TokenOut(BaseModel):
     access_token: str
     token_type: str
     username: Optional[str] = None
+    email: Optional[str] = None
     role: Optional[str] = None

@@ -1,16 +1,15 @@
-import { useRef, useState, useContext } from "react";
+import { useRef, useState } from "react";
 import Card from "../ui/Card";
 import classes from "./LoginForm.module.css";
 import { handleSignUp } from "../helpers/api-calls";
 import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 
 const SignUpForm = (props) => {
     const [error, setError] = useState("");
     const usernameInputRef = useRef();
     const passwordInputRef = useRef();
     const emailInputRef = useRef();
-    const router = useNavigate();
+    const navigate = useNavigate();
 
     const currentDomain = window.location.hostname;
 
@@ -24,22 +23,14 @@ const SignUpForm = (props) => {
             password: passwordInputRef.current.value,
         };
 
-        const signUp = await handleSignUp(
+        await handleSignUp(
             signUpData.username,
             signUpData.email,
             signUpData.password,
-            currentDomain
+            currentDomain,
+            navigate,
+            setError
         );
-
-        if (signUp) {
-            console.log(signUp);
-            toast.success("Nutzer wurde angelegt. Ab zum Login! 😊");
-            router("/login");
-        } else {
-            toast.error("Nutzer konnte nicht angelegt werden. 😞");
-            setError(signUp);
-            console.log(signUp);
-        }
     };
 
     return (

@@ -2,12 +2,14 @@ import { useRef, useState } from "react";
 import Card from "../ui/Card";
 import classes from "./NewTicketForm.module.css";
 import FormData from "form-data";
+import { useContext } from "react";
+import AuthContext from "../auth/auth-context";
 
 const NewTicketForm = (props) => {
+    const { user } = useContext(AuthContext);
     const [selectedFile, setSelectedFile] = useState([]);
     const [isFilePicked, setIsFilePicked] = useState(false);
     const [attachmentsList, setAttachmentsList] = useState([]);
-    const emailInputRef = useRef();
     const sectionInputRef = useRef();
     const titleInputRef = useRef();
     const issueInputRef = useRef();
@@ -16,7 +18,8 @@ const NewTicketForm = (props) => {
         event.preventDefault();
 
         const ticketData = {
-            email: emailInputRef.current.value,
+            email: user.email,
+            username: user.username,
             section: sectionInputRef.current.value,
             title: titleInputRef.current.value,
             issue: issueInputRef.current.value,
@@ -80,15 +83,6 @@ const NewTicketForm = (props) => {
                         <option value="Security">Sicherheit</option>
                         <option value="Software">Software</option>
                     </select>
-                </div>
-                <div className={classes.control}>
-                    <label htmlFor="email">Email</label>
-                    <input
-                        type="email"
-                        required
-                        id="email"
-                        ref={emailInputRef}
-                    />
                 </div>
                 <div className={classes.control}>
                     <label htmlFor="issue">Problembeschreibung</label>

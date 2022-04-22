@@ -149,7 +149,7 @@ async def return_file(timestamp: str, picture: str):
             headers={"WWW-Authenticate": "Bearer"},
         )
 
-    return FileResponse(file_path)
+    return file_path
 
 
 @router.patch(

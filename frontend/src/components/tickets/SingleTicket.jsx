@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { toast } from "react-toastify";
-import axios from "axios";
 import Card from "../ui/Card";
 import classes from "./SingleTicket.module.css";
 import LoadingSpinner from "../helpers/loading-spinner";
-import { getSingleIssue } from "../helpers/api-calls";
+import { getSingleIssue, updateSingleIssue } from "../helpers/api-calls";
 
 const SingleTicket = () => {
     const { id } = useParams();
@@ -17,35 +15,13 @@ const SingleTicket = () => {
     const currentDomain = window.location.hostname;
 
     const handleOnButtonClick = () => {
-        axios
-            .patch(
-                `http://${currentDomain}:8000/api/issues/updateData/${id}?update=${!solvedStatus}`,
-                JSON.stringify({
-                    issue_id: parseInt(id),
-                    update: !solvedStatus,
-                }),
-                {
-                    headers: {
-                        Authorization: `Bearer ${
-                            JSON.parse(sessionStorage.getItem("auth"))
-                                .access_token
-                        }`,
-                    },
-                }
-            )
-            .then((response) => {
-                setData(response.data);
-                setSolvedStatus(!solvedStatus);
-                toast.success(
-                    `Neuer Ticketstatus: ${
-                        !solvedStatus ? "Abgeschlossen! 🥳" : "Offen ⚙️"
-                    } `
-                );
-            })
-            .catch((err) => {
-                console.log(err);
-                toast.error("Ticket konnte nicht bearbeitet werden. 😞");
-            });
+        updateSingleIssue(
+            currentDomain,
+            id,
+            setData,
+            setSolvedStatus,
+            solvedStatus
+        );
     };
 
     useEffect(() => {
@@ -58,7 +34,7 @@ const SingleTicket = () => {
             setImages,
             id
         );
-    }, [currentDomain, id, setSolvedStatus]);
+    }, [currentDomain, id, setSolvedStatus, setImages, setData, setIsLoading]);
 
     if (isLoading) {
         return <LoadingSpinner isLoading={isLoading} />;
@@ -77,6 +53,7 @@ const SingleTicket = () => {
                 <section>Bereich: {data.section}</section>
                 <p>Problembeschreibung: {data.issue}</p>
                 <p>Datum: {outputDate}</p>
+                <p>Nutzer: {data.username}</p>
                 <p>Email: {data.email}</p>
                 <p>Status: {solvedStatus ? "Abgeschlossen" : "Offen"}</p>
                 {attachments.length > 1 ? (
@@ -94,6 +71,7 @@ const SingleTicket = () => {
             </div>
             {images.length === attachments.length &&
                 images.map((image) => {
+                    console.log(image);
                     return (
                         <div className={classes.image} key={image.toString()}>
                             <img

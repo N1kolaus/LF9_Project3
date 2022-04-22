@@ -8,7 +8,9 @@ const Ticket = (props) => {
     const attachments = props.attachments.split(", ");
     const outputDate = `${date.getDate()}.${
         date.getMonth() + 1
-    }.${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
+    }.${date.getFullYear()} ${date.getHours()}:${
+        (date.getMinutes() < 10 ? "0" : "") + date.getMinutes()
+    }`;
 
     const handleOnClick = (props) => {
         navigate(`/tickets/${props.id}`);

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Fragment, useState, useEffect, useContext } from "react";
+import { Fragment, useContext } from "react";
 import { handleLogout } from "../components/helpers/api-calls";
 import AuthContext from "../components/auth/auth-context";
 import classes from "./MainNavigation.module.css";
