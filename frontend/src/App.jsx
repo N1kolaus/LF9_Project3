@@ -22,9 +22,17 @@ function App() {
                 <ToastContainer theme={"dark"} />
                 <Layout user={user} setUser={setUser}>
                     <Routes>
-                        <Route path="/" element={<LoginPage />} />
-                        <Route path="/login" element={<LoginPage />} />
-                        <Route path="/signUp" element={<SignUpPage />} />
+                        <Route path="/" exact={true} element={<LoginPage />} />
+                        <Route
+                            path="/login"
+                            exact={true}
+                            element={<LoginPage />}
+                        />
+                        <Route
+                            path="/signUp"
+                            exact={true}
+                            element={<SignUpPage />}
+                        />
                         <Route
                             element={
                                 <ProtectedRoute user={user} setUser={setUser} />

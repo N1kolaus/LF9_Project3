@@ -75,7 +75,7 @@ const SignUpForm = (props) => {
                 <div>
                     <p>
                         Bereits registrierter Nutzer?{" "}
-                        <Link to={{ pathname: "/login" }}>Anmelden</Link>
+                        <Link to={{ pathname: "/" }}>Anmelden</Link>
                     </p>
                 </div>
                 <div className={classes.actions}>

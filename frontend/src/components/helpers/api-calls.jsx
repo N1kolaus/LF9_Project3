@@ -53,7 +53,7 @@ export const handleSignUp = async (
         })
         .then((response) => {
             toast.success("Nutzer wurde angelegt. Ab zum Login! 😊");
-            navigate("/login");
+            navigate("/");
         })
         .catch((error) => {
             toast.error("Nutzer konnte nicht angelegt werden. 😞");
@@ -64,7 +64,7 @@ export const handleSignUp = async (
 
 export const handleLogout = () => {
     sessionStorage.removeItem("auth");
-    window.location = "/login";
+    window.location = "/";
 };
 
 export const getAllData = (currentDomain, setData, setIsLoading) => {
@@ -111,10 +111,33 @@ export const getSingleIssue = (
 
             if (attachments[0] !== "no attachments") {
                 attachments.forEach((image) => {
-                    const img =
-                        (`http://${currentDomain}:8000/api/issues/getFiles/${timestamp}/${image}`,
-                        config());
-                    setImages((oldImages) => [...oldImages, img]);
+                    axios
+                        .get(
+                            `http://${currentDomain}:8000/api/issues/getFiles/${timestamp}/${image}`,
+                            {
+                                headers: {
+                                    Authorization: `Bearer ${
+                                        JSON.parse(
+                                            sessionStorage.getItem("auth")
+                                        ).access_token
+                                    }`,
+                                },
+                                responseType: "arraybuffer",
+                            }
+                        )
+                        .then((response) => {
+                            let blob = new Blob([response.data], {
+                                type: response.headers["content-type"],
+                            });
+                            let newImage = URL.createObjectURL(blob);
+                            setImages((oldImages) => [...oldImages, newImage]);
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                            toast.error(
+                                "Attachments konnte nicht geladen werden. 😞"
+                            );
+                        });
                 });
             }
 

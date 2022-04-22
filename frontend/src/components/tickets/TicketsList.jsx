@@ -11,7 +11,7 @@ const TicketsList = (props) => {
     const navigate = useNavigate();
 
     if (!user) {
-        navigate("/login");
+        navigate("/");
     }
 
     if (tickets.length > 0) {

@@ -29,7 +29,7 @@ const MainNavigation = () => {
                                 <Link to="/new">Neues Ticket erstellen</Link>
                             </li>
                             <li>
-                                <Link onClick={handleLogoutClick} to="/login">
+                                <Link onClick={handleLogoutClick} to="/">
                                     Logout {user.username}
                                 </Link>
                             </li>
@@ -37,7 +37,7 @@ const MainNavigation = () => {
                     ) : (
                         <Fragment>
                             <li>
-                                <Link to="/login">Login</Link>
+                                <Link to="/">Login</Link>
                             </li>
                         </Fragment>
                     )}

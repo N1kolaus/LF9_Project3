@@ -11,8 +11,8 @@ const override = css`
 
 const LoadingSpinner = (props) => {
     const isLoading = props.isLoading;
-    const [loading, setLoading] = useState(isLoading);
-    const [color, setColor] = useState("#77002E");
+    const [loading] = useState(isLoading);
+    const [color] = useState("#77002E");
 
     return (
         <SyncLoader color={color} loading={loading} size={15} css={override} />

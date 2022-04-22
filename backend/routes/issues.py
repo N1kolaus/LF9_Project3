@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 router = APIRouter(
     prefix="/api/issues",
     tags=[Tags.issues],
-    # dependencies=[Depends(get_current_active_user)],
+    dependencies=[Depends(get_current_active_user)],
     responses={404: {"description": "Not found"}},
 )
 
@@ -139,8 +139,10 @@ async def return_file(timestamp: str, picture: str):
 
         if picture.split(".")[-1] == "png":
             file_path = os.path.join(file_path, picture)
+            return FileResponse(file_path, media_type="image/png")
         else:
             file_path = os.path.join(file_path, picture)
+            return FileResponse(file_path, media_type="image/jpeg")
     except FileNotFoundError as e:
         logger.debug(f"Couldn't find file: {str(e)}")
         raise HTTPException(
@@ -148,8 +150,6 @@ async def return_file(timestamp: str, picture: str):
             detail=f"couldn't find requested file {picture}",
             headers={"WWW-Authenticate": "Bearer"},
         )
-
-    return file_path
 
 
 @router.patch(

@@ -2,7 +2,7 @@ import { useEffect, useContext } from "react";
 import { Navigate, Outlet, useNavigate } from "react-router-dom";
 import AuthContext from "../components/auth/auth-context";
 
-const ProtectedRoute = ({ redirectPath = "/login", children }) => {
+const ProtectedRoute = ({ redirectPath = "/", children }) => {
     const { user, setUser } = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -11,7 +11,7 @@ const ProtectedRoute = ({ redirectPath = "/login", children }) => {
 
         if (!auth) {
             setUser(null);
-            navigate("/login");
+            navigate("/");
         }
 
         setUser(JSON.parse(auth));

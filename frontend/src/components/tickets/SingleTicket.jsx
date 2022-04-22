@@ -71,7 +71,7 @@ const SingleTicket = () => {
             </div>
             {images.length === attachments.length &&
                 images.map((image) => {
-                    console.log(image);
+                    console.log("image", image);
                     return (
                         <div className={classes.image} key={image.toString()}>
                             <img
