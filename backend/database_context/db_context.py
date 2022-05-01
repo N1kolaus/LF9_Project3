@@ -8,7 +8,7 @@ connect_args = {"check_same_thread": False}
 engine = create_engine(sqlite_url, echo=True, connect_args=connect_args)
 
 # POSTGRESQL
-# postgre_url = "postgresql://ticketadmin:adminadmin@192.168.17.3/tickets?sslmode=prefer"
+# postgre_url = "postgresql://ticketadmin:adminadmin@192.168.17.3/tickets?sslmode=require"
 # engine = create_engine(postgre_url, pool_size=3, max_overflow=0)
 
 

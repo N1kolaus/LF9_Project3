@@ -19,7 +19,7 @@ export const handleLogin = async (
     setError
 ) => {
     const getClientCredentials = oauth.client(axios.create(), {
-        url: `http://${currentDomain}:8000/api/auth/token`,
+        url: `https://${currentDomain}:8000/api/auth/token`,
         grant_type: "",
         username: username,
         password: password,
@@ -32,6 +32,7 @@ export const handleLogin = async (
         setUser(auth);
         navigate("/all");
     } catch (error) {
+        console.log("login: ", error);
         setUser(null);
         setError(error);
     }
@@ -46,7 +47,7 @@ export const handleSignUp = async (
     setError
 ) => {
     const signUp = axios
-        .post(`http://${currentDomain}:8000/api/auth/user`, {
+        .post(`https://${currentDomain}:8000/api/auth/user`, {
             username,
             email,
             password,
@@ -69,7 +70,7 @@ export const handleLogout = () => {
 
 export const getAllData = (currentDomain, setData, setIsLoading) => {
     return axios
-        .get(`http://${currentDomain}:8000/api/issues/allData`, config())
+        .get(`https://${currentDomain}:8000/api/issues/allData`, config())
         .then((response) => {
             setData(response.data);
             setIsLoading(false);
@@ -92,7 +93,7 @@ export const getSingleIssue = (
     id
 ) => {
     return axios
-        .get(`http://${currentDomain}:8000/api/issues/getData/${id}`, {
+        .get(`https://${currentDomain}:8000/api/issues/getData/${id}`, {
             headers: {
                 Authorization: `Bearer ${
                     JSON.parse(sessionStorage.getItem("auth")).access_token
@@ -113,7 +114,7 @@ export const getSingleIssue = (
                 attachments.forEach((image) => {
                     axios
                         .get(
-                            `http://${currentDomain}:8000/api/issues/getFiles/${timestamp}/${image}`,
+                            `https://${currentDomain}:8000/api/issues/getFiles/${timestamp}/${image}`,
                             {
                                 headers: {
                                     Authorization: `Bearer ${
@@ -162,7 +163,7 @@ export const updateSingleIssue = (
 ) => {
     return axios
         .patch(
-            `http://${currentDomain}:8000/api/issues/updateData/${id}?update=${!solvedStatus}`,
+            `https://${currentDomain}:8000/api/issues/updateData/${id}?update=${!solvedStatus}`,
             JSON.stringify({
                 issue_id: parseInt(id),
                 update: !solvedStatus,
@@ -190,7 +191,7 @@ export const updateSingleIssue = (
 export const postIssue = (currentDomain, ticketData, navigate) => {
     return axios
         .post(
-            `http://${currentDomain}:8000/api/issues/postIssue`,
+            `https://${currentDomain}:8000/api/issues/postIssue`,
             ticketData,
             config()
         )

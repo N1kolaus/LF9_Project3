@@ -1,6 +1,7 @@
 from database_context.db_context import create_db_and_tables
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.httpsredirect import HTTPSRedirectMiddleware
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -14,6 +15,8 @@ logging.basicConfig(filename="./logs/log.txt", encoding="utf-8", level=logging.D
 logger = logging.getLogger("main")
 
 app = FastAPI()
+
+app.add_middleware(HTTPSRedirectMiddleware)
 
 app.include_router(auth.router)
 app.include_router(issues.router)
@@ -59,4 +62,11 @@ async def serve_spa(request: Request):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000, log_level="debug")
+    uvicorn.run(
+        app,
+        host="0.0.0.0",
+        port=8000,
+        ssl_keyfile="./privatekey.pem",
+        ssl_certfile="./certificate.pem",
+        log_level="debug",
+    )
