@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import Card from "../ui/Card";
-import classes from "./LoginForm.module.css";
 import { handleSignUp } from "../helpers/api-calls";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -35,12 +34,8 @@ const SignUpForm = (props) => {
 
     return (
         <Card>
-            <form
-                className={classes.form}
-                onSubmit={handleOnSubmit}
-                encType="multipart/form-data"
-            >
-                <div className={classes.control}>
+            <form onSubmit={handleOnSubmit} encType="multipart/form-data">
+                <div>
                     <label htmlFor="username">Nutzername</label>
                     <input
                         type="text"
@@ -49,7 +44,7 @@ const SignUpForm = (props) => {
                         ref={usernameInputRef}
                     />
                 </div>
-                <div className={classes.control}>
+                <div>
                     <label htmlFor="email">Email</label>
                     <input
                         type="email"
@@ -58,7 +53,7 @@ const SignUpForm = (props) => {
                         ref={emailInputRef}
                     />
                 </div>
-                <div className={classes.control}>
+                <div>
                     <label htmlFor="password">Passwort</label>
                     <input
                         type="password"
@@ -68,9 +63,7 @@ const SignUpForm = (props) => {
                     />
                 </div>
                 {error !== "" && (
-                    <p className={classes.error}>
-                        Nutzername, Email und Passwort sind Pflichtfelder!
-                    </p>
+                    <p>Nutzername, Email und Passwort sind Pflichtfelder!</p>
                 )}
                 <div>
                     <p>
@@ -78,7 +71,7 @@ const SignUpForm = (props) => {
                         <Link to={{ pathname: "/" }}>Anmelden</Link>
                     </p>
                 </div>
-                <div className={classes.actions}>
+                <div>
                     <button>SignUp</button>
                 </div>
             </form>

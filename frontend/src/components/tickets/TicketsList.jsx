@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import Ticket from "./Ticket";
 import AuthContext from "../auth/auth-context";
-import classes from "./TicketsList.module.css";
 import { useNavigate } from "react-router-dom";
 
 const TicketsList = (props) => {
@@ -16,7 +15,7 @@ const TicketsList = (props) => {
 
     if (tickets.length > 0) {
         return (
-            <ul className={classes.list}>
+            <ul>
                 {tickets.map((ticket) => {
                     return (
                         <Ticket

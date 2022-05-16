@@ -1,6 +1,5 @@
 import { useRef, useState, useContext } from "react";
 import Card from "../ui/Card";
-import classes from "./LoginForm.module.css";
 import { handleLogin } from "../helpers/api-calls";
 import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "./auth-context";
@@ -35,12 +34,8 @@ const LoginForm = (props) => {
 
     return (
         <Card>
-            <form
-                className={classes.form}
-                onSubmit={handleOnSubmit}
-                encType="multipart/form-data"
-            >
-                <div className={classes.control}>
+            <form onSubmit={handleOnSubmit} encType="multipart/form-data">
+                <div>
                     <label htmlFor="username">Nutzername</label>
                     <input
                         type="text"
@@ -49,7 +44,7 @@ const LoginForm = (props) => {
                         ref={usernameInputRef}
                     />
                 </div>
-                <div className={classes.control}>
+                <div>
                     <label htmlFor="password">Passwort</label>
                     <input
                         type="password"
@@ -58,18 +53,14 @@ const LoginForm = (props) => {
                         ref={passwordInputRef}
                     />
                 </div>
-                {error !== "" && (
-                    <p className={classes.error}>
-                        Nutzername oder Passwort falsch!
-                    </p>
-                )}
+                {error !== "" && <p>Nutzername oder Passwort falsch!</p>}
                 <div>
                     <p>
                         Kein registrierter Nutzer?{" "}
                         <Link to={{ pathname: "/signup" }}>Anmelden</Link>
                     </p>
                 </div>
-                <div className={classes.actions}>
+                <div>
                     <button>Login</button>
                 </div>
             </form>

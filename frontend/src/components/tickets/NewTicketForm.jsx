@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import Card from "../ui/Card";
-import classes from "./NewTicketForm.module.css";
 import FormData from "form-data";
 import { useContext } from "react";
 import AuthContext from "../auth/auth-context";
@@ -56,12 +55,8 @@ const NewTicketForm = (props) => {
 
     return (
         <Card>
-            <form
-                className={classes.form}
-                onSubmit={handleOnSubmit}
-                encType="multipart/form-data"
-            >
-                <div className={classes.control}>
+            <form onSubmit={handleOnSubmit} encType="multipart/form-data">
+                <div>
                     <label htmlFor="title">Titel</label>
                     <input
                         type="text"
@@ -70,7 +65,7 @@ const NewTicketForm = (props) => {
                         ref={titleInputRef}
                     />
                 </div>
-                <div className={classes.control}>
+                <div>
                     <label htmlFor="section">Bereich</label>
                     <select
                         required
@@ -84,7 +79,7 @@ const NewTicketForm = (props) => {
                         <option value="Software">Software</option>
                     </select>
                 </div>
-                <div className={classes.control}>
+                <div>
                     <label htmlFor="issue">Problembeschreibung</label>
                     <textarea
                         required
@@ -93,7 +88,7 @@ const NewTicketForm = (props) => {
                         ref={issueInputRef}
                     ></textarea>
                 </div>
-                <div className={classes.control}>
+                <div>
                     <input
                         type="file"
                         name="file"
@@ -113,7 +108,7 @@ const NewTicketForm = (props) => {
                         <p></p>
                     )}
                 </div>
-                <div className={classes.actions}>
+                <div>
                     <button>Ticket anlegen</button>
                 </div>
             </form>

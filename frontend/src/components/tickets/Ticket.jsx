@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import Card from "../ui/Card";
-import classes from "./Ticket.module.css";
 
 const Ticket = (props) => {
     const navigate = useNavigate();
@@ -17,9 +16,9 @@ const Ticket = (props) => {
     };
 
     return (
-        <li className={classes.item}>
+        <li>
             <Card>
-                <div className={classes.content}>
+                <div>
                     <h2
                         onClick={() => {
                             handleOnClick(props);

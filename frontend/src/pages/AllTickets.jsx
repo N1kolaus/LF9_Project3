@@ -20,7 +20,7 @@ const AllTicketsPage = () => {
 
     return (
         <section>
-            <h1>Alle Tickets</h1>
+            <h1 className="text-4xl font-bold">Alle Tickets</h1>
             <TicketsList tickets={data} />
         </section>
     );

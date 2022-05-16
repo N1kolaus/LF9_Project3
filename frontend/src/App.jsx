@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Layout from "./layout/Layout";
 import NewTicket from "./pages/NewTicket";
@@ -18,7 +18,7 @@ function App() {
 
     return (
         <AuthContext.Provider value={{ user, setUser }}>
-            <HashRouter>
+            <BrowserRouter>
                 <ToastContainer theme={"dark"} />
                 <Layout user={user} setUser={setUser}>
                     <Routes>
@@ -47,7 +47,7 @@ function App() {
                         </Route>
                     </Routes>
                 </Layout>
-            </HashRouter>
+            </BrowserRouter>
         </AuthContext.Provider>
     );
 }

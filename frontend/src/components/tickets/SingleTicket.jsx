@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Card from "../ui/Card";
-import classes from "./SingleTicket.module.css";
 import LoadingSpinner from "../helpers/loading-spinner";
 import { getSingleIssue, updateSingleIssue } from "../helpers/api-calls";
 
@@ -48,7 +47,7 @@ const SingleTicket = () => {
 
     return (
         <Card>
-            <div className={classes.content}>
+            <div>
                 <h2>{data.title}</h2>
                 <section>Bereich: {data.section}</section>
                 <p>Problembeschreibung: {data.issue}</p>
@@ -64,7 +63,7 @@ const SingleTicket = () => {
                     <p>Keine Anhänge</p>
                 )}
             </div>
-            <div className={classes.actions}>
+            <div>
                 <button onClick={handleOnButtonClick}>
                     {solvedStatus ? "Ticket öffnen" : "Ticket schließen"}
                 </button>
@@ -73,7 +72,7 @@ const SingleTicket = () => {
                 images.map((image) => {
                     console.log("image", image);
                     return (
-                        <div className={classes.image} key={image.toString()}>
+                        <div key={image.toString()}>
                             <img
                                 src={image}
                                 alt={data.title}

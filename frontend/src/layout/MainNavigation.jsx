@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Fragment, useContext } from "react";
 import { handleLogout } from "../components/helpers/api-calls";
 import AuthContext from "../components/auth/auth-context";
-import classes from "./MainNavigation.module.css";
 
 const MainNavigation = () => {
     const { user, setUser } = useContext(AuthContext);
@@ -13,37 +12,41 @@ const MainNavigation = () => {
     };
 
     return (
-        <header className={classes.header}>
-            <Link to="/all">
-                <div className={classes.logo}>Doubtful-Joy SE</div>
-            </Link>
+        <nav class="flex items-center justify-between flex-wrap bg-sky-700 p-6">
+            <div class="flex items-center flex-shrink-0 text-white mr-6">
+                <span class="font-semibold text-xl tracking-tight">
+                    <a href="/all">Doubtful-Joy SE</a>
+                </span>
+            </div>
+            {user && (
+                <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+                    <div class="text-sm lg:flex-grow">
+                        <a
+                            href="/all"
+                            class="block mt-4 lg:inline-block lg:mt-0 text-sky-200 hover:text-white mr-4"
+                        >
+                            Alle Tickets
+                        </a>
+                        <a
+                            href="/new"
+                            class="block mt-4 lg:inline-block lg:mt-0 text-sky-200 hover:text-white mr-4"
+                        >
+                            Neues Ticket
+                        </a>
+                    </div>
 
-            <nav>
-                <ul>
-                    {user ? (
-                        <Fragment>
-                            <li>
-                                <Link to="/all">Alle Tickets</Link>
-                            </li>
-                            <li>
-                                <Link to="/new">Neues Ticket erstellen</Link>
-                            </li>
-                            <li>
-                                <Link onClick={handleLogoutClick} to="/">
-                                    Logout {user.username}
-                                </Link>
-                            </li>
-                        </Fragment>
-                    ) : (
-                        <Fragment>
-                            <li>
-                                <Link to="/">Login</Link>
-                            </li>
-                        </Fragment>
-                    )}
-                </ul>
-            </nav>
-        </header>
+                    <div>
+                        <a
+                            href="/"
+                            onClick={handleLogoutClick}
+                            class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-sky-500 hover:bg-white mt-4 lg:mt-0"
+                        >
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            )}
+        </nav>
     );
 };
 
