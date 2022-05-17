@@ -17,38 +17,50 @@ function App() {
     );
 
     return (
-        <AuthContext.Provider value={{ user, setUser }}>
-            <BrowserRouter>
-                <ToastContainer theme={"dark"} />
-                <Layout user={user} setUser={setUser}>
-                    <Routes>
-                        <Route path="/" exact={true} element={<LoginPage />} />
-                        <Route
-                            path="/login"
-                            exact={true}
-                            element={<LoginPage />}
-                        />
-                        <Route
-                            path="/signUp"
-                            exact={true}
-                            element={<SignUpPage />}
-                        />
-                        <Route
-                            element={
-                                <ProtectedRoute user={user} setUser={setUser} />
-                            }
-                        >
-                            <Route path="/all" element={<AllTicketsPage />} />
-                            <Route path="new" element={<NewTicket />} />
+        <div className="h-screen bg-gradient-to-b from-gray-200 to-gray-400">
+            <AuthContext.Provider value={{ user, setUser }}>
+                <BrowserRouter>
+                    <ToastContainer theme={"dark"} />
+                    <Layout user={user} setUser={setUser}>
+                        <Routes>
                             <Route
-                                path="/tickets/:id"
-                                element={<SingleTicket />}
+                                path="/"
+                                exact={true}
+                                element={<LoginPage />}
                             />
-                        </Route>
-                    </Routes>
-                </Layout>
-            </BrowserRouter>
-        </AuthContext.Provider>
+                            <Route
+                                path="/login"
+                                exact={true}
+                                element={<LoginPage />}
+                            />
+                            <Route
+                                path="/signUp"
+                                exact={true}
+                                element={<SignUpPage />}
+                            />
+                            <Route
+                                element={
+                                    <ProtectedRoute
+                                        user={user}
+                                        setUser={setUser}
+                                    />
+                                }
+                            >
+                                <Route
+                                    path="/all"
+                                    element={<AllTicketsPage />}
+                                />
+                                <Route path="new" element={<NewTicket />} />
+                                <Route
+                                    path="/tickets/:id"
+                                    element={<SingleTicket />}
+                                />
+                            </Route>
+                        </Routes>
+                    </Layout>
+                </BrowserRouter>
+            </AuthContext.Provider>
+        </div>
     );
 }
 

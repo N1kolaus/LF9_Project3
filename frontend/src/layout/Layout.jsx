@@ -4,7 +4,7 @@ const Layout = (props) => {
     return (
         <div>
             <MainNavigation />
-            <main>{props.children}</main>
+            <main className="px-4 py-4">{props.children}</main>
         </div>
     );
 };
