@@ -65,7 +65,7 @@ const LoginForm = (props) => {
                     </p>
                 )}
                 <div className="mt-4">
-                    <button className="inline-block px-4 py-1 rounded bg-sky-600 text-white shadow-lg uppercase tracking-wider font-semibold hover:bg-sky-900 hover:shadow-lg w-full">
+                    <button className="inline-block px-6 py-2 rounded bg-sky-600 text-white shadow-lg uppercase tracking-wider font-semibold hover:bg-sky-900 hover:shadow-lg w-full">
                         Login
                     </button>
                 </div>
