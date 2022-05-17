@@ -17,7 +17,7 @@ function App() {
     );
 
     return (
-        <div className="h-screen bg-gradient-to-b from-gray-200 to-gray-400">
+        <div className="h-full bg-auto min-h-screen bg-gradient-to-b from-gray-200 to-gray-400">
             <AuthContext.Provider value={{ user, setUser }}>
                 <BrowserRouter>
                     <ToastContainer theme={"dark"} />

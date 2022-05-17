@@ -1,7 +1,6 @@
 import { useContext } from "react";
-import Ticket from "./Ticket";
 import AuthContext from "../auth/auth-context";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const TicketsList = (props) => {
     const { user } = useContext(AuthContext);
@@ -15,7 +14,7 @@ const TicketsList = (props) => {
 
     if (tickets.length > 0) {
         return (
-            <div className="w-full mt-4 pl-10 pr-10">
+            <div className="w-full h-screen mt-4 pl-10 pr-10">
                 <div className="bg-white overflow-auto rounded">
                     <table className="min-w-full bg-white">
                         <thead className="bg-sky-600 text-white">
