@@ -1,8 +1,8 @@
 import { useRef, useState, useContext } from "react";
-import Card from "../ui/Card";
 import { handleLogin } from "../helpers/api-calls";
 import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "./auth-context";
+import login from "../../pics/login.png";
 
 const LoginForm = (props) => {
     const { setUser } = useContext(AuthContext);
@@ -33,12 +33,15 @@ const LoginForm = (props) => {
     };
 
     return (
-        <div className="mt-8 flex justify-center items-center flex-wrap">
+        <div className="mt-12 flex justify-center items-center flex-wrap">
             <form onSubmit={handleOnSubmit} encType="multipart/form-data">
-                <div className="flex justify-center text-3xl font-bold text-gray-900 uppercase">
-                    Login
+                <div className="flex items-center justify-center">
+                    <img src={login} alt="Login" class="w-10 px-1 mt-1" />
+                    <div className="text-4xl font-bold text-gray-900 uppercase">
+                        Login
+                    </div>
                 </div>
-                <p className="mt-4 text-gray-900">Bitte melden Sie sich an:</p>
+                <p className="mt-10 text-gray-900">Bitte melden Sie sich an:</p>
                 <div className="mt-2 text-gray-900">
                     <input
                         type="text"
