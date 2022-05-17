@@ -38,18 +38,18 @@ const LoginForm = (props) => {
                 <div className="flex justify-center text-3xl font-bold text-gray-900 uppercase">
                     Login
                 </div>
-                <p className="mt-4 text-gray-900">Bitten melden Sie sich an:</p>
+                <p className="mt-4 text-gray-900">Bitte melden Sie sich an:</p>
                 <div className="mt-2 text-gray-900">
                     <input
                         type="text"
                         required
                         id="username"
                         ref={usernameInputRef}
-                        placeholder="Benutzer"
+                        placeholder="Nutzername"
                         className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     />
                 </div>
-                <div className="mt-4 text-gray-900">
+                <div className="mt-2 text-gray-900">
                     <input
                         type="password"
                         required
