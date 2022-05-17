@@ -20,8 +20,8 @@ const AllTicketsPage = () => {
 
     return (
         <section>
-            <h1 className="text-4xl font-bold">Alle Tickets</h1>
-            <TicketsList tickets={data} />
+            <h1 className="mt-12 px-10">Alle Tickets</h1>
+            <TicketsList tickets={data} className="mt-4 px-10" />
         </section>
     );
 };

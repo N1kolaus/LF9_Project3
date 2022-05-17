@@ -2,7 +2,7 @@ import { useRef, useState, useContext } from "react";
 import { handleLogin } from "../helpers/api-calls";
 import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "./auth-context";
-import login from "../../pics/login.png";
+import login from "../../images/login.png";
 
 const LoginForm = (props) => {
     const { setUser } = useContext(AuthContext);
@@ -36,7 +36,7 @@ const LoginForm = (props) => {
         <div className="mt-12 flex justify-center items-center flex-wrap">
             <form onSubmit={handleOnSubmit} encType="multipart/form-data">
                 <div className="flex items-center justify-center">
-                    <img src={login} alt="Login" class="w-10 px-1 mt-1" />
+                    <img src={login} alt="Login" className="w-10 px-1 mt-1" />
                     <div className="text-4xl font-bold text-gray-900 uppercase">
                         Login
                     </div>
@@ -76,7 +76,7 @@ const LoginForm = (props) => {
                     <p className="mb-0 mr-2">Kein registrierter Nutzer?</p>
                     <Link
                         to={{ pathname: "/signup" }}
-                        class="inline-block px-6 py-2 border-2 border-sky-600 text-sky-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                        className="inline-block px-6 py-2 border-2 border-sky-600 text-sky-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                     >
                         Anlegen
                     </Link>
