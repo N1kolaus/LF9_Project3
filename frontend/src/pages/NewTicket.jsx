@@ -13,7 +13,7 @@ const NewTicket = () => {
 
     return (
         <section>
-            <h1>Neues Ticket</h1>
+            <h1 className="mt-12 px-10">Neues Ticket</h1>
             <NewTicketForm onNewTicket={handleNewTicket} />
         </section>
     );

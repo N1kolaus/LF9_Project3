@@ -54,65 +54,87 @@ const NewTicketForm = (props) => {
     };
 
     return (
-        <Card>
-            <form onSubmit={handleOnSubmit} encType="multipart/form-data">
-                <div>
-                    <label htmlFor="title">Titel</label>
-                    <input
-                        type="text"
-                        required
-                        id="title"
-                        ref={titleInputRef}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="section">Bereich</label>
-                    <select
-                        required
-                        name="section"
-                        id="section"
-                        ref={sectionInputRef}
+        <div className="w-full mt-4 pl-10 pr-10 text-gray-900">
+            <div className="container max-w-3xl">
+                <div className="border-2 border-gray-900 rounded bg-gray-200">
+                    <form
+                        onSubmit={handleOnSubmit}
+                        encType="multipart/form-data"
+                        className="p-4"
                     >
-                        <option value="Hardware">Hardware</option>
-                        <option value="Network">Netzwerk</option>
-                        <option value="Security">Sicherheit</option>
-                        <option value="Software">Software</option>
-                    </select>
-                </div>
-                <div>
-                    <label htmlFor="issue">Problembeschreibung</label>
-                    <textarea
-                        required
-                        rows="5"
-                        id="issue"
-                        ref={issueInputRef}
-                    ></textarea>
-                </div>
-                <div>
-                    <input
-                        type="file"
-                        name="file"
-                        onChange={changeHandler}
-                        multiple
-                    />
-                    {isFilePicked ? (
-                        <div>
-                            <p>Dateien:</p>
-                            <ul>
-                                {attachmentsList.map((attachment) => (
-                                    <li key={attachment}>{attachment}</li>
-                                ))}
-                            </ul>
+                        <div className="mt-2 text-gray-900">
+                            <input
+                                type="text"
+                                required
+                                id="title"
+                                ref={titleInputRef}
+                                placeholder="Titel"
+                                className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            />
                         </div>
-                    ) : (
-                        <p></p>
-                    )}
+                        <div className="mt-2 text-gray-900">
+                            <select
+                                required
+                                name="section"
+                                id="section"
+                                ref={sectionInputRef}
+                                placeholder="Bereich"
+                                className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            >
+                                <option value="Hardware">Hardware</option>
+                                <option value="Network">Netzwerk</option>
+                                <option value="Security">Sicherheit</option>
+                                <option value="Software">Software</option>
+                            </select>
+                        </div>
+                        <div className="mt-2 text-gray-900">
+                            <textarea
+                                required
+                                rows="5"
+                                id="issue"
+                                ref={issueInputRef}
+                                placeholder="Problembeschreibung"
+                                className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            ></textarea>
+                        </div>
+                        <div className="mt-2 text-gray-900">
+                            <input
+                                type="file"
+                                name="file"
+                                onChange={changeHandler}
+                                multiple
+                                class="block w-full text-sm text-slate-500
+      file:mr-4 file:py-2 file:px-4
+      file:rounded file:border-0
+      file:text-sm file:font-semibold
+      file:bg-sky-600 file:text-white
+      hover:file:bg-sky-900
+    "
+                            />
+                            {isFilePicked ? (
+                                <div className="mt-2 text-slate-500">
+                                    <p>Dateien:</p>
+                                    <ul>
+                                        {attachmentsList.map((attachment) => (
+                                            <li key={attachment}>
+                                                {attachment}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ) : (
+                                <p></p>
+                            )}
+                        </div>
+                        <div className="flex justify-end">
+                            <button className="block px-6 py-2 rounded bg-sky-600 text-white shadow-lg uppercase tracking-wider font-semibold hover:bg-sky-900 hover:shadow-lg">
+                                Ticket anlegen
+                            </button>
+                        </div>
+                    </form>
                 </div>
-                <div>
-                    <button>Ticket anlegen</button>
-                </div>
-            </form>
-        </Card>
+            </div>
+        </div>
     );
 };
 

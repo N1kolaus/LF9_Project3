@@ -47,13 +47,16 @@ const SingleTicket = () => {
     return (
         <div className="w-full mt-4 pl-10 pr-10 text-gray-900">
             <div className="container max-w-3xl">
-                <div className="flex items-center justify-between mt-4">
-                    <h2 className="text-5xl">{data.title}</h2>
-                    <button className="inline-block px-6 py-2 rounded bg-sky-600 text-white shadow-lg uppercase tracking-wider font-semibold hover:bg-sky-900 hover:shadow-lg">
+                <div className="flex items-center justify-between mt-4 ">
+                    <h2 className="text-5xl font-semibold">{data.title}</h2>
+                    <button
+                        onClick={handleOnButtonClick}
+                        className="inline-block px-6 py-2 rounded bg-sky-600 text-white shadow-lg uppercase tracking-wider font-semibold hover:bg-sky-900 hover:shadow-lg"
+                    >
                         {solvedStatus ? "Ticket öffnen" : "Ticket schließen"}
                     </button>
                 </div>
-                <div class="mt-6 p-4 grid grid-cols-6 gap-2 justify-start content-start border-2 border-gray-900 rounded">
+                <div className="mt-6 p-4 grid grid-cols-6 gap-2 justify-start content-start border-2 border-gray-900 rounded bg-gray-200 text-gray-900">
                     <p className="font-semibold">Bereich: </p>
                     <p className="col-span-5">{data.section}</p>
                     <p className="font-semibold">Datum: </p>
