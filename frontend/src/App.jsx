@@ -29,12 +29,12 @@ function App() {
                                 element={<LoginPage />}
                             />
                             <Route
-                                path="/login"
+                                path="login"
                                 exact={true}
                                 element={<LoginPage />}
                             />
                             <Route
-                                path="/signUp"
+                                path="signUp"
                                 exact={true}
                                 element={<SignUpPage />}
                             />
@@ -47,12 +47,12 @@ function App() {
                                 }
                             >
                                 <Route
-                                    path="/all"
+                                    path="all"
                                     element={<AllTicketsPage />}
                                 />
                                 <Route path="new" element={<NewTicket />} />
                                 <Route
-                                    path="/tickets/:id"
+                                    path="tickets/:id"
                                     element={<SingleTicket />}
                                 />
                             </Route>
