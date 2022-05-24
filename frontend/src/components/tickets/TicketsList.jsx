@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import AuthContext from "../auth/auth-context";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const TicketsList = (props) => {
     const { user } = useContext(AuthContext);
@@ -107,7 +107,17 @@ const TicketsList = (props) => {
         );
     }
 
-    return <p>Keine Tickets verfügbar.</p>;
+    return (
+        <div className="w-full h-screen mt-4 pl-10 pr-10 text-gray-900">
+            Keine Tickets verfügbar.{" "}
+            <Link
+                to={{ pathname: "/new" }}
+                className="text-sky-900 font-semibold hover:text-sky-600"
+            >
+                → Neues Ticket anlegen
+            </Link>
+        </div>
+    );
 };
 
 export default TicketsList;

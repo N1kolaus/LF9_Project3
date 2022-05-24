@@ -103,13 +103,7 @@ const NewTicketForm = (props) => {
                                 name="file"
                                 onChange={changeHandler}
                                 multiple
-                                className="block w-full text-sm text-slate-500
-      file:mr-4 file:py-2 file:px-4
-      file:rounded file:border-0
-      file:text-sm file:font-semibold
-      file:bg-sky-600 file:text-white
-      hover:file:bg-sky-900
-    "
+                                className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-sky-600 file:text-white hover:file:bg-sky-900"
                             />
                             {isFilePicked ? (
                                 <div className="mt-2 text-slate-500">
