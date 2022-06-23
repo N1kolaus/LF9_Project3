@@ -75,6 +75,9 @@
   binary-units = true
 }
 
+%%% Fuer Tabellen ueber mehrere Seiten
+\usepackage{longtable}
+
 %%% Code schoen darstellen %%%
 \usepackage{listings}
 \lstdefinestyle{MyPythonStyle}{
@@ -307,31 +310,31 @@ Von der Realisierung sind betroffen:
 
 \begin{description}
   \item[Manware] \
-        \begin{itemize}
-          \item Projektteam IT20/2 Gruppe 7
-          \item Support-Mitarbeiter des Auftraggeber
-          \item IT-Mitarbeiter des Autraggebers
-        \end{itemize}
+    \begin{itemize}
+      \item Projektteam IT20/2 Gruppe 7
+      \item Support-Mitarbeiter des Auftraggeber
+      \item IT-Mitarbeiter des Autraggebers
+    \end{itemize}
   \item[Orgware] \
-        \begin{itemize}
-          \item Sicherheitsanforderungen
-          \item Benutzerhandbuch
-          \item Benutzerschulung
-        \end{itemize}
+    \begin{itemize}
+      \item Sicherheitsanforderungen
+      \item Benutzerhandbuch
+      \item Benutzerschulung
+    \end{itemize}
   \item[Hardware] \
-        \begin{itemize}
-          \item Server
-          \item Mitarbeiter-PCs
-        \end{itemize}
+    \begin{itemize}
+      \item Server
+      \item Mitarbeiter-PCs
+    \end{itemize}
   \item[Software] \
-        \begin{itemize}
-          \item VM-Ware
-          \item Datenbank-Server
-          \item Web-Server
-          \item Firewall-System
-          \item \ac{DNS}
-          \item \ac{DHCP}
-        \end{itemize}
+    \begin{itemize}
+      \item VM-Ware
+      \item Datenbank-Server
+      \item Web-Server
+      \item Firewall-System
+      \item \ac{DNS}
+      \item \ac{DHCP}
+    \end{itemize}
 \end{description}
 
 
@@ -411,7 +414,7 @@ Ebenso wird der im Anhang \cpageref{fig:Netzwerkplan} zu betrachtende Netzwerkpl
   \label{fig:Projektstrukturplan}
 \end{figure}
 
-\begin{figure}[htbp]"-
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.95\textwidth]{data/Gantt.png}
   \caption{Gantt-Diagramm}
@@ -468,8 +471,8 @@ Die Netzwerke werden wie in \vref{tab:Netzwerk} zu sehen verteilt.
   \label{tab:Netzwerk}
 \end{table}
 
-Als Hostname der Firewall wird \glqq{}ipfire\grqq{} und als Domaine \glqq{}doubtful-joy07.com\grqq{} festgelegt.
-Nach dem Auswählen der Sprache wird aufgrund der Kundenspezifikation das Filesystem \glqq{}ext4 Filesystem\grqq{} ausgewählt. Nach dem Zuweisen der einzelnen Netze mit den IP- und MAC-Adressen wird der \ac{DHCP} deaktiviert, damit es später mit dem \ac{DHCP}-Server im grünen Netz nicht zu Komplikationen führt.
+Als Hostname der Firewall wird \enquote{ipfire} und als Domaine \enquote{doubtful-joy07.com} festgelegt.
+Nach dem Auswählen der Sprache wird aufgrund der Kundenspezifikation das Filesystem \enquote{ext4 Filesystem} ausgewählt. Nach dem Zuweisen der einzelnen Netze mit den IP- und MAC-Adressen wird der \ac{DHCP} deaktiviert, damit es später mit dem \ac{DHCP}-Server im grünen Netz nicht zu Komplikationen führt.
 
 Nach dem Einrichten der Firewall werden aus dem grünen Netz mittels des IPFire-Web"-interfaces verschiedene Einstellungen der Firewall bearbeitet. Für die Verbindungen zwischen Admin-PC, \ac{DHCP}-\ac{DNS}-\ac{DB}-Server und Webserver sowie für die Erreichbarkeit des Webservers aus dem roten Netz werden vier verschiedene Regeln erstellt, die in \vref{fig:FirewallConfig} zu sehen sind.
 
@@ -574,9 +577,9 @@ Die Funktion des \ac{DNS} kann mittels \texttt{nslookup}, zu sehen in \vref{fig:
 
 \subsection{Einrichtung des Datenbank-Servers}
 
-Die Einrichtung eines Datenbank-Servers erfolgt mittels der Anleitung von Aaron Kili. \autocite{tecmint:PostgreSQLAndpgAdmin} Mit dieser wird PostGreSQL, ein \glqq{}leistungsstarkes, weit verbreitetes, quelloffenes, plattformübergreifendes und fortschrittliches objektrelationales Datenbanksystem\grqq{} \autocite{tecmint:PostgreSQLAndpgAdmin} und pgAdmin, ein \glqq{}fortschrittliches, quelloffenes, voll funktionsfähiges und webbasiertes Verwaltungs- und Managementwerkzeug\grqq{} \autocite{tecmint:PostgreSQLAndpgAdmin}, installiert.
+Die Einrichtung eines Datenbank-Servers erfolgt mittels der Anleitung von Aaron Kili. \autocite{tecmint:PostgreSQLAndpgAdmin} Mit dieser wird PostGreSQL, ein \enquote{leistungsstarkes, weit verbreitetes, quelloffenes, plattformübergreifendes und fortschrittliches objektrelationales Datenbanksystem} \autocite{tecmint:PostgreSQLAndpgAdmin} und pgAdmin, ein \enquote{fortschrittliches, quelloffenes, voll funktionsfähiges und webbasiertes Verwaltungs- und Managementwerkzeug} \autocite{tecmint:PostgreSQLAndpgAdmin}, installiert.
 
-Mittels des Webinterfaces, das pgAdmin bereitstellt, lässt sich eine Datenbank erstellen, zu sehen in \vref{fig:DBErstellung}. Der Name der Datenbank wird auf \glqq{}tickets\grqq{}, der Benutzername auf \glqq{}ticketadmin\grqq{} und das Passwort auf \glqq{}adminadmin\grqq{} festgelegt.
+Mittels des Webinterfaces, das pgAdmin bereitstellt, lässt sich eine Datenbank erstellen, zu sehen in \vref{fig:DBErstellung}. Der Name der Datenbank wird auf \enquote{tickets}, der Benutzername auf \enquote{ticketadmin} und das Passwort auf \enquote{adminadmin} festgelegt.
 
 \begin{figure}[htbp]
   \centering
@@ -670,6 +673,103 @@ Das Projektteam IT20/2 Gruppe 7 besteht aus drei Anwendungsentwicklern, was die 
 
 
 \chapter{Auswertung und Reflexion Projekt 4}
+
+
+\section{Schutzbedarfsanalyse und TOM-Identifikation}
+
+\begin{longtable}{p{0.2\textwidth}p{0.5\textwidth}l}
+  \caption{Gefährdungsübersicht für Datenbank-Server und Web-Server}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                \\
+  Risko                                                                                                                                                                                                           & Auswirkung                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        & Schweregrad \\
+  \hline
+  G 0.8 Ausfall oder Störung der Stromversorgung                                                                                                                                                                  & Durch einen Ausfall oder eine Störung der Stromversorgung können die Server ebenfalls in ihrer Funktionsweise eingeschränkt sein oder komplett ausfallen.
+  Dies ist besonders schwerwiegend, da die Behebung eines Stromausfalls in den meisten Fällen einen längeren Ausfall zur Folge hat. Das abrupte Abstürzen der Systeme verhindert ein sofortiges manuelles Backup. & 5/5                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             \\
+  G 0.9 Ausfall oder Störung von Kommunikationsnetzen                                                                                                                                                             & Durch den Ausfall des Kommunikationsnetzes kann keine Verbindung mehr zu den Servern hergestellt werden. Zum einen sind diese für den Kunden nicht mehr erreichbar und zum anderen kann ein Systemadmin diese Systeme (falls sie nicht On-Site stehen) auch nicht erreichen. Dies ist als Totalausfall des Systems zu werten und verhindert eine normale Benutzung.                                                                                                                                                                                                                                                                                               & 5/5         \\
+  G 0.23 Unbefugtes Eindringen in IT-Systeme                                                                                                                                                                      & Durch ein unbefugtes Eindringen in IT-Systeme können die komplette Server-Infrastruktur und die Funktionalität des Systems beeinträchtigt werden. Vorhandene Daten könnten manipuliert, gelöscht oder gestohlen werden. Das komplette System kann kompromittiert werden, es könnten andere Informationen angezeigt werden, als vom Betreiber angedacht. Ein unbefugter Zutritt ist aufgrund der aufgeführten Punkte als höchst kritisch z werten.                                                                                                                                                                                                                 & 5/5         \\
+  G 0.25 Ausfall von Geräten oder Systemen                                                                                                                                                                        & Ein Ausfall von Geräten oder Systemen ist als höchst kritisch zu werten. Da in der aktuellen Umsetzung keine Art von Replikation, Loadbalancing oder High-Availability Lösung vorhanden ist, würde der Ausfall eines einzelnen Gerätes einen Komplettausfall des Systems zur Folge haben. Der Ausfall von Hardware ist ein durchaus realistisches und auf längere Zeit gesehen ein sehr wahrscheinliches Szenario.                                                                                                                                                                                                                                                & 5/5         \\
+  G 0.27 Ressourcenmangel                                                                                                                                                                                         & Ein Mangel an Ressourcen ist durchaus realistisch und mit steigender Nutzerzahl auch ein wahrscheinlich auftretendes Problem. Wenn viele Personen gleichzeitig versuchen ein Ticket zu öffnen, könnte dies etwa einem DDoS-Angriff entsprechen. Die Antwortzeit des Systems verlangsamt sich, manche Anfragen werden vielleicht nicht bearbeitet, Daten werden nicht korrekt in die Datenbank geschrieben, was ebenfalls einen Informationsverlust zur Folge haben kann. Deshalb ist es wichtig, stets genügend Ressourcen zur Verfügung zu stellen, das betrifft unter anderem Arbeitsspeicher, persistenter Speicher, Rechenleistung und den Netzwerkdurchsatz. & 5/5         \\
+  \label{tab:Risikoanalyse}
+\end{longtable}
+
+\begin{longtable}{p{0.2\textwidth}p{0.5\textwidth}p{0.2\textwidth}}
+  \caption{Technisch- Organisatorische Maßnahmen zur Verminderung der Risiken
+  }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            \\
+  Maßnahmen                                                                                                                                       & Beschreibung                                                                                                                                                                                                                                                                                                                                  & Bezug                                      \\
+  \hline
+  Verwendung einer unterbrechungsfreien Stromversorgung                                                                                           & Durch die Verwendung einer unterbrechungsfreien Stromversorgung kann man zeitweise vom Stromnetz unabhängig agieren. Dies ermöglicht entweder die Überbrückung des Ausfalls oder das korrekte herunterfahren der einzelnen Server. Aufwand ist für unser angestrebtes Konzept noch relativ gering, der Nutzen aber auch groß.                 & G .0.8                                     \\
+  Verwendung von Zugriffsbeschränkungen                                                                                                           & Der Zugriff auf die Server sollten nur für autorisierte Nutzer ermöglicht sein, damit kein unberechtigter Nutzer das System manipulieren kann. Dies kann in Form von Nutzerkonten mit starken Passwörtern, oder durch das Hinterlegen von SSH-Keys auf dem Server erreicht werden. Aufwand ist dabei relativ gering und der Nutzen sehr groß. & G 0.23 Unbefugtes Eindringen in IT-Systeme \\
+  Nutzung von high-availability-clustern                                                                                                          & Diese Lösung erfordert das doppelte Vorhandensein von allen wichtigen Servern. Falls ein Teilsystem ausfällt wird einfach das andere Backup-System verwendet, wodurch die Funktionalität des Gesamtsystems erhalten bleibt.
+  Der Aufwand dafür ist groß, da jedes System in doppelter Ausführung vorhanden sein muss, was doppelten Preis und doppelte Konfiguration bedeutet. Außerdem ist die Einrichtung eines High availability clusters mit zusätzlichem Aufwand verbunden
+  Der Nutzen der daraus gezogen wird ist sehr groß, besonders bei kritischen Systemen ist man dadurch vor einem Ausfall des Gesamtsystems sicher. & G 0.25 Ausfall von Geräten oder Systemen
+  \label{tab:TOM}
+\end{longtable}
+
+
+
+\section{Cybersecurity implementieren}
+
+\subsection{Datensicherung des Datenbankservers}
+
+Zur Datensicherung des Datenbankservers im laufenden Betriebs werden folgende Schritte abgearbeitet:
+
+\begin{itemize}
+  \item Einloggen als User \textit{ticketadmin}, mit dem Passwort \enquote{adminadmin}.
+  \item Neues Verzeichnis mit dem Namen \enquote{backups} erstellen, zu sehen in \vref{fig:pg_backup}.
+  \item Erstellen eines Cron-Tasks, ebenfalls zu sehen in \vref{fig:pg_backup}.
+  \item Eintragen der in \vref{lst:cron_task} zu sehenden Einstellungen.
+\end{itemize}
+
+Mit diesen Einstellungen wird jeden Sonntag um Mitternacht ein Backup der Datenbank erstellt und in dem Verzeichnis \enquote{backups} gespeichert.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{data/postgres_backup.png}
+  \caption{Erstellen eines Verzeichnisses und eines Cron-Tasks}
+  \label{fig:pg_backup}
+\end{figure}
+
+\begin{lstlisting}[language=bash,caption={Einrichtung eines Cron-Tasks},label={lst:cron_task}]
+  0 0 * * 0 pg_dump -U postgres dbname > ~/postgres/backups/tickets.bak
+\end{lstlisting}
+
+
+\subsection{E2E-Verschlüsselung der DMZ-Kommunikation}
+
+Voraussetzung für das Erstellen eines SSL-Zertifikats auf dem Dienst-Server die Installation von  \textit{openssl}, was bei CentOS standardmäßig vorhanden ist.
+
+Mittels des in \vref{lst:ssl_cert} zu sehenden Befehls wird ein self-signed-certificate erstellt.
+
+\begin{lstlisting}[language=bash,caption={Erstellen eines self-signed-certificates},label={lst:ssl_cert}]
+  # openssl req -x509 -newkey rsa:4096 -keyout privatekey.pem \
+  -out certificate.pem -sha256 -days 365
+\end{lstlisting}
+
+Die beiden erstellten Dateien und das damit verbundene Zertifikat ist ein Jahr gültig und muss in das Python-Backend eingebunden werden. Dafür wird die \enquote{main}-Funktion um \enquote{ssl\_keyfile} und \enquote{ssl\_certfile} erweitert, zu sehen in \vref{lst:cert_input}.
+
+\begin{lstlisting}[language=python,caption={Einbinden des self-signed-certificate},label={lst:cert_input}]
+  if __name__ == "__main__":
+    uvicorn.run(
+        app,
+        host="0.0.0.0",
+        port=8000,
+        ssl_keyfile="./privatekey.pem",
+        ssl_certfile="./certificate.pem",
+        log_level="debug",
+    )
+\end{lstlisting}
+
+Die Verbindungen zum Frontend/Backend sind jetzt mittels HTTPS verschlüsselt.
+
+
+\subsection{SSH ohne Passwort}
+
+Voraussetzung für einen Zugriff auf den Dienst-Server ohne Passwort ist die Installation des \textit{openssh-server}. Bei CentOS ist dieser standardmäßig installiert.
+
+Mittels \texttt{ssh-keygen} kann ein SSH-Schlüssel erstellt werden. Dieser kann mittels des in \vref{lst:ssh_copy} zu sehenden Befehls in das \enquote{.ssh}-Verzeichnis des Dienst-Servers kopiert werden. Die nächste Anmeldung auf dem Dienst-Server kann nun ohne Passworteingabe erfolgen.
+
+\begin{lstlisting}[language=bash,caption={Kopieren des SSH-Keys auf den Dienste-Server},label={lst:ssh_copy}]
+  ssh-copy-id -i ~/.ssh/id_rsa.pub ticketadmin@192.168.244.10
+\end{lstlisting}
+
 
 \newpage
 
